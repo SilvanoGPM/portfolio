@@ -12,6 +12,7 @@ export function CloseSidebarButton(props: Omit<IconButtonProps, 'aria-label'>) {
       aria-label="Abrir menu lateral"
       color="white"
       colorScheme="blackAlpha"
+      bg="transparent"
       fontSize="4xl"
       icon={<Icon as={AiOutlineClose} />}
       onClick={closeSidebar}

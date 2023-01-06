@@ -11,6 +11,7 @@ export function OpenSidebarButton(props: Omit<IconButtonProps, 'aria-label'>) {
       {...props}
       aria-label="Abrir menu lateral"
       colorScheme="blackAlpha"
+      bg="transparent"
       color="white"
       fontSize="4xl"
       icon={<Icon as={AiOutlineMenu} />}

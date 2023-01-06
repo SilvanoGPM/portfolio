@@ -3,7 +3,7 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
 export function Footer() {
   return (
-    <HStack fontSize="4xl" justify="center">
+    <HStack fontSize="4xl" justify="center" mt={{ base: '-32', lg: '0' }}>
       <Link href="https://github.com/SilvanoGPM">
         <Icon
           as={AiFillGithub}
