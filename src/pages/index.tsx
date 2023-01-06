@@ -1,5 +1,5 @@
-import { Main } from '$components/Main';
+import { Text } from '@chakra-ui/react';
 
 export default function Home() {
-  return <Main />;
+  return <Text fontWeight="black">Portfolio</Text>;
 }

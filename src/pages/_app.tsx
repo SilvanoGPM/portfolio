@@ -1,14 +1,19 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+
+import { theme } from '$styles/themes';
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Next Boilerplate</title>
+        <title>Silvano Marques | Programador Web</title>
       </Head>
 
-      <Component {...pageProps} />
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
     </>
   );
 }
