@@ -13,7 +13,7 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
     <Flex>
       <ParticleBackground />
       <Sidebar />
-      <Box px="8" py="12">
+      <Box px="8" py="12" mt={{ base: '8', lg: '0' }}>
         {children}
       </Box>
     </Flex>

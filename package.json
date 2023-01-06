@@ -21,6 +21,7 @@
     "react-dom": "18.1.0",
     "react-icons": "^4.7.1",
     "react-particles": "^2.7.1",
+    "react-typing-effect": "^2.0.5",
     "tsparticles": "^2.7.1",
     "zustand": "^4.2.0"
   },
@@ -32,6 +33,7 @@
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.30",
     "@types/react": "^18.0.8",
+    "@types/react-typing-effect": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
     "eslint": "8.14.0",

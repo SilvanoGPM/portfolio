@@ -20,6 +20,7 @@ export function Sidebar() {
     direction: 'column',
     justify: 'space-between',
     py: '4',
+    sx: glassmorphismContainer({ bg: 'backgroundAlpha.600', blur: '2px' }),
   };
 
   if (isSmallScreen) {
@@ -35,10 +36,6 @@ export function Sidebar() {
           w="100%"
           h="100vh"
           overflow="hidden"
-          sx={glassmorphismContainer({
-            bg: 'backgroundAlpha.600',
-            blur: '50px',
-          })}
           {...sharedStyles}
         >
           <Content />
@@ -61,13 +58,7 @@ export function Sidebar() {
   }
 
   return (
-    <Flex
-      w="400px"
-      h="100vh"
-      minH="500px"
-      sx={glassmorphismContainer({ bg: 'backgroundAlpha.600', blur: '10px' })}
-      {...sharedStyles}
-    >
+    <Flex w="400px" h="100vh" minH="500px" {...sharedStyles}>
       <Content />
     </Flex>
   );
