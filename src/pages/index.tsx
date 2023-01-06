@@ -1,5 +1,5 @@
-import { Text } from '@chakra-ui/react';
+import { Sidebar } from '$components/Sidebar';
 
 export default function Home() {
-  return <Text fontWeight="black">Portfolio</Text>;
+  return <Sidebar />;
 }

@@ -16,7 +16,21 @@ export const theme = extendTheme({
     },
 
     background: {
+      '600': '#080808',
       '500': '#111111',
+      '400': '#282828',
+    },
+
+    backgroundAlpha: {
+      '900': 'rgba(17, 17, 17, 0.9)',
+      '800': 'rgba(17, 17, 17, 0.8)',
+      '700': 'rgba(17, 17, 17, 0.7)',
+      '600': 'rgba(17, 17, 17, 0.6)',
+      '500': 'rgba(17, 17, 17, 0.5)',
+      '400': 'rgba(17, 17, 17, 0.4)',
+      '300': 'rgba(17, 17, 17, 0.3)',
+      '200': 'rgba(17, 17, 17, 0.2)',
+      '100': 'rgba(17, 17, 17, 0.1)',
     },
   },
 
@@ -28,8 +42,11 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: 'background.500',
-        color: '#eee',
+        bgImage: 'url(/bg.jpg)',
+        bgPos: 'center',
+        bgSize: 'cover',
+        bgColor: 'background.500',
+        color: 'white',
       },
     },
   },
