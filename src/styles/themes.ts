@@ -42,9 +42,6 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bgImage: 'url(/bg.jpg)',
-        bgPos: 'center',
-        bgSize: 'cover',
         bgColor: 'background.500',
         color: 'white',
       },
