@@ -47,17 +47,13 @@ export const theme = extendTheme({
     },
   },
 
-  fonts: {
-    heading: 'Titillium Web',
-    body: 'Titillium Web',
-  },
-
   styles: {
     global: {
       html: {
         ...thinScrollbar,
       },
       body: {
+        fontDisplay: 'swap',
         bgColor: 'background.500',
         color: 'white',
         ...thinScrollbar,

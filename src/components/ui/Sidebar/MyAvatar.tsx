@@ -7,9 +7,7 @@ export function MyAvatar() {
   return (
     <Center h="200px">
       <Link href="/">
-        <a>
-          <Image src={logoImg.src} w="250px" />
-        </a>
+        <Image src={logoImg.src} w="250px" />
       </Link>
     </Center>
   );

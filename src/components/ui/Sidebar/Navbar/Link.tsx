@@ -17,17 +17,17 @@ export function Link({ href, children, ...props }: LinkProps) {
   const color = isInPath ? 'brand.500' : 'white';
 
   return (
-    <NextLink href={href} passHref>
-      <ChakraLink
-        {...props}
-        color={color}
-        textTransform="uppercase"
-        fontWeight="semibold"
-        fontSize="2xl"
-        sx={linkAnimation}
-      >
-        {children}
-      </ChakraLink>
-    </NextLink>
+    <ChakraLink
+      {...props}
+      as={NextLink}
+      href={href}
+      color={color}
+      textTransform="uppercase"
+      fontWeight="semibold"
+      fontSize="2xl"
+      sx={linkAnimation}
+    >
+      {children}
+    </ChakraLink>
   );
 }

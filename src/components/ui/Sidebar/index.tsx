@@ -10,10 +10,13 @@ import { CloseSidebarButton } from './CloseSidebarButton';
 export function Sidebar() {
   const { sidebarIsOpen } = useUIStore();
 
-  const isSmallScreen = useBreakpointValue({
-    base: true,
-    lg: false,
-  });
+  const isSmallScreen = useBreakpointValue(
+    {
+      base: true,
+      lg: false,
+    },
+    { ssr: false },
+  );
 
   const sharedStyles: FlexProps = {
     bg: 'background.400',
