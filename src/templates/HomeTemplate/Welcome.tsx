@@ -1,9 +1,11 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
 import ReactTypingEffect from 'react-typing-effect';
 
+import { Section } from '$components/ui/Section';
+
 export function Welcome() {
   return (
-    <Box as="section">
+    <Section>
       <Text fontWeight="bold">Seja bem vindo(a), meu nome é</Text>
 
       <Heading as="h1" textTransform="uppercase" fontWeight="black">
@@ -19,6 +21,6 @@ export function Welcome() {
           staticText="Desenvolvedor"
         />
       </Box>
-    </Box>
+    </Section>
   );
 }

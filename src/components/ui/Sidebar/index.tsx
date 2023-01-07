@@ -1,4 +1,4 @@
-import { Flex, FlexProps, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Flex, FlexProps, useBreakpointValue } from '@chakra-ui/react';
 
 import { glassmorphismContainer } from '$styles/tokens';
 import { useUIStore } from '$stores/ui';
@@ -58,8 +58,20 @@ export function Sidebar() {
   }
 
   return (
-    <Flex w="400px" h="100vh" minH="500px" {...sharedStyles}>
-      <Content />
-    </Flex>
+    <>
+      <Box minW="400px" h="100vh" minH="500px" />
+
+      <Flex
+        pos="fixed"
+        top="0"
+        left="0"
+        w="400px"
+        h="100vh"
+        minH="500px"
+        {...sharedStyles}
+      >
+        <Content />
+      </Flex>
+    </>
   );
 }
