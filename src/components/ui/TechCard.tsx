@@ -3,9 +3,12 @@ import { Center, Text } from '@chakra-ui/react';
 
 interface TechCardProps {
   name: string;
+  colored: boolean;
 }
 
-export function TechCard({ name }: TechCardProps) {
+export function TechCard({ name, colored }: TechCardProps) {
+  const coloredClass = colored ? 'colored' : '';
+
   return (
     <Center
       cursor="pointer"
@@ -24,7 +27,9 @@ export function TechCard({ name }: TechCardProps) {
       }}
     >
       <Text fontSize="3xl">
-        <i className={`devicon-${name.toLocaleLowerCase()}-plain colored`}></i>
+        <i
+          className={`devicon-${name.toLocaleLowerCase()}-plain ${coloredClass}`}
+        ></i>
       </Text>
 
       <Text fontWeight="bold" fontSize="small" textTransform="uppercase">

@@ -2,10 +2,11 @@ import { Text } from '@chakra-ui/react';
 
 import { HighlightText } from '$components/chakra/HighlightText';
 import { Section } from '$components/ui/Section';
+import { ABOUT_ME } from '$data/sections';
 
 export function AboutMe() {
   return (
-    <Section title="Sobre mim">
+    <Section title="Sobre mim" dataScroll={ABOUT_ME}>
       <Text maxW="600px" fontSize="xl" textAlign="justify">
         Me chamo <HighlightText>Silvano Marques</HighlightText> e atualmente
         estou localizado no estado de Pernambuco. Comecei a estudar programação

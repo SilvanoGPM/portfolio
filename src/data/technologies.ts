@@ -15,3 +15,5 @@ export const technologies = [
   'vscode',
   'intellij',
 ];
+
+export const blackLogos = ['nextjs', 'github'];

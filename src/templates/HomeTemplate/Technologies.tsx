@@ -2,7 +2,7 @@ import { Flex } from '@chakra-ui/react';
 
 import { Section } from '$components/ui/Section';
 import { TechCard } from '$components/ui/TechCard';
-import { technologies } from '$data/technologies';
+import { blackLogos, technologies } from '$data/technologies';
 
 export function Technologies() {
   return (
@@ -14,7 +14,11 @@ export function Technologies() {
         justify={{ base: 'space-between', lg: 'start' }}
       >
         {technologies.map((technology) => (
-          <TechCard key={technology} name={technology} />
+          <TechCard
+            key={technology}
+            name={technology}
+            colored={!blackLogos.includes(technology)}
+          />
         ))}
       </Flex>
     </Section>
