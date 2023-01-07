@@ -18,7 +18,6 @@ export function Sidebar() {
   const sharedStyles: FlexProps = {
     bg: 'background.400',
     direction: 'column',
-    justify: 'space-between',
     py: '4',
     sx: glassmorphismContainer({ bg: 'backgroundAlpha.600', blur: '2px' }),
   };
@@ -36,6 +35,7 @@ export function Sidebar() {
           w="100%"
           h="100vh"
           overflow="hidden"
+          justify="space-evenly"
           {...sharedStyles}
         >
           <Content />
@@ -65,6 +65,7 @@ export function Sidebar() {
         pos="fixed"
         top="0"
         left="0"
+        justify="space-between"
         w="400px"
         h="100vh"
         minH="500px"

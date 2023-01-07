@@ -7,7 +7,7 @@ import { ABOUT_ME } from '$data/sections';
 
 export function Welcome() {
   return (
-    <Section>
+    <Section h="100vh" justify="center" mt={{ base: '-28', lg: '0' }}>
       <Text fontWeight="bold">Seja bem vindo(a), meu nome é</Text>
 
       <Heading as="h1" textTransform="uppercase" fontWeight="black">
@@ -34,7 +34,7 @@ export function Welcome() {
         colorScheme="brand"
         onClick={() => scrollToElement(ABOUT_ME)}
       >
-        Mais sobre mim
+        Mais sobre mim 😃
       </Button>
     </Section>
   );

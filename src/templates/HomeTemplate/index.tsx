@@ -10,8 +10,8 @@ export function HomeTemplate() {
     <DefaultLayout>
       <VStack align="start" spacing="16" as="main">
         <Welcome />
-        <Technologies />
         <AboutMe />
+        <Technologies />
       </VStack>
     </DefaultLayout>
   );

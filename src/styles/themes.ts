@@ -1,6 +1,7 @@
 import { extendTheme } from '@chakra-ui/react';
 
 import { Button } from './components/button';
+import { thinScrollbar } from './tokens';
 
 export const theme = extendTheme({
   components: {
@@ -53,9 +54,13 @@ export const theme = extendTheme({
 
   styles: {
     global: {
+      html: {
+        ...thinScrollbar,
+      },
       body: {
         bgColor: 'background.500',
         color: 'white',
+        ...thinScrollbar,
       },
     },
   },
