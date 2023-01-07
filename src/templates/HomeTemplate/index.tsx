@@ -4,6 +4,7 @@ import { VStack } from '@chakra-ui/react';
 import { Welcome } from './Welcome';
 import { Technologies } from './Technologies';
 import { AboutMe } from './AboutMe';
+import { Services } from './Services';
 
 export function HomeTemplate() {
   return (
@@ -12,6 +13,7 @@ export function HomeTemplate() {
         <Welcome />
         <AboutMe />
         <Technologies />
+        <Services />
       </VStack>
     </DefaultLayout>
   );
