@@ -18,7 +18,7 @@ export function Section({
     <>
       {dataScroll && <div data-scroll={dataScroll} />}
 
-      <Flex as="section" direction="column" {...props}>
+      <Flex w="full" as="section" direction="column" {...props}>
         {title && <SubTitle>{title}</SubTitle>}
         {children}
       </Flex>

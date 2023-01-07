@@ -29,6 +29,7 @@ export function Welcome() {
       </Text>
 
       <Button
+        maxW="300px"
         mt="2"
         variant="outline"
         colorScheme="brand"

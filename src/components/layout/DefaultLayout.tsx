@@ -16,7 +16,7 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
       <ParticleBackground />
       <Sidebar />
 
-      <Box w="full">
+      <Flex direction="column" w="full" justify="space-between">
         <Box w="full" px="8" pt="12">
           {children}
         </Box>
@@ -24,7 +24,7 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
         <Box w="full" pos="relative">
           <Footer />
         </Box>
-      </Box>
+      </Flex>
     </Flex>
   );
 }
