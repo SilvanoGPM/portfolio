@@ -16,8 +16,11 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
       <ParticleBackground />
       <Sidebar />
 
-      <Box px="8" pt="12" w="full">
-        {children}
+      <Box w="full" pos="relative">
+        <Box w="full" px="8" pt="12">
+          {children}
+        </Box>
+
         <Footer />
       </Box>
     </Flex>
