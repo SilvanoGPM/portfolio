@@ -1,12 +1,12 @@
 import { ChakraProvider } from '@chakra-ui/react';
+import { Titillium_Web } from '@next/font/google';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import NextNProgress from 'nextjs-progressbar';
 import { Router } from 'next/router';
-import { Titillium_Web } from '@next/font/google';
+import NextNProgress from 'nextjs-progressbar';
 
-import { theme } from '$styles/themes';
 import { useUIStore } from '$stores/ui';
+import { theme } from '$styles/themes';
 
 const tintilliumWeb = Titillium_Web({
   weight: ['400', '600', '700', '900'],

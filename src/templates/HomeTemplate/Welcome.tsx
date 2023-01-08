@@ -24,9 +24,7 @@ export function Welcome() {
         />
       </Box>
 
-      <Text mt="10">
-        Sites, APIs, Open Source, curiosidade e muito café ☕.
-      </Text>
+      <Text mt="10">Sites, APIs, Open Source e muito café ☕.</Text>
 
       <Button
         maxW="300px"
