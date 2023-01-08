@@ -1,5 +1,4 @@
-import { Button, Icon, VStack } from '@chakra-ui/react';
-import { AiFillEye } from 'react-icons/ai';
+import { Button, VStack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 import { Section } from '$components/ui/Section';
@@ -35,7 +34,6 @@ export function Projects({ projects }: ProjectsProps) {
           ))}
 
           <Button
-            rightIcon={<Icon as={AiFillEye} />}
             size="lg"
             maxW={{ base: '100%', lg: '40%' }}
             w="full"
