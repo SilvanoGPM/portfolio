@@ -7,6 +7,7 @@ import NextNProgress from 'nextjs-progressbar';
 
 import { useUIStore } from '$stores/ui';
 import { theme } from '$styles/themes';
+import { useSplashScreen } from '$hooks/useSplashScreen';
 
 const tintilliumWeb = Titillium_Web({
   weight: ['400', '600', '700', '900'],
@@ -14,6 +15,8 @@ const tintilliumWeb = Titillium_Web({
 });
 
 function App({ Component, pageProps }: AppProps) {
+  useSplashScreen('hide');
+
   const { closeSidebar } = useUIStore();
 
   Router.events.on('routeChangeComplete', closeSidebar);

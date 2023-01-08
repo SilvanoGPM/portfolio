@@ -16,9 +16,8 @@ export function AboutMe() {
       >
         <VStack maxW="550px" fontSize="xl" textAlign="justify">
           <Text>
-            Olá, me chamo <HighlightText>Silvano Marques</HighlightText> e sou
-            um jovem morador de Pernambuco e estou no último ano para me formar
-            como{' '}
+            Olá, me chamo <HighlightText>Silvano Marques</HighlightText>, sou um
+            jovem de 18 anos e estou no último ano para me formar como{' '}
             <HighlightText>
               Técnico em desenvolvimento de sistemas
             </HighlightText>

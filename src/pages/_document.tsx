@@ -1,4 +1,4 @@
-import { Box, CircularProgress } from '@chakra-ui/react';
+import { SplashScreen } from '$components/ui/SplashScreen';
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
@@ -17,11 +17,8 @@ export default function Document() {
         <meta name="theme-color" content="#b33939" />
       </Head>
 
-      <body>
-        <Box pos="absolute" left="50%" zIndex="50">
-          <CircularProgress value={50} color="green.300" />
-        </Box>
-
+      <body style={{ overflow: 'hidden' }}>
+        <SplashScreen />
         <Main />
         <NextScript />
       </body>
