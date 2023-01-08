@@ -83,3 +83,27 @@ export const thinScrollbar = {
     border: 'transparent',
   },
 };
+
+export const bgTransparencyDark = (bgImage: string, brightness: string) => ({
+  '&': {
+    position: 'relative',
+  },
+
+  '& > *': {
+    position: 'absolute',
+  },
+
+  '&::before': {
+    content: "''",
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bgImage,
+    width: '100%',
+    height: '100%',
+    filter: `brightness(${brightness})`,
+    bgSize: 'cover',
+    bgRepeat: 'no-repeat',
+    bgPos: 'center',
+  },
+});

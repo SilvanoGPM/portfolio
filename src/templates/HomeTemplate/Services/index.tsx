@@ -1,6 +1,7 @@
 import { ApiIcon, OtherIcon, WebIcon } from '$components/chakra/Icons';
-import { Section } from '$components/ui/Section';
 import { Flex } from '@chakra-ui/react';
+
+import { Section } from '$components/ui/Section';
 
 import { Card } from './Card';
 

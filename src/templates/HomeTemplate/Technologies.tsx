@@ -1,7 +1,9 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 
 import { Section } from '$components/ui/Section';
 import { TechCard } from '$components/ui/TechCard';
+import { ScrollButton } from '$components/ui/ScrollButton';
+import { PROJECTS } from '$data/sections';
 
 export interface TechnologiesProps {
   technologies: string[];
@@ -25,6 +27,13 @@ export function Technologies({ technologies, blackLogos }: TechnologiesProps) {
           />
         ))}
       </Flex>
+
+      <Text mt="10" maxW="400px">
+        Você pode ver os projetos que eu realizer utilizando algumas dessas
+        tecnologias.
+      </Text>
+
+      <ScrollButton dataScroll={PROJECTS}>Ver projetos</ScrollButton>
     </Section>
   );
 }

@@ -1,5 +1,5 @@
-import { SplashScreen } from '$components/ui/SplashScreen';
 import { Html, Head, Main, NextScript } from 'next/document';
+import { SplashScreen } from '$components/ui/SplashScreen';
 
 export default function Document() {
   return (

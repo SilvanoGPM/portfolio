@@ -1,9 +1,9 @@
-import { Box, Button, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text } from '@chakra-ui/react';
 import ReactTypingEffect from 'react-typing-effect';
 
 import { Section } from '$components/ui/Section';
-import { scrollToElement } from '$utils/scrollToElement';
 import { ABOUT_ME } from '$data/sections';
+import { ScrollButton } from '$components/ui/ScrollButton';
 
 export function Welcome() {
   return (
@@ -28,15 +28,7 @@ export function Welcome() {
         Programação, Sites, APIs, Open Source e muito café ☕.
       </Text>
 
-      <Button
-        maxW="300px"
-        mt="2"
-        variant="outline"
-        colorScheme="brand"
-        onClick={() => scrollToElement(ABOUT_ME)}
-      >
-        Mais sobre mim 😃
-      </Button>
+      <ScrollButton dataScroll={ABOUT_ME}>Mais sobre mim 😃</ScrollButton>
     </Section>
   );
 }

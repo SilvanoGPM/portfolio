@@ -3,8 +3,11 @@ import { Avatar, Flex, Text, VStack } from '@chakra-ui/react';
 import { HighlightText } from '$components/chakra/HighlightText';
 import { Section } from '$components/ui/Section';
 import { ABOUT_ME } from '$data/sections';
+import { getMyAge } from '$utils/getMyAge';
 
 export function AboutMe() {
+  const age = getMyAge();
+
   return (
     <Section title="Sobre mim" dataScroll={ABOUT_ME}>
       <Flex
@@ -17,7 +20,7 @@ export function AboutMe() {
         <VStack maxW="550px" fontSize="xl" textAlign="justify">
           <Text>
             Olá, me chamo <HighlightText>Silvano Marques</HighlightText>, sou um
-            jovem de 18 anos e estou no último ano para me formar como{' '}
+            jovem de {age} anos e estou no último ano para me formar como{' '}
             <HighlightText>
               Técnico em desenvolvimento de sistemas
             </HighlightText>

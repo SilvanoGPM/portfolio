@@ -5,12 +5,14 @@ import { Welcome } from './Welcome';
 import { Technologies, TechnologiesProps } from './Technologies';
 import { AboutMe } from './AboutMe';
 import { Services } from './Services';
+import { Projects, ProjectsProps } from './Projects';
 
 export interface HomeTemplateProps {
   technologies: TechnologiesProps;
+  projects: ProjectsProps;
 }
 
-export function HomeTemplate({ technologies }: HomeTemplateProps) {
+export function HomeTemplate({ technologies, projects }: HomeTemplateProps) {
   return (
     <DefaultLayout>
       <VStack align="start" spacing="16" as="main">
@@ -18,6 +20,7 @@ export function HomeTemplate({ technologies }: HomeTemplateProps) {
         <AboutMe />
         <Technologies {...technologies} />
         <Services />
+        <Projects {...projects} />
       </VStack>
     </DefaultLayout>
   );
