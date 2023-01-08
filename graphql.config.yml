@@ -1,3 +1,4 @@
+overrite: true
 schema:
   - https://graphql.datocms.com:
       headers:
@@ -17,9 +18,12 @@ generates:
             FloatType: number
             IntType: number
             ItemId: string
-            JsonField: unkown
+            JsonField: unknown
             MetaTagAttributes: Record<string, string>
             UploadId: string
       - typed-document-node
       - add:
             content: '/* eslint-disable */'
+    config:
+      namingConvention:
+       enumValues: keep

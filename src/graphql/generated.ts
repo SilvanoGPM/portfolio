@@ -35,18 +35,18 @@ export type CollectionMetadata = {
 };
 
 export enum ColorBucketType {
-  Black = 'black',
-  Blue = 'blue',
-  Brown = 'brown',
-  Cyan = 'cyan',
-  Green = 'green',
-  Grey = 'grey',
-  Orange = 'orange',
-  Pink = 'pink',
-  Purple = 'purple',
-  Red = 'red',
-  White = 'white',
-  Yellow = 'yellow'
+  black = 'black',
+  blue = 'blue',
+  brown = 'brown',
+  cyan = 'cyan',
+  green = 'green',
+  grey = 'grey',
+  orange = 'orange',
+  pink = 'pink',
+  purple = 'purple',
+  red = 'red',
+  white = 'white',
+  yellow = 'yellow'
 }
 
 export type ColorField = {
@@ -77,9 +77,9 @@ export type CreatedAtFilter = {
 };
 
 export enum FaviconType {
-  AppleTouchIcon = 'appleTouchIcon',
-  Icon = 'icon',
-  MsApplication = 'msApplication'
+  appleTouchIcon = 'appleTouchIcon',
+  icon = 'icon',
+  msApplication = 'msApplication'
 }
 
 export type FileField = FileFieldInterface & {
@@ -1442,182 +1442,182 @@ export type ImgixParams = {
 };
 
 export enum ImgixParamsAuto {
-  Compress = 'compress',
-  Enhance = 'enhance',
-  Format = 'format',
-  Redeye = 'redeye'
+  compress = 'compress',
+  enhance = 'enhance',
+  format = 'format',
+  redeye = 'redeye'
 }
 
 export enum ImgixParamsBlendAlign {
-  Bottom = 'bottom',
-  Center = 'center',
-  Left = 'left',
-  Middle = 'middle',
-  Right = 'right',
-  Top = 'top'
+  bottom = 'bottom',
+  center = 'center',
+  left = 'left',
+  middle = 'middle',
+  right = 'right',
+  top = 'top'
 }
 
 export enum ImgixParamsBlendCrop {
-  Bottom = 'bottom',
-  Faces = 'faces',
-  Left = 'left',
-  Right = 'right',
-  Top = 'top'
+  bottom = 'bottom',
+  faces = 'faces',
+  left = 'left',
+  right = 'right',
+  top = 'top'
 }
 
 export enum ImgixParamsBlendFit {
-  Clamp = 'clamp',
-  Clip = 'clip',
-  Crop = 'crop',
-  Max = 'max',
-  Scale = 'scale'
+  clamp = 'clamp',
+  clip = 'clip',
+  crop = 'crop',
+  max = 'max',
+  scale = 'scale'
 }
 
 export enum ImgixParamsBlendMode {
-  Burn = 'burn',
-  Color = 'color',
-  Darken = 'darken',
-  Difference = 'difference',
-  Dodge = 'dodge',
-  Exclusion = 'exclusion',
-  Hardlight = 'hardlight',
-  Hue = 'hue',
-  Lighten = 'lighten',
-  Luminosity = 'luminosity',
-  Multiply = 'multiply',
-  Normal = 'normal',
-  Overlay = 'overlay',
-  Saturation = 'saturation',
-  Screen = 'screen',
-  Softlight = 'softlight'
+  burn = 'burn',
+  color = 'color',
+  darken = 'darken',
+  difference = 'difference',
+  dodge = 'dodge',
+  exclusion = 'exclusion',
+  hardlight = 'hardlight',
+  hue = 'hue',
+  lighten = 'lighten',
+  luminosity = 'luminosity',
+  multiply = 'multiply',
+  normal = 'normal',
+  overlay = 'overlay',
+  saturation = 'saturation',
+  screen = 'screen',
+  softlight = 'softlight'
 }
 
 export enum ImgixParamsBlendSize {
-  Inherit = 'inherit'
+  inherit = 'inherit'
 }
 
 export enum ImgixParamsCh {
-  Dpr = 'dpr',
-  SaveData = 'saveData',
-  Width = 'width'
+  dpr = 'dpr',
+  saveData = 'saveData',
+  width = 'width'
 }
 
 export enum ImgixParamsCrop {
-  Bottom = 'bottom',
-  Edges = 'edges',
-  Entropy = 'entropy',
-  Faces = 'faces',
-  Focalpoint = 'focalpoint',
-  Left = 'left',
-  Right = 'right',
-  Top = 'top'
+  bottom = 'bottom',
+  edges = 'edges',
+  entropy = 'entropy',
+  faces = 'faces',
+  focalpoint = 'focalpoint',
+  left = 'left',
+  right = 'right',
+  top = 'top'
 }
 
 export enum ImgixParamsCs {
-  Adobergb1998 = 'adobergb1998',
-  Srgb = 'srgb',
-  Strip = 'strip',
-  Tinysrgb = 'tinysrgb'
+  adobergb1998 = 'adobergb1998',
+  srgb = 'srgb',
+  strip = 'strip',
+  tinysrgb = 'tinysrgb'
 }
 
 export enum ImgixParamsFill {
-  Blur = 'blur',
-  Solid = 'solid'
+  blur = 'blur',
+  solid = 'solid'
 }
 
 export enum ImgixParamsFit {
-  Clamp = 'clamp',
-  Clip = 'clip',
-  Crop = 'crop',
-  Facearea = 'facearea',
-  Fill = 'fill',
-  Fillmax = 'fillmax',
-  Max = 'max',
-  Min = 'min',
-  Scale = 'scale'
+  clamp = 'clamp',
+  clip = 'clip',
+  crop = 'crop',
+  facearea = 'facearea',
+  fill = 'fill',
+  fillmax = 'fillmax',
+  max = 'max',
+  min = 'min',
+  scale = 'scale'
 }
 
 export enum ImgixParamsFlip {
-  H = 'h',
-  Hv = 'hv',
-  V = 'v'
+  h = 'h',
+  hv = 'hv',
+  v = 'v'
 }
 
 export enum ImgixParamsFm {
-  Avif = 'avif',
-  Blurhash = 'blurhash',
-  Gif = 'gif',
-  Jp2 = 'jp2',
-  Jpg = 'jpg',
-  Json = 'json',
-  Jxr = 'jxr',
-  Mp4 = 'mp4',
-  Pjpg = 'pjpg',
-  Png = 'png',
-  Png8 = 'png8',
-  Png32 = 'png32',
-  Webm = 'webm',
-  Webp = 'webp'
+  avif = 'avif',
+  blurhash = 'blurhash',
+  gif = 'gif',
+  jp2 = 'jp2',
+  jpg = 'jpg',
+  json = 'json',
+  jxr = 'jxr',
+  mp4 = 'mp4',
+  pjpg = 'pjpg',
+  png = 'png',
+  png8 = 'png8',
+  png32 = 'png32',
+  webm = 'webm',
+  webp = 'webp'
 }
 
 export enum ImgixParamsIptc {
-  Allow = 'allow',
-  Block = 'block'
+  allow = 'allow',
+  block = 'block'
 }
 
 export enum ImgixParamsMarkAlign {
-  Bottom = 'bottom',
-  Center = 'center',
-  Left = 'left',
-  Middle = 'middle',
-  Right = 'right',
-  Top = 'top'
+  bottom = 'bottom',
+  center = 'center',
+  left = 'left',
+  middle = 'middle',
+  right = 'right',
+  top = 'top'
 }
 
 export enum ImgixParamsMarkFit {
-  Clip = 'clip',
-  Crop = 'crop',
-  Fill = 'fill',
-  Max = 'max',
-  Scale = 'scale'
+  clip = 'clip',
+  crop = 'crop',
+  fill = 'fill',
+  max = 'max',
+  scale = 'scale'
 }
 
 export enum ImgixParamsMarkTile {
-  Grid = 'grid'
+  grid = 'grid'
 }
 
 export enum ImgixParamsPalette {
-  Css = 'css',
-  Json = 'json'
+  css = 'css',
+  json = 'json'
 }
 
 export enum ImgixParamsTransparency {
-  Grid = 'grid'
+  grid = 'grid'
 }
 
 export enum ImgixParamsTrim {
-  Auto = 'auto',
-  Color = 'color'
+  auto = 'auto',
+  color = 'color'
 }
 
 export enum ImgixParamsTxtAlign {
-  Bottom = 'bottom',
-  Center = 'center',
-  Left = 'left',
-  Middle = 'middle',
-  Right = 'right',
-  Top = 'top'
+  bottom = 'bottom',
+  center = 'center',
+  left = 'left',
+  middle = 'middle',
+  right = 'right',
+  top = 'top'
 }
 
 export enum ImgixParamsTxtClip {
-  Ellipsis = 'ellipsis',
-  End = 'end',
-  Middle = 'middle',
-  Start = 'start'
+  ellipsis = 'ellipsis',
+  end = 'end',
+  middle = 'middle',
+  start = 'start'
 }
 
 export enum ImgixParamsTxtFit {
-  Max = 'max'
+  max = 'max'
 }
 
 /** Specifies how to filter by usage */
@@ -1639,9 +1639,9 @@ export type ItemIdFilter = {
 };
 
 export enum ItemStatus {
-  Draft = 'draft',
-  Published = 'published',
-  Updated = 'updated'
+  draft = 'draft',
+  published = 'published',
+  updated = 'updated'
 }
 
 /** Record of type Languages (language) */
@@ -1671,9 +1671,9 @@ export type LanguageRecord_SeoMetaTagsArgs = {
 };
 
 export enum MuxThumbnailFormatType {
-  Gif = 'gif',
-  Jpg = 'jpg',
-  Png = 'png'
+  gif = 'gif',
+  jpg = 'jpg',
+  png = 'png'
 }
 
 /** Specifies how to filter by image orientation */
@@ -1705,36 +1705,36 @@ export type ProjetoModelFilter = {
 };
 
 export enum ProjetoModelOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  CreatedAtAsc = 'createdAt_ASC',
-  CreatedAtDesc = 'createdAt_DESC',
-  DescricaoAsc = 'descricao_ASC',
-  DescricaoDesc = 'descricao_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  NomeAsc = 'nome_ASC',
-  NomeDesc = 'nome_DESC',
-  RepositorioAsc = 'repositorio_ASC',
-  RepositorioDesc = 'repositorio_DESC',
-  UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
-  UrlAsc = 'url_ASC',
-  UrlDesc = 'url_DESC'
+  _createdAt_ASC = '_createdAt_ASC',
+  _createdAt_DESC = '_createdAt_DESC',
+  _firstPublishedAt_ASC = '_firstPublishedAt_ASC',
+  _firstPublishedAt_DESC = '_firstPublishedAt_DESC',
+  _isValid_ASC = '_isValid_ASC',
+  _isValid_DESC = '_isValid_DESC',
+  _publicationScheduledAt_ASC = '_publicationScheduledAt_ASC',
+  _publicationScheduledAt_DESC = '_publicationScheduledAt_DESC',
+  _publishedAt_ASC = '_publishedAt_ASC',
+  _publishedAt_DESC = '_publishedAt_DESC',
+  _status_ASC = '_status_ASC',
+  _status_DESC = '_status_DESC',
+  _unpublishingScheduledAt_ASC = '_unpublishingScheduledAt_ASC',
+  _unpublishingScheduledAt_DESC = '_unpublishingScheduledAt_DESC',
+  _updatedAt_ASC = '_updatedAt_ASC',
+  _updatedAt_DESC = '_updatedAt_DESC',
+  createdAt_ASC = 'createdAt_ASC',
+  createdAt_DESC = 'createdAt_DESC',
+  descricao_ASC = 'descricao_ASC',
+  descricao_DESC = 'descricao_DESC',
+  id_ASC = 'id_ASC',
+  id_DESC = 'id_DESC',
+  nome_ASC = 'nome_ASC',
+  nome_DESC = 'nome_DESC',
+  repositorio_ASC = 'repositorio_ASC',
+  repositorio_DESC = 'repositorio_DESC',
+  updatedAt_ASC = 'updatedAt_ASC',
+  updatedAt_DESC = 'updatedAt_DESC',
+  url_ASC = 'url_ASC',
+  url_DESC = 'url_DESC'
 }
 
 /** Record of type Projeto (projeto) */
@@ -1908,10 +1908,10 @@ export type ResolutionFilter = {
 };
 
 export enum ResolutionType {
-  Icon = 'icon',
-  Large = 'large',
-  Medium = 'medium',
-  Small = 'small'
+  icon = 'icon',
+  large = 'large',
+  medium = 'medium',
+  small = 'small'
 }
 
 export type ResponsiveImage = {
@@ -1957,7 +1957,7 @@ export type SiteGlobalSeoArgs = {
 };
 
 export enum SiteLocale {
-  En = 'en'
+  en = 'en'
 }
 
 /** Specifies how to filter by status */
@@ -2225,30 +2225,30 @@ export type UploadNotesFilter = {
 };
 
 export enum UploadOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  BasenameAsc = 'basename_ASC',
-  BasenameDesc = 'basename_DESC',
-  FilenameAsc = 'filename_ASC',
-  FilenameDesc = 'filename_DESC',
-  FormatAsc = 'format_ASC',
-  FormatDesc = 'format_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  MimeTypeAsc = 'mimeType_ASC',
-  MimeTypeDesc = 'mimeType_DESC',
-  ResolutionAsc = 'resolution_ASC',
-  ResolutionDesc = 'resolution_DESC',
-  SizeAsc = 'size_ASC',
-  SizeDesc = 'size_DESC'
+  _createdAt_ASC = '_createdAt_ASC',
+  _createdAt_DESC = '_createdAt_DESC',
+  _updatedAt_ASC = '_updatedAt_ASC',
+  _updatedAt_DESC = '_updatedAt_DESC',
+  basename_ASC = 'basename_ASC',
+  basename_DESC = 'basename_DESC',
+  filename_ASC = 'filename_ASC',
+  filename_DESC = 'filename_DESC',
+  format_ASC = 'format_ASC',
+  format_DESC = 'format_DESC',
+  id_ASC = 'id_ASC',
+  id_DESC = 'id_DESC',
+  mimeType_ASC = 'mimeType_ASC',
+  mimeType_DESC = 'mimeType_DESC',
+  resolution_ASC = 'resolution_ASC',
+  resolution_DESC = 'resolution_DESC',
+  size_ASC = 'size_ASC',
+  size_DESC = 'size_DESC'
 }
 
 export enum UploadOrientation {
-  Landscape = 'landscape',
-  Portrait = 'portrait',
-  Square = 'square'
+  landscape = 'landscape',
+  portrait = 'portrait',
+  square = 'square'
 }
 
 /** Specifies how to filter by size */
@@ -2300,14 +2300,14 @@ export type UploadTitleFilter = {
 };
 
 export enum UploadType {
-  Archive = 'archive',
-  Audio = 'audio',
-  Image = 'image',
-  Pdfdocument = 'pdfdocument',
-  Presentation = 'presentation',
-  Richtext = 'richtext',
-  Spreadsheet = 'spreadsheet',
-  Video = 'video'
+  archive = 'archive',
+  audio = 'audio',
+  image = 'image',
+  pdfdocument = 'pdfdocument',
+  presentation = 'presentation',
+  richtext = 'richtext',
+  spreadsheet = 'spreadsheet',
+  video = 'video'
 }
 
 /** Specifies how to filter by update datetime */
@@ -2365,9 +2365,9 @@ export type UploadWidthFilter = {
 };
 
 export enum VideoMp4Res {
-  High = 'high',
-  Low = 'low',
-  Medium = 'medium'
+  high = 'high',
+  low = 'low',
+  medium = 'medium'
 }
 
 export type FocalPoint = {
@@ -2379,7 +2379,7 @@ export type FocalPoint = {
 export type GetLanguagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetLanguagesQuery = { __typename?: 'Query', language?: { __typename?: 'LanguageRecord', names?: unkown | null } | null };
+export type GetLanguagesQuery = { __typename?: 'Query', language?: { __typename?: 'LanguageRecord', names?: unknown | null } | null };
 
 
 export const GetLanguagesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetLanguages"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"language"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"names"}}]}}]}}]} as unknown as DocumentNode<GetLanguagesQuery, GetLanguagesQueryVariables>;

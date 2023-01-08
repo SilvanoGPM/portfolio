@@ -1,3 +1,4 @@
+import { Box, CircularProgress } from '@chakra-ui/react';
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
@@ -17,6 +18,10 @@ export default function Document() {
       </Head>
 
       <body>
+        <Box pos="absolute" left="50%" zIndex="50">
+          <CircularProgress isIndeterminate color="green.300" />
+        </Box>
+
         <Main />
         <NextScript />
       </body>
