@@ -32,6 +32,7 @@
     "react-icons": "^4.7.1",
     "react-particles": "^2.7.1",
     "react-typing-effect": "^2.0.5",
+    "sharp": "^0.31.3",
     "tsparticles": "^2.7.1",
     "zustand": "^4.2.0"
   },

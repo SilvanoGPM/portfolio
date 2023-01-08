@@ -1,4 +1,4 @@
-import { Avatar, Flex, Text } from '@chakra-ui/react';
+import { Avatar, Flex, Text, VStack } from '@chakra-ui/react';
 
 import { HighlightText } from '$components/chakra/HighlightText';
 import { Section } from '$components/ui/Section';
@@ -7,16 +7,41 @@ import { ABOUT_ME } from '$data/sections';
 export function AboutMe() {
   return (
     <Section title="Sobre mim" dataScroll={ABOUT_ME}>
-      <Flex wrap="wrap" w="full" justify="space-between" gap="1rem">
-        <Text maxW="550px" fontSize="xl" textAlign="justify">
-          Me chamo <HighlightText>Silvano Marques</HighlightText> e atualmente
-          estou localizado no estado de Pernambuco. Comecei a estudar
-          programação com 14 anos e desde não parei, meu foco é em
-          desenvolvimento web, porém já explorei algumas outras áreas, como
-          mobile, games e arduino. Estou no último ano do meu processo de
-          formação para{' '}
-          <HighlightText>Técnico em Desenvolvimento de Sistemas</HighlightText>.
-        </Text>
+      <Flex
+        wrap="wrap"
+        w="full"
+        align="center"
+        justify="space-between"
+        gap="1rem"
+      >
+        <VStack maxW="550px" fontSize="xl" textAlign="justify">
+          <Text>
+            Olá, me chamo <HighlightText>Silvano Marques</HighlightText> e sou
+            um jovem morador de Pernambuco e estou no último ano para me formar
+            como{' '}
+            <HighlightText>
+              Técnico em desenvolvimento de sistemas
+            </HighlightText>
+            .
+          </Text>
+
+          <Text>
+            Desde os 14 anos, tenho dedicado meu tempo e esforços para aprender
+            e me tornar um{' '}
+            <HighlightText>especialista em programação</HighlightText>. Me
+            considero dedicado e motivado, consigo resolver problemas complexos
+            através de código. Além disso, possuo amplos conhecimentos em{' '}
+            <HighlightText>desenvolvimento web</HighlightText>, sendo capaz de
+            criar sites e APIs.
+          </Text>
+
+          <Text>
+            Meu foco principal é o desenvolvimento web, mas também já estudei
+            outras áreas, como mobile, arduino e games, logo possuo uma certa{' '}
+            <HighlightText>versatilidade e disposição</HighlightText> para
+            aprender coisas novas.
+          </Text>
+        </VStack>
 
         <Avatar
           src="https://github.com/SilvanoGPM.png"

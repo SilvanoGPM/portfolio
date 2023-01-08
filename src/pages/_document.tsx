@@ -19,7 +19,7 @@ export default function Document() {
 
       <body>
         <Box pos="absolute" left="50%" zIndex="50">
-          <CircularProgress isIndeterminate color="green.300" />
+          <CircularProgress value={50} color="green.300" />
         </Box>
 
         <Main />
