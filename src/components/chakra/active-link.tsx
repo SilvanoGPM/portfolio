@@ -18,6 +18,13 @@ export function ActiveLink({
 
   let isActive = false;
 
+  if (
+    (asPath === '' || asPath == '/') &&
+    (props.href === '' || props.href === '/')
+  ) {
+    isActive = true;
+  }
+
   if (shouldMatchExactHref && (asPath === props.href || asPath === props.as)) {
     isActive = true;
   }
