@@ -1,8 +1,10 @@
-import { Icon, IconButton, IconButtonProps } from '@chakra-ui/react';
+import { IconButtonProps } from '@chakra-ui/react';
 import { AiOutlineClose } from 'react-icons/ai';
 
 import { useUIStore } from '$stores/ui';
 import { useScrollLock } from '$hooks/useScrollLock';
+
+import { SidebarButton } from './SidebarButon';
 
 export function CloseSidebarButton(props: Omit<IconButtonProps, 'aria-label'>) {
   const { closeSidebar } = useUIStore();
@@ -14,14 +16,10 @@ export function CloseSidebarButton(props: Omit<IconButtonProps, 'aria-label'>) {
   }
 
   return (
-    <IconButton
+    <SidebarButton
       {...props}
-      aria-label="Fechar menu lateral"
-      color="white"
-      colorScheme="blackAlpha"
-      bg="transparent"
-      fontSize="4xl"
-      icon={<Icon as={AiOutlineClose} />}
+      aria-label="Fechar menu"
+      icon={AiOutlineClose}
       onClick={handleCloseSidebar}
     />
   );

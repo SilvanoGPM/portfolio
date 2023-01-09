@@ -1,8 +1,8 @@
-import { HStack, Text, Tooltip } from '@chakra-ui/react';
+import { HStack, Tooltip } from '@chakra-ui/react';
 
 import { Project } from '..';
-import { iconsTech } from './iconsTech';
 import { categories } from './categories';
+import { Tech } from '$components/ui/Tech';
 
 interface TechListProps {
   project: Project;
@@ -17,26 +17,11 @@ export function TechList({ project }: TechListProps) {
         <category.Icon color={category.color} fontSize="4xl" />
       </Tooltip>
 
-      {project.techs.map((tech) => {
-        const isIconTech = Object.keys(iconsTech).find(
-          (key) => key === tech.toLocaleLowerCase(),
-        );
-
-        if (isIconTech) {
-          const { Icon: TechIcon, ...props } =
-            iconsTech[isIconTech as keyof typeof iconsTech];
-
-          return <TechIcon key={tech} fontSize="2xl" {...props} />;
-        }
-
-        return (
-          <Text key={tech} fontSize="2xl">
-            <i
-              className={`devicon-${tech.toLocaleLowerCase()}-plain colored`}
-            ></i>
-          </Text>
-        );
-      })}
+      {project.techs.map((tech) => (
+        <Tooltip key={tech} label={tech}>
+          <Tech name={tech} fontSize="2xl" />
+        </Tooltip>
+      ))}
     </HStack>
   );
 }

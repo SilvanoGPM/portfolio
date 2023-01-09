@@ -1,11 +1,11 @@
-import { MyAvatar } from './MyAvatar';
+import { Logo } from './Logo';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 
 export function Content() {
   return (
     <>
-      <MyAvatar />
+      <Logo />
       <Navbar />
       <Footer />
     </>

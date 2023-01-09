@@ -1,24 +1,21 @@
-import { HStack, Icon, Link } from '@chakra-ui/react';
+import { HStack, Icon } from '@chakra-ui/react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+
+import { ExternalLink } from '$components/chakra/ExternalLink';
 
 export function Footer() {
   return (
     <HStack fontSize="4xl" justify="center">
-      <Link href="https://github.com/SilvanoGPM">
-        <Icon
-          as={AiFillGithub}
-          transition="0.2s ease-in-out color"
-          _hover={{ color: 'brand.500' }}
-        />
-      </Link>
+      <ExternalLink href="https://github.com/SilvanoGPM" animated={false}>
+        <Icon as={AiFillGithub} />
+      </ExternalLink>
 
-      <Link href="https://www.linkedin.com/in/silvano-marques-8b964a210/">
-        <Icon
-          as={AiFillLinkedin}
-          transition="0.2s ease-in-out color"
-          _hover={{ color: 'brand.500' }}
-        />
-      </Link>
+      <ExternalLink
+        href="https://www.linkedin.com/in/silvano-marques-8b964a210/"
+        animated={false}
+      >
+        <Icon as={AiFillLinkedin} />
+      </ExternalLink>
     </HStack>
   );
 }

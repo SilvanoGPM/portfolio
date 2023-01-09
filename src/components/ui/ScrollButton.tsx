@@ -4,13 +4,20 @@ import { scrollToElement } from '$utils/scrollToElement';
 
 interface ScrollButtonProps extends ButtonProps {
   dataScroll: string;
+  beforeScroll?: () => void;
 }
 
 export function ScrollButton({
   dataScroll,
+  beforeScroll,
   children,
   ...props
 }: ScrollButtonProps) {
+  function handleScroll() {
+    beforeScroll?.();
+    scrollToElement(dataScroll);
+  }
+
   return (
     <Button
       size="lg"
@@ -18,7 +25,7 @@ export function ScrollButton({
       mt="2"
       variant="outline"
       colorScheme="brand"
-      onClick={() => scrollToElement(dataScroll)}
+      onClick={handleScroll}
       {...props}
     >
       {children}

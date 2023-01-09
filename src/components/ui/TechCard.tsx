@@ -1,5 +1,6 @@
 import { glassmorphismContainer } from '$styles/tokens';
 import { Center, Text } from '@chakra-ui/react';
+import { Tech } from './Tech';
 
 interface TechCardProps {
   name: string;
@@ -7,8 +8,6 @@ interface TechCardProps {
 }
 
 export function TechCard({ name, colored }: TechCardProps) {
-  const coloredClass = colored ? 'colored' : '';
-
   return (
     <Center
       cursor="pointer"
@@ -26,11 +25,7 @@ export function TechCard({ name, colored }: TechCardProps) {
         boxShadow: '5px 5px 30px rgba(255, 0, 0, 0.5)',
       }}
     >
-      <Text fontSize="3xl">
-        <i
-          className={`devicon-${name.toLocaleLowerCase()}-plain ${coloredClass}`}
-        ></i>
-      </Text>
+      <Tech name={name} colored={colored} bottomGap fontSize="3xl" />
 
       <Text fontWeight="bold" fontSize="small" textTransform="uppercase">
         {name}
