@@ -4,10 +4,13 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router } from 'next/router';
 import NextNProgress from 'nextjs-progressbar';
+import { QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 import { useUIStore } from '$stores/ui';
 import { theme } from '$styles/themes';
 import { useSplashScreen } from '$hooks/use-splash-screen';
+import { queryClient } from '$services/query-client';
 
 const tintilliumWeb = Titillium_Web({
   weight: ['400', '600', '700', '900'],
@@ -41,7 +44,10 @@ function App({ Component, pageProps }: AppProps) {
       />
 
       <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+          <ReactQueryDevtools />
+        </QueryClientProvider>
       </ChakraProvider>
     </>
   );

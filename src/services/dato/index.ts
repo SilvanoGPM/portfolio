@@ -12,7 +12,7 @@ export function request<TDocument = any>(
     document,
     variables,
     {
-      Authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_DATOCMS_API_TOKEN}`,
     },
   );
 }

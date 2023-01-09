@@ -31,6 +31,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-particles": "^2.7.1",
+    "react-query": "^3.39.2",
     "react-typing-effect": "^2.0.5",
     "sharp": "^0.31.3",
     "tsparticles": "^2.7.1",

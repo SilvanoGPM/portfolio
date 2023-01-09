@@ -4,16 +4,27 @@ import { AiFillEye } from 'react-icons/ai';
 import { glassmorphismContainer } from '$styles/tokens';
 import { Link } from '$components/chakra/internal-link';
 
-import { Project } from '..';
 import { TechList } from './tech-list';
 import { Links } from './links';
 import { Thumbnail } from './thumbnail';
 
-interface CardProps {
+export type Category = 'web' | 'mobile' | 'api' | 'other';
+
+export interface Project {
+  slug: string;
+  name: string;
+  category: Category;
+  url?: string | null;
+  repository?: string | null;
+  techs: string[];
+  thumbnail?: string | null;
+}
+
+interface ProjectCardProps {
   project: Project;
 }
 
-export function Card({ project }: CardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   const href = `/project/${project.slug}`;
 
   return (
@@ -29,6 +40,7 @@ export function Card({ project }: CardProps) {
         pos="relative"
         w={{ base: 'full', lg: '40%' }}
         h={{ base: '50%', lg: 'full' }}
+        px="4"
         borderRightColor={{ base: 'none', lg: 'brand.500' }}
         borderRightWidth={{ base: 'none', lg: '8px' }}
         sx={glassmorphismContainer({ bg: 'backgroundAlpha.100' })}
@@ -36,7 +48,7 @@ export function Card({ project }: CardProps) {
         <Center h="full">
           <Heading
             as="h3"
-            fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }}
+            fontSize={{ base: 'xl', md: '2xl' }}
             textTransform="uppercase"
             textAlign="center"
           >

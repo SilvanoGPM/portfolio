@@ -3,8 +3,7 @@ import NextLink from 'next/link';
 
 import { Section } from '$components/ui/section';
 import { PROJECTS } from '$shared/sections';
-
-import { Card } from './card';
+import { ProjectCard } from '$components/ui/project-card';
 
 export type Category = 'web' | 'mobile' | 'api' | 'other';
 
@@ -30,7 +29,7 @@ export function Projects({ projects }: ProjectsProps) {
       <Section title="Projetos">
         <VStack spacing="8">
           {projects.map((project) => (
-            <Card key={project.slug} project={project} />
+            <ProjectCard key={project.slug} project={project} />
           ))}
 
           <Button

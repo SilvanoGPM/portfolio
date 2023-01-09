@@ -4,6 +4,9 @@ import { Button } from './components/button';
 import { thinScrollbar } from './tokens';
 
 export const theme = extendTheme({
+  initialColorMode: 'dark',
+  useSystemColorMode: false,
+
   components: {
     Button,
   },

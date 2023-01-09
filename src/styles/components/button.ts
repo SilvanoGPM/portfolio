@@ -8,6 +8,8 @@ export const Button: ComponentStyleConfig = {
   variants: {
     solid: ({ colorScheme }) => ({
       color: colorScheme === 'brand' ? 'white' : 'inherit',
+      border: '2px solid',
+      borderColor: `${colorScheme}.500`,
       transition: '0.2s filter',
       rounded: 'none',
       _disabled: {
