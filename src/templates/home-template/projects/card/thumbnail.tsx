@@ -1,6 +1,6 @@
 import { Image } from '@chakra-ui/react';
 
-import { Link } from '$components/chakra/link';
+import { Link } from '$components/chakra/internal-link';
 
 interface ThumbnailProps {
   href: string;

@@ -2,7 +2,7 @@ import { Box, Center, Flex, Heading, Icon } from '@chakra-ui/react';
 import { AiFillEye } from 'react-icons/ai';
 
 import { glassmorphismContainer } from '$styles/tokens';
-import { Link } from '$components/chakra/link';
+import { Link } from '$components/chakra/internal-link';
 
 import { Project } from '..';
 import { TechList } from './tech-list';

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import { Replace } from '$utils/replace';
 
-import { Link } from './link';
+import { Link } from './internal-link';
 
 interface ActiveLinkProps extends Replace<ChakraLinkProps, { href: string }> {
   shouldMatchExactHref?: boolean;
