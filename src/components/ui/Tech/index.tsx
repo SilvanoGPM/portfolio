@@ -1,7 +1,9 @@
-import { IntersectingTypes } from '$utils/intersectingTypes';
-import { IconProps, Text, TextProps } from '@chakra-ui/react';
 import { forwardRef, ForwardRefRenderFunction, LegacyRef } from 'react';
-import { iconsTech } from './iconsTech';
+import { IconProps, Text, TextProps } from '@chakra-ui/react';
+
+import { IntersectingTypes } from '$utils/intersecting-types';
+
+import { iconsTech } from './icons-tech';
 
 interface TechProps extends Partial<IntersectingTypes<IconProps, TextProps>> {
   name: string;

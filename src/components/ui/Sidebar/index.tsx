@@ -2,10 +2,10 @@ import { Box, Flex, FlexProps } from '@chakra-ui/react';
 
 import { glassmorphismContainer } from '$styles/tokens';
 import { useUIStore } from '$stores/ui';
-import { useScreenVersion } from '$hooks/useScreenVersion';
+import { useScreenVersion } from '$hooks/use-screen-version';
 
-import { Content } from './Content';
-import { SidebarButtons } from './SidebarButtons';
+import { Content } from './content';
+import { SidebarButtons } from './sidebar-buttons';
 
 export function Sidebar() {
   const { sidebarIsOpen } = useUIStore();

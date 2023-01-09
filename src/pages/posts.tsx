@@ -1,4 +1,4 @@
-import { PostsTemplate } from '$templates/PostsTemplate';
+import { PostsTemplate } from '$templates/posts-template';
 
 export default function Posts() {
   return <PostsTemplate />;

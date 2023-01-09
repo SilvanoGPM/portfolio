@@ -7,7 +7,7 @@ import NextNProgress from 'nextjs-progressbar';
 
 import { useUIStore } from '$stores/ui';
 import { theme } from '$styles/themes';
-import { useSplashScreen } from '$hooks/useSplashScreen';
+import { useSplashScreen } from '$hooks/use-splash-screen';
 
 const tintilliumWeb = Titillium_Web({
   weight: ['400', '600', '700', '900'],

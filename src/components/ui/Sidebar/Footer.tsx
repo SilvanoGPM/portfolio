@@ -1,7 +1,7 @@
 import { HStack, Icon } from '@chakra-ui/react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
-import { ExternalLink } from '$components/chakra/ExternalLink';
+import { ExternalLink } from '$components/chakra/external-link';
 
 export function Footer() {
   return (

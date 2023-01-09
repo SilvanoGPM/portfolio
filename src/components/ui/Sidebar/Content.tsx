@@ -1,6 +1,6 @@
-import { Logo } from './Logo';
-import { Navbar } from './Navbar';
-import { Footer } from './Footer';
+import { Logo } from './logo';
+import { Navbar } from './navbar';
+import { Footer } from './footer';
 
 export function Content() {
   return (

@@ -1,10 +1,10 @@
-import { HomeTemplate, HomeTemplateProps } from '$templates/HomeTemplate';
 import { GetStaticProps } from 'next';
 
 import { request } from '$services/dato';
+import { HomeTemplate, HomeTemplateProps } from '$templates/home-template';
 import { GetLanguagesAndLatestProjectsDocument } from '$graphql/generated';
-import { TechnologiesProps } from '$templates/HomeTemplate/Technologies';
-import { Project, Category } from '$templates/HomeTemplate/Projects';
+import { TechnologiesProps } from '$templates/home-template/technologies';
+import { Project, Category } from '$templates/home-template/projects';
 
 export default function Home(props: HomeTemplateProps) {
   return <HomeTemplate {...props} />;

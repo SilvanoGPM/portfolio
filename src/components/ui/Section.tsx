@@ -1,7 +1,7 @@
 import { Flex, FlexProps } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
-import { SubTitle } from '$components/chakra/SubTitle';
+import { SubTitle } from '$components/chakra/sub-title';
 import { Replace } from '$utils/replace';
 
 interface SectionProps extends Replace<FlexProps, { title?: ReactNode }> {

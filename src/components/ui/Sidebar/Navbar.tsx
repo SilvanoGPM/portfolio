@@ -1,6 +1,6 @@
 import { VStack } from '@chakra-ui/react';
 
-import { ActiveLink } from '$components/chakra/ActiveLink';
+import { ActiveLink } from '$components/chakra/active-link';
 
 export function Navbar() {
   return (
