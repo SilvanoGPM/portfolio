@@ -2,7 +2,7 @@ import { HStack, Tooltip } from '@chakra-ui/react';
 
 import { Tech } from '$components/ui/tech';
 
-import { Project } from '..';
+import { Project } from '.';
 import { categories } from './categories';
 
 interface TechListProps {
