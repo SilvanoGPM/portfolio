@@ -1,7 +1,7 @@
 import { Flex, FlexProps } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
-import { SubTitle } from '$components/chakra/sub-title';
+import { Title } from '$components/chakra/title';
 import { Replace } from '$utils/replace';
 
 interface SectionProps extends Replace<FlexProps, { title?: ReactNode }> {
@@ -19,7 +19,7 @@ export function Section({
       {dataScroll && <div data-scroll={dataScroll} />}
 
       <Flex w="full" as="section" direction="column" {...props}>
-        {title && <SubTitle>{title}</SubTitle>}
+        {title && <Title>{title}</Title>}
         {children}
       </Flex>
     </>

@@ -43,3 +43,19 @@ export const FIND_PROJECTS = gql`
     }
   }
 `;
+
+export const GET_PROJECT = gql`
+  query getProject($slug: String) {
+    project(filter: { slug: { eq: $slug } }) {
+      name
+      description
+      category
+      repository
+      url
+      thumbnail {
+        url
+      }
+      techs
+    }
+  }
+`;

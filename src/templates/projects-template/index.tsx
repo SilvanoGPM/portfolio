@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { VStack } from '@chakra-ui/react';
 
-import { SubTitle } from '$components/chakra/sub-title';
+import { Title } from '$components/chakra/title';
 import { DefaultLayout } from '$components/layout/default-layout';
 import { ProjectCard } from '$components/ui/project-card';
 import { Pagination } from '$components/ui/pagination';
@@ -30,9 +30,9 @@ export function ProjectsTemplate() {
 
   return (
     <DefaultLayout>
-      <SubTitle as="h1" fontSize="4xl">
+      <Title as="h1" fontSize="4xl">
         Projetos
-      </SubTitle>
+      </Title>
 
       <FilterOptions value={category} setValue={handleChangeCategory} />
 

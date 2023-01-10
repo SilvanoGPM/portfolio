@@ -25,7 +25,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  const href = `/project/${project.slug}`;
+  const href = `/projects/${project.slug}`;
 
   return (
     <Flex

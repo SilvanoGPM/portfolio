@@ -9,7 +9,11 @@ interface TechCardProps {
   colored: boolean;
 }
 
+const BIG_STRING_LENGTH = 15;
+
 export function TechCard({ name, colored }: TechCardProps) {
+  const isBigText = name.length >= BIG_STRING_LENGTH;
+
   return (
     <Center
       cursor="pointer"
@@ -27,9 +31,19 @@ export function TechCard({ name, colored }: TechCardProps) {
         boxShadow: '5px 5px 30px rgba(255, 0, 0, 0.5)',
       }}
     >
-      <Tech name={name} colored={colored} bottomGap fontSize="3xl" />
+      <Tech
+        name={name}
+        colored={colored}
+        bottomGap={!isBigText}
+        fontSize="3xl"
+      />
 
-      <Text fontWeight="bold" fontSize="small" textTransform="uppercase">
+      <Text
+        fontWeight="bold"
+        fontSize={isBigText ? 'x-small' : 'small'}
+        textTransform="uppercase"
+        textAlign="center"
+      >
         {name}
       </Text>
     </Center>
