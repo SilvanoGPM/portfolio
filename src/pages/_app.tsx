@@ -11,6 +11,7 @@ import { useUIStore } from '$stores/ui';
 import { theme } from '$styles/themes';
 import { useSplashScreen } from '$hooks/use-splash-screen';
 import { queryClient } from '$services/query-client';
+import { useScrollLock } from '$hooks/use-scroll-lock';
 
 const tintilliumWeb = Titillium_Web({
   weight: ['400', '600', '700', '900'],
@@ -19,10 +20,14 @@ const tintilliumWeb = Titillium_Web({
 
 function App({ Component, pageProps }: AppProps) {
   useSplashScreen('hide');
+  const { unlockScroll } = useScrollLock();
 
   const { closeSidebar } = useUIStore();
 
-  Router.events.on('routeChangeComplete', closeSidebar);
+  Router.events.on('routeChangeComplete', () => {
+    unlockScroll();
+    closeSidebar();
+  });
 
   return (
     <>
