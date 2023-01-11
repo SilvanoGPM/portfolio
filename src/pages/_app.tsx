@@ -1,17 +1,19 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { Titillium_Web } from '@next/font/google';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
 import { Router } from 'next/router';
 import NextNProgress from 'nextjs-progressbar';
 import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { DefaultSeo } from 'next-seo';
 
 import { useUIStore } from '$stores/ui';
 import { theme } from '$styles/themes';
 import { useSplashScreen } from '$hooks/use-splash-screen';
 import { queryClient } from '$services/query-client';
 import { useScrollLock } from '$hooks/use-scroll-lock';
+
+import SEO from 'next-seo.config';
 
 const tintilliumWeb = Titillium_Web({
   weight: ['400', '600', '700', '900'],
@@ -37,9 +39,7 @@ function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
 
-      <Head>
-        <title>Silvano Marques | Programador Web</title>
-      </Head>
+      <DefaultSeo {...SEO} />
 
       <NextNProgress
         color={theme.colors.brand['500']}

@@ -5,9 +5,34 @@ import { HomeTemplate, HomeTemplateProps } from '$templates/home-template';
 import { GetLanguagesAndLatestProjectsDocument } from '$graphql/generated';
 import { TechnologiesProps } from '$templates/home-template/technologies';
 import { Project, Category } from '$templates/home-template/projects';
+import { NextSeo } from 'next-seo';
 
 export default function Home(props: HomeTemplateProps) {
-  return <HomeTemplate {...props} />;
+  return (
+    <>
+      <NextSeo
+        title="Silvano Marques | Desenvolvedor Web"
+        description="Silvano Marques, Desenvolvedor Web."
+        openGraph={{
+          images: [
+            {
+              url: 'https://silvanomarques.vercel.app/cover.png',
+              width: 1280,
+              height: 720,
+              alt: 'Silvano Marques',
+            },
+          ],
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
+
+      <HomeTemplate {...props} />
+    </>
+  );
 }
 
 export const getStaticProps: GetStaticProps<HomeTemplateProps> = async () => {

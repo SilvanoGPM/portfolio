@@ -1,4 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { NextSeo } from 'next-seo';
+import markdownToTxt from 'markdown-to-txt';
 
 import {
   ProjectTemplate,
@@ -9,8 +11,30 @@ import {
 import { getProject } from '$http/get-project';
 import { findProjects } from '$http/find-project';
 
+import SEO from 'next-seo.config';
+
 export default function Project(props: ProjectTemplateProps) {
-  return <ProjectTemplate {...props} />;
+  return (
+    <>
+      <NextSeo
+        title={`${props.project.name} | Silvano Marques`}
+        description={markdownToTxt(props.project.description)}
+        canonical={SEO.openGraph.url}
+        openGraph={{
+          images: [
+            { url: String(props.project.thumbnail), alt: props.project.name },
+          ],
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
+
+      <ProjectTemplate {...props} />
+    </>
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
