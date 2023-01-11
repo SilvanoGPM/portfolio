@@ -1,7 +1,17 @@
 import { FindProjectsParams, findProjects } from '$http/find-project';
-import { useQuery } from 'react-query';
+import { useQuery, UseQueryResult } from 'react-query';
 
 type Category = 'web' | 'api' | 'mobile' | 'other';
+
+interface Project {
+  slug: string;
+  name: string;
+  category: Category;
+  url?: string | null;
+  repository?: string | null;
+  techs: string[];
+  thumbnail?: string | null;
+}
 
 export function useFindProjects(params: FindProjectsParams) {
   const { data: oldData, ...rest } = useQuery(
@@ -23,5 +33,7 @@ export function useFindProjects(params: FindProjectsParams) {
     thumbnail: project.thumbnail ? String(project.thumbnail?.url) : null,
   }));
 
-  return { data, total, ...rest };
+  return { data, total, ...rest } as UseQueryResult<Project[], unknown> & {
+    total: number;
+  };
 }

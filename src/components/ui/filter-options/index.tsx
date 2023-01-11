@@ -1,22 +1,18 @@
 import { Flex } from '@chakra-ui/react';
 
-import { Category } from '..';
 import { SelectButton } from './select-button';
 
-const buttons: Array<{ value: Category; label: string }> = [
-  { value: 'all', label: 'Todos' },
-  { value: 'web', label: 'Sites' },
-  { value: 'api', label: 'APIs' },
-  { value: 'mobile', label: 'Aplicativos' },
-  { value: 'other', label: 'Outros' },
-];
-
-interface FilterOptionsProps {
+interface FilterOptionsProps<T extends string> {
   value: string;
-  setValue: (value: Category) => void;
+  buttons: Array<{ value: T; label: string }>;
+  setValue: (value: T) => void;
 }
 
-export function FilterOptions({ value, setValue }: FilterOptionsProps) {
+export function FilterOptions<T extends string>({
+  buttons,
+  value,
+  setValue,
+}: FilterOptionsProps<T>) {
   return (
     <Flex gap="1rem" wrap="wrap">
       {buttons.map((button) => (
