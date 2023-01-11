@@ -2,8 +2,9 @@ import { Avatar, Flex, Text, VStack } from '@chakra-ui/react';
 
 import { HighlightText } from '$components/chakra/highlight-text';
 import { Section } from '$components/ui/section';
-import { ABOUT_ME } from '$shared/sections';
+import { ABOUT_ME, CONTACT } from '$shared/sections';
 import { getMyAge } from '$utils/get-my-age';
+import { ScrollButton } from '$components/ui/scroll-button';
 
 export function AboutMe() {
   const age = getMyAge();
@@ -41,7 +42,7 @@ export function AboutMe() {
             Meu foco principal é o desenvolvimento web, mas também já estudei
             outras áreas, como mobile, arduino e games, logo possuo uma certa{' '}
             <HighlightText>versatilidade e disposição</HighlightText> para
-            aprender coisas novas.
+            aprender tecnológias novas.
           </Text>
         </VStack>
 
@@ -68,6 +69,12 @@ export function AboutMe() {
           }}
         />
       </Flex>
+
+      <Text mt="10" maxW="400px">
+        Ficou com alguma dúvida? <br /> Entre em contato agora mesmo.
+      </Text>
+
+      <ScrollButton dataScroll={CONTACT}>Contato</ScrollButton>
     </Section>
   );
 }

@@ -6,8 +6,8 @@ import {
   Category,
 } from '$templates/project-template';
 
-import { getProject } from '$http/getProject';
-import { findProjects } from '$http/findProjects';
+import { getProject } from '$http/get-project';
+import { findProjects } from '$http/find-project';
 
 export default function Project(props: ProjectTemplateProps) {
   return <ProjectTemplate {...props} />;

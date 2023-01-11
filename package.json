@@ -20,6 +20,7 @@
     "@graphql-codegen/typescript": "^2.8.7",
     "@graphql-codegen/typescript-operations": "^2.5.12",
     "@graphql-typed-document-node/core": "^3.1.1",
+    "@hookform/resolvers": "^2.9.10",
     "@lottiefiles/react-lottie-player": "^3.5.0",
     "@next/font": "^13.1.1",
     "framer-motion": "^6.5.1",
@@ -30,6 +31,7 @@
     "nextjs-progressbar": "^0.0.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.41.5",
     "react-icons": "^4.7.1",
     "react-markdown": "^8.0.4",
     "react-particles": "^2.7.1",
@@ -37,6 +39,7 @@
     "react-typing-effect": "^2.0.5",
     "sharp": "^0.31.3",
     "tsparticles": "^2.7.1",
+    "yup": "^0.32.11",
     "zustand": "^4.2.0"
   },
   "devDependencies": {

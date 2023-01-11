@@ -7,6 +7,7 @@ import { Technologies, TechnologiesProps } from './technologies';
 import { AboutMe } from './about-me';
 import { Services } from './services';
 import { Projects, ProjectsProps } from './projects';
+import { Contact } from './contact';
 
 export interface HomeTemplateProps {
   technologies: TechnologiesProps;
@@ -22,6 +23,7 @@ export function HomeTemplate({ technologies, projects }: HomeTemplateProps) {
         <Technologies {...technologies} />
         <Services />
         <Projects {...projects} />
+        <Contact />
       </VStack>
     </DefaultLayout>
   );

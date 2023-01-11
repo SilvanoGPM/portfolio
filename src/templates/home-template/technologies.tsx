@@ -15,7 +15,7 @@ export function Technologies({ technologies }: TechnologiesProps) {
       <TechList techs={technologies} w="full" />
 
       <Text mt="10" maxW="400px">
-        Você pode ver os projetos que eu realizer utilizando algumas dessas
+        Você pode ver os projetos que eu desenvolvi utilizando algumas dessas
         tecnologias.
       </Text>
 
