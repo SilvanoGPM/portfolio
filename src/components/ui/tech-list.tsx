@@ -2,7 +2,7 @@ import { Flex, FlexProps } from '@chakra-ui/react';
 
 import { TechCard } from './tech-card';
 
-const blackLogos = ['nextjs', 'github'];
+const blackLogos = ['nextjs', 'github', 'express'];
 
 interface TechListProps extends FlexProps {
   techs: string[];
