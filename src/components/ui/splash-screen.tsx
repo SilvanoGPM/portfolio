@@ -1,6 +1,6 @@
-import { useSplashScreen } from '$hooks/use-splash-screen';
 import { Box, Center, CircularProgress, Text } from '@chakra-ui/react';
 
+import { useSplashScreen } from '$hooks/use-splash-screen';
 import { theme } from '$styles/themes';
 
 // Para as cores utilizar o objeto theme porque o componente não consegue acessar
@@ -10,13 +10,14 @@ export function SplashScreen() {
 
   return (
     <Box
+      id="loader"
       pos="fixed"
       left="0"
       top="0"
       w="100vw"
       h="100vh"
       zIndex="1000"
-      id="loader"
+      display="none"
       bg={theme.colors.background['500']}
     >
       <Center h="100vh" flexDir="column">

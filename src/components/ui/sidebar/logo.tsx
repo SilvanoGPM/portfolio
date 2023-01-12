@@ -7,7 +7,7 @@ export function Logo() {
   return (
     <Center h="200px">
       <Link href="/">
-        <Image src={logoImg.src} w="250px" />
+        <Image src={logoImg.src} w="250px" h="100px" />
       </Link>
     </Center>
   );
