@@ -65,7 +65,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </Box>
 
         <Box pos="absolute" right="4" bottom="4">
-          <Link href={href} animated={false}>
+          <Link
+            href={href}
+            animated={false}
+            aria-label="Saiba mais sobre este projeto"
+          >
             <Icon
               as={AiFillEye}
               fontSize="4xl"

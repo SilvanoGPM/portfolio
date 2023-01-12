@@ -15,6 +15,8 @@ import { useScrollLock } from '$hooks/use-scroll-lock';
 
 import SEO from 'next-seo.config';
 
+import '$styles/css/devicon/style.min.css';
+
 const tintilliumWeb = Titillium_Web({
   weight: ['400', '600', '700', '900'],
   subsets: ['latin'],

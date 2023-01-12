@@ -12,13 +12,21 @@ export function Links({ repository, url }: LinksProps) {
   return (
     <>
       {repository && (
-        <ExternalLink href={repository} animated={false}>
+        <ExternalLink
+          href={repository}
+          animated={false}
+          aria-label="Repositório do projeto"
+        >
           <Icon as={AiFillGithub} />
         </ExternalLink>
       )}
 
       {url && (
-        <ExternalLink href={url} animated={false}>
+        <ExternalLink
+          href={url}
+          animated={false}
+          aria-label="Página do projeto"
+        >
           <Icon as={AiOutlineGlobal} />
         </ExternalLink>
       )}

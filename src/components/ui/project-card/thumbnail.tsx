@@ -13,6 +13,7 @@ export function Thumbnail({ href, thumbnail, name }: ThumbnailProps) {
       href={href}
       animated={false}
       pos="relative"
+      aria-label="Saiba mais sobre este projeto"
       w={{ base: 'full', lg: '60%' }}
       h={{ base: '50%', lg: 'full' }}
       overflow="hidden"

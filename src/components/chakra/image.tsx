@@ -19,7 +19,7 @@ interface ImageProps
 }
 
 export function Image({ src, alt, quality, objectFit, ...props }: ImageProps) {
-  const [loadingImage, loadingControls] = useBoolean();
+  const [loadingImage, loadingControls] = useBoolean(true);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const shimmerAnimation = keyframes`
@@ -31,30 +31,26 @@ export function Image({ src, alt, quality, objectFit, ...props }: ImageProps) {
     }
   `;
 
-  const imageLoadingAnimation =
-    !loadingImage || prefersReducedMotion
-      ? undefined
-      : `${shimmerAnimation} 1s linear infinite forwards`;
+  const imageLoadingAnimation = prefersReducedMotion
+    ? undefined
+    : `${shimmerAnimation} 1s linear infinite forwards`;
 
   const bgGradient = !loadingImage
     ? undefined
-    : `linear(
-                                                    to-r,
-                                                    background.700 0%,
-                                                    background.900,
-                                                    background.700 40%,
-                                                    background.900 100%
-                                                  )`;
+    : 'linear(to-r, background.700 0%, background.900, background.700 40%, background.900 100%)';
 
-  const style = { objectFit, border: 'none' } as CSSProperties;
+  const style = {
+    objectFit,
+    overflow: props.overflow,
+    border: 'none',
+  } as CSSProperties;
 
   return (
     <Box
       pos="relative"
       bgSize="80rem 14rem"
-      animation={imageLoadingAnimation}
+      animation={loadingImage ? imageLoadingAnimation : undefined}
       bgGradient={bgGradient}
-      border="none"
       {...props}
     >
       <NextImage
@@ -63,7 +59,7 @@ export function Image({ src, alt, quality, objectFit, ...props }: ImageProps) {
         quality={quality}
         fill
         style={style}
-        onLoadingComplete={() => loadingControls.off()}
+        onLoadingComplete={loadingControls.off}
       />
     </Box>
   );

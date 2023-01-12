@@ -23,22 +23,6 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
-
-      <link
-        rel="preload"
-        href="styles.css"
-        as="style"
-        onLoad={(event) => {
-          const target = event.nativeEvent.target as HTMLLinkElement;
-          target.onload = null;
-          target.rel = 'stylesheet';
-        }}
-      />
-
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
-      />
     </Html>
   );
 }

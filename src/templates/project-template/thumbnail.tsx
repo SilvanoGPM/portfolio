@@ -12,6 +12,7 @@ export function Thumbnail({ project }: ThumbnailProps) {
     <ExternalLink
       href={String(project.url || project.repository)}
       animated={false}
+      aria-label="Página do projeto"
     >
       <Image
         mt="4"

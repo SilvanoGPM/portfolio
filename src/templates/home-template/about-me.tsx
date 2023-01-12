@@ -1,10 +1,13 @@
-import { Avatar, Flex, Text, VStack } from '@chakra-ui/react';
+import { Flex, Text, VStack } from '@chakra-ui/react';
 
 import { HighlightText } from '$components/chakra/highlight-text';
 import { Section } from '$components/ui/section';
 import { ABOUT_ME, CONTACT } from '$shared/sections';
 import { getMyAge } from '$utils/get-my-age';
 import { ScrollButton } from '$components/ui/scroll-button';
+import { Image } from '$components/chakra/image';
+
+import meImg from '$assets/me.png';
 
 export function AboutMe() {
   const age = getMyAge();
@@ -46,19 +49,19 @@ export function AboutMe() {
           </Text>
         </VStack>
 
-        <Avatar
-          src="https://github.com/SilvanoGPM.png"
+        <Image
+          alt="Silvano Marques"
+          src={meImg.src}
           filter={{
             base: 'contrast(100%) grayscale(0%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%)',
             lg: 'contrast(128%) grayscale(100%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(120%) sepia(0%)',
           }}
-          name="Silvano Marques"
-          title="Silvano Marques"
           bg="background.500"
           borderColor="brand.500"
+          rounded="full"
+          overflow="hidden"
           borderWidth="2px"
           color="white"
-          size="2xl"
           width="200px"
           height="200px"
           mx="auto"

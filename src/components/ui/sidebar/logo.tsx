@@ -6,8 +6,13 @@ import logoImg from '$assets/logo.png';
 export function Logo() {
   return (
     <Center h="200px">
-      <Link href="/">
-        <Image src={logoImg.src} w="250px" h="100px" />
+      <Link href="/" aria-label="Ir para o início">
+        <Image
+          alt="Letras S e M como se fosse um bloco de código HTML"
+          src={logoImg.src}
+          w={logoImg.width}
+          h={logoImg.height}
+        />
       </Link>
     </Center>
   );

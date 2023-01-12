@@ -43,6 +43,7 @@ export function Card({ post }: CardProps) {
           <ExternalLink
             href={`https://www.tabnews.com.br/silvanomarques/${post.slug}`}
             animated={false}
+            aria-label="Este mesmo post no TabNews"
           >
             <Image
               alt={post.title}
@@ -65,13 +66,18 @@ export function Card({ post }: CardProps) {
           key={post.slug}
           fontSize={['xl', '2xl', '3xl', '3xl', '4xl']}
           animated={false}
+          aria-label="Saiba mais sobre este post"
         >
           {post.title}
         </Link>
       </Flex>
 
       <Box w={{ base: 'full', md: '20%' }} h="full">
-        <Link href={link} animated={false}>
+        <Link
+          href={link}
+          animated={false}
+          aria-label="Saiba mais sobre este post"
+        >
           <IconButton
             w="full"
             h="full"
