@@ -1,10 +1,11 @@
-import { Box, Flex, Image, Icon, Tooltip, IconButton } from '@chakra-ui/react';
+import { Box, Flex, Icon, Tooltip, IconButton } from '@chakra-ui/react';
 import { AiFillEye, AiOutlineClockCircle } from 'react-icons/ai';
 
 import { ExternalLink } from '$components/chakra/external-link';
 import { Link } from '$components/chakra/internal-link';
 import { glassmorphismContainer } from '$styles/tokens';
 import tabnewsImg from '$assets/tabnews.png';
+import { Image } from '$components/chakra/image';
 
 interface Post {
   id: string;
@@ -43,7 +44,13 @@ export function Card({ post }: CardProps) {
             href={`https://www.tabnews.com.br/silvanomarques/${post.slug}`}
             animated={false}
           >
-            <Image src={tabnewsImg.src} minW="40px" maxW="40px" h="40px" />
+            <Image
+              alt={post.title}
+              src={tabnewsImg.src}
+              width={10}
+              height={10}
+              quality={100}
+            />
           </ExternalLink>
 
           <Tooltip label={post.createdAt} hasArrow>

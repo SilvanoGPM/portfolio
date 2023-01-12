@@ -17,7 +17,6 @@ export function SplashScreen() {
       w="100vw"
       h="100vh"
       zIndex="1000"
-      display="none"
       bg={theme.colors.background['500']}
     >
       <Center h="100vh" flexDir="column">

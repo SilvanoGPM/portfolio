@@ -9,7 +9,8 @@
     "prepare": "husky install",
     "test": "jest --findRelatedTests --passWithNoTests --bail",
     "test:watch": "npm run test --watch",
-    "generate-ts-types": "graphql-codegen --config graphql.config.yml"
+    "generate-ts-types": "graphql-codegen --config graphql.config.yml",
+    "analyze": "cross-env ANALYZE=true npm run build"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.4.6",

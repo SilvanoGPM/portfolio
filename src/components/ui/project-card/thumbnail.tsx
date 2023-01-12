@@ -1,22 +1,23 @@
-import { Image } from '@chakra-ui/react';
-
 import { Link } from '$components/chakra/internal-link';
+import { Image } from '$components/chakra/image';
 
 interface ThumbnailProps {
   href: string;
+  name: string;
   thumbnail?: string | null;
 }
 
-export function Thumbnail({ href, thumbnail }: ThumbnailProps) {
+export function Thumbnail({ href, thumbnail, name }: ThumbnailProps) {
   return (
     <Link
       href={href}
       animated={false}
+      pos="relative"
       w={{ base: 'full', lg: '60%' }}
       h={{ base: '50%', lg: 'full' }}
       overflow="hidden"
     >
-      <Image w="full" h="full" src={String(thumbnail)} objectFit="cover" />
+      <Image src={String(thumbnail)} alt={name} h="full" objectFit="cover" />
     </Link>
   );
 }

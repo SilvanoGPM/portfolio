@@ -34,7 +34,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
       w="full"
       transition="0.2s ease-in"
     >
-      <Thumbnail href={href} thumbnail={project.thumbnail} />
+      <Thumbnail
+        href={href}
+        thumbnail={project.thumbnail}
+        name={project.name}
+      />
 
       <Box
         pos="relative"

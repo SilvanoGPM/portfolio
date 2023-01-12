@@ -1,6 +1,5 @@
-import { Image } from '@chakra-ui/react';
-
 import { ExternalLink } from '$components/chakra/external-link';
+import { Image } from '$components/chakra/image';
 
 import { Project } from '.';
 
@@ -13,7 +12,6 @@ export function Thumbnail({ project }: ThumbnailProps) {
     <ExternalLink
       href={String(project.url || project.repository)}
       animated={false}
-      display="table"
     >
       <Image
         mt="4"
@@ -21,6 +19,7 @@ export function Thumbnail({ project }: ThumbnailProps) {
         alt={project.name}
         objectFit="contain"
         maxH="400px"
+        h="400px"
       />
     </ExternalLink>
   );
