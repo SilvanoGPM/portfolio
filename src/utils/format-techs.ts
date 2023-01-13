@@ -5,7 +5,11 @@ function format(tech: string) {
   return titled
     .replace('js', 'JS')
     .replace('Html', 'HTML')
-    .replace('Css', 'CSS');
+    .replace('Css', 'CSS')
+    .replace('Chakra', '')
+    .replace('Vscode', '')
+    .replace('Intellij', '')
+    .replace('Github', '');
 }
 
 export function formatTechs(techs: string[]) {

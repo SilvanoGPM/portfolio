@@ -6,6 +6,7 @@ import { Links } from '$components/ui/project-card/links';
 import { glassmorphismContainer } from '$styles/tokens';
 
 import { Project } from '.';
+import { linkAnimation } from '../../styles/tokens';
 
 interface ContentProps {
   project: Project;
@@ -20,7 +21,19 @@ export function Content({ project }: ContentProps) {
       <Text
         as={ReactMarkdown}
         fontSize="2xl"
-        sx={{ strong: { color: 'brand.500' } }}
+        sx={{
+          strong: { color: 'brand.500' },
+          'ol, ul': {
+            pl: '2.5rem',
+          },
+          a: {
+            ...linkAnimation,
+            '&': {
+              color: 'brand.500',
+              ...linkAnimation['&'],
+            },
+          },
+        }}
       >
         {project.description}
       </Text>

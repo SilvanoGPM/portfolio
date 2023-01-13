@@ -11,6 +11,8 @@ interface TechProps extends Partial<IntersectingTypes<IconProps, TextProps>> {
   bottomGap?: boolean;
 }
 
+const originals = ['express'];
+
 const TechBase: ForwardRefRenderFunction<
   HTMLParagraphElement | SVGSVGElement,
   TechProps
@@ -37,6 +39,7 @@ const TechBase: ForwardRefRenderFunction<
   }
 
   const coloredClass = colored ? 'colored' : '';
+  const suffix = originals.includes(name) ? 'original' : 'plain';
 
   return (
     <Text
@@ -44,7 +47,7 @@ const TechBase: ForwardRefRenderFunction<
       ref={ref as LegacyRef<HTMLParagraphElement>}
     >
       <i
-        className={`devicon-${name.toLocaleLowerCase()}-plain ${coloredClass}`}
+        className={`devicon-${name.toLocaleLowerCase()}-${suffix} ${coloredClass}`}
       ></i>
     </Text>
   );
