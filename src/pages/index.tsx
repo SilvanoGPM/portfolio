@@ -1,18 +1,21 @@
 import { GetStaticProps } from 'next';
+import { NextSeo } from 'next-seo';
 
 import { request } from '$services/dato';
 import { HomeTemplate, HomeTemplateProps } from '$templates/home-template';
 import { GetLanguagesAndLatestProjectsDocument } from '$graphql/generated';
 import { TechnologiesProps } from '$templates/home-template/technologies';
 import { Project, Category } from '$templates/home-template/projects';
-import { NextSeo } from 'next-seo';
+import { formatTechs } from '$utils/format-techs';
 
 export default function Home(props: HomeTemplateProps) {
   return (
     <>
       <NextSeo
         title="Silvano Marques | Desenvolvedor Web"
-        description="Silvano Marques, Desenvolvedor Web."
+        description={`Silvano Marques, Desenvolvedor Web. Tenho experiência em ${formatTechs(
+          props.technologies.technologies,
+        )}`}
         openGraph={{
           images: [
             {
