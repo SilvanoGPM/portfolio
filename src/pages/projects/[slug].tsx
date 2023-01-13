@@ -12,6 +12,7 @@ import { getProject } from '$http/get-project';
 import { findProjects } from '$http/find-project';
 
 import SEO from 'next-seo.config';
+import { Analytics } from '$components/analytics';
 
 export default function Project(props: ProjectTemplateProps) {
   return (
@@ -31,6 +32,8 @@ export default function Project(props: ProjectTemplateProps) {
           cardType: 'summary_large_image',
         }}
       />
+
+      <Analytics />
 
       <ProjectTemplate {...props} />
     </>

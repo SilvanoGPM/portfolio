@@ -7,6 +7,7 @@ import { GetLanguagesAndLatestProjectsDocument } from '$graphql/generated';
 import { TechnologiesProps } from '$templates/home-template/technologies';
 import { Project, Category } from '$templates/home-template/projects';
 import { formatTechs } from '$utils/format-techs';
+import { Analytics } from '$components/analytics';
 
 export default function Home(props: HomeTemplateProps) {
   return (
@@ -32,6 +33,8 @@ export default function Home(props: HomeTemplateProps) {
           cardType: 'summary_large_image',
         }}
       />
+
+      <Analytics />
 
       <HomeTemplate {...props} />
     </>

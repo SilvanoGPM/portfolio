@@ -24,6 +24,7 @@ const tintilliumWeb = Titillium_Web({
 
 function App({ Component, pageProps }: AppProps) {
   useSplashScreen('hide');
+
   const { unlockScroll } = useScrollLock();
 
   const { closeSidebar } = useUIStore();
