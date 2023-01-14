@@ -2,21 +2,34 @@ import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 
 import { request } from '$services/dato';
-import { HomeTemplate, HomeTemplateProps } from '$templates/home-template';
-import { GetLanguagesAndLatestProjectsDocument } from '$graphql/generated';
-import { TechnologiesProps } from '$templates/home-template/technologies';
+import { HomeTemplate } from '$templates/home-template';
+import { GetInfoAndLatestProjectsDocument } from '$graphql/generated';
 import { Project, Category } from '$templates/home-template/projects';
-import { formatTechs } from '$utils/format-techs';
 import { Analytics } from '$components/analytics';
 
-export default function Home(props: HomeTemplateProps) {
+interface InfoProps {
+  aboutMe: string;
+  techs: string[];
+  api: string;
+  web: string;
+  other: string;
+  title: string;
+  description: string;
+}
+
+interface HomeProps {
+  info: InfoProps;
+  projects: Project[];
+}
+
+export default function Home({ info, projects }: HomeProps) {
+  const { title, description, ...restInfo } = info;
+
   return (
     <>
       <NextSeo
-        title="Silvano Marques | Desenvolvedor Web"
-        description={`Silvano Marques, Desenvolvedor Web. Tenho experiência em ${formatTechs(
-          props.technologies.technologies,
-        )}`}
+        title={title}
+        description={description}
         openGraph={{
           images: [
             {
@@ -36,17 +49,19 @@ export default function Home(props: HomeTemplateProps) {
 
       <Analytics />
 
-      <HomeTemplate {...props} />
+      <HomeTemplate projects={projects} info={restInfo} />
     </>
   );
 }
 
-export const getStaticProps: GetStaticProps<HomeTemplateProps> = async () => {
-  const data = await request(GetLanguagesAndLatestProjectsDocument, {
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const data = await request(GetInfoAndLatestProjectsDocument, {
     first: 3,
   });
 
-  const technologies = data.language?.names as TechnologiesProps;
+  console.log(data.info);
+
+  const info = data.info as InfoProps;
   const projectsRaw = data.allProjects;
 
   const projects = projectsRaw.map<Project>((project) => ({
@@ -61,8 +76,8 @@ export const getStaticProps: GetStaticProps<HomeTemplateProps> = async () => {
   return {
     revalidate: 60 * 60 * 24 * 7, // one week
     props: {
-      technologies,
-      projects: { projects },
+      info,
+      projects,
     },
   };
 };

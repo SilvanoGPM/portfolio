@@ -1,17 +1,18 @@
-import { Flex, Text, VStack } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 
-import { HighlightText } from '$components/chakra/highlight-text';
 import { Section } from '$components/ui/section';
 import { ABOUT_ME, CONTACT } from '$shared/sections';
-import { getMyAge } from '$utils/get-my-age';
 import { ScrollButton } from '$components/ui/scroll-button';
 import { Image } from '$components/chakra/image';
 
 import meImg from '$assets/me.png';
+import { Markdown } from '$components/ui/markdown';
 
-export function AboutMe() {
-  const age = getMyAge();
+interface AboutMeProps {
+  text: string;
+}
 
+export function AboutMe({ text }: AboutMeProps) {
   return (
     <Section title="Sobre mim" dataScroll={ABOUT_ME}>
       <Flex
@@ -21,33 +22,9 @@ export function AboutMe() {
         justify="space-between"
         gap="1rem"
       >
-        <VStack maxW="550px" fontSize="xl" textAlign="justify">
-          <Text>
-            Olá, me chamo <HighlightText>Silvano Marques</HighlightText>, sou um
-            jovem de {age} anos e estou no último ano para me formar como{' '}
-            <HighlightText>
-              Técnico em desenvolvimento de sistemas
-            </HighlightText>
-            .
-          </Text>
-
-          <Text>
-            Desde os 14 anos, tenho dedicado meu tempo e esforços para aprender
-            e me tornar um{' '}
-            <HighlightText>especialista em programação</HighlightText>. Me
-            considero dedicado e motivado, consigo resolver problemas complexos
-            através de código. Além disso, possuo amplos conhecimentos em{' '}
-            <HighlightText>desenvolvimento web</HighlightText>, sendo capaz de
-            criar sites e APIs.
-          </Text>
-
-          <Text>
-            Meu foco principal é o desenvolvimento web, mas também já estudei
-            outras áreas, como mobile, arduino e games, logo possuo uma certa{' '}
-            <HighlightText>versatilidade e disposição</HighlightText> para
-            aprender tecnológias novas.
-          </Text>
-        </VStack>
+        <Markdown maxW="550px" fontSize="xl" textAlign="justify" spacing="4">
+          {text}
+        </Markdown>
 
         <Image
           alt="Silvano Marques"

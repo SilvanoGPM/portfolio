@@ -5,7 +5,13 @@ import { Section } from '$components/ui/section';
 
 import { Card } from './card';
 
-export function Services() {
+interface ServicesProps {
+  api: string;
+  web: string;
+  other: string;
+}
+
+export function Services({ api, web, other }: ServicesProps) {
   return (
     <Section title="Serviços">
       <Flex
@@ -14,23 +20,11 @@ export function Services() {
         wrap="wrap"
         gap="1rem"
       >
-        <Card
-          title="APIs"
-          description="Desenvolvo uma API para o seu sistema com Java e Spring Boot ou integro uma já criada ao seu sistema."
-          Icon={ApiIcon}
-        />
+        <Card title="APIs" description={api} Icon={ApiIcon} />
 
-        <Card
-          title="Sites"
-          description="Desenvolvo diversos tipos de sites, Landing Pages, Blogs, Portfólios, entre outros."
-          Icon={WebIcon}
-        />
+        <Card title="Sites" description={web} Icon={WebIcon} />
 
-        <Card
-          title="Outros"
-          description="Desenvolvo um software específico para você ou sua empresa."
-          Icon={OtherIcon}
-        />
+        <Card title="Outros" description={other} Icon={OtherIcon} />
       </Flex>
     </Section>
   );

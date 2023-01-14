@@ -1,9 +1,15 @@
 import { gql } from 'graphql-request';
 
-export const GET_LANGUAGES_AND_LATEST_PROJECTS = gql`
-  query GetLanguagesAndLatestProjects($first: IntType) {
-    language {
-      names
+export const GET_INFO_AND_LATEST_PROJECTS = gql`
+  query GetInfoAndLatestProjects($first: IntType) {
+    info {
+      aboutMe
+      techs
+      api
+      web
+      other
+      title
+      description
     }
 
     allProjects(first: $first) {

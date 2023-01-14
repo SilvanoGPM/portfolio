@@ -3,26 +3,34 @@ import { VStack } from '@chakra-ui/react';
 import { DefaultLayout } from '$components/layout/default-layout';
 
 import { Welcome } from './welcome';
-import { Technologies, TechnologiesProps } from './technologies';
+import { Technologies } from './technologies';
 import { AboutMe } from './about-me';
 import { Services } from './services';
-import { Projects, ProjectsProps } from './projects';
+import { Projects, Project } from './projects';
 import { Contact } from './contact';
 
-export interface HomeTemplateProps {
-  technologies: TechnologiesProps;
-  projects: ProjectsProps;
+interface InfoProps {
+  aboutMe: string;
+  techs: string[];
+  api: string;
+  web: string;
+  other: string;
 }
 
-export function HomeTemplate({ technologies, projects }: HomeTemplateProps) {
+export interface HomeTemplateProps {
+  info: InfoProps;
+  projects: Project[];
+}
+
+export function HomeTemplate({ projects, info }: HomeTemplateProps) {
   return (
     <DefaultLayout>
       <VStack align="start" spacing="16" as="main">
         <Welcome />
-        <AboutMe />
-        <Technologies {...technologies} />
-        <Services />
-        <Projects {...projects} />
+        <AboutMe text={info.aboutMe} />
+        <Technologies technologies={info.techs} />
+        <Services {...info} />
+        <Projects projects={projects} />
         <Contact />
       </VStack>
     </DefaultLayout>
