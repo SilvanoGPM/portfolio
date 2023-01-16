@@ -59,8 +59,6 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     first: 3,
   });
 
-  console.log(data.info);
-
   const info = data.info as InfoProps;
   const projectsRaw = data.allProjects;
 

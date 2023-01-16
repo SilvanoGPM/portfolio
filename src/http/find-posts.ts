@@ -1,6 +1,15 @@
 import { POSTS_PER_PAGE } from '$shared/pagination';
 
-export interface RawPost {
+import { formatDate } from '$utils/date-format';
+
+interface Post {
+  id: string;
+  title: string;
+  slug: string;
+  createdAt: string;
+}
+
+interface RawPost {
   id: string;
   parent_id: string | null;
   title: string | null;
@@ -12,6 +21,19 @@ export interface FindPostsParams {
   page: number;
   strategy?: 'new' | 'old' | 'relevant';
   size?: number;
+}
+
+function mapData(data?: RawPost[]) {
+  return (
+    data
+      ?.filter((post) => post.parent_id === null)
+      .map<Post>((post) => ({
+        ...post,
+        title: String(post.title),
+        slug: String(post.slug),
+        createdAt: formatDate(new Date(post.created_at)),
+      })) || []
+  );
 }
 
 export async function findPosts({
@@ -27,5 +49,5 @@ export async function findPosts({
   const response = await fetch(url);
   const data = await response.json();
 
-  return data as RawPost[];
+  return mapData(data);
 }

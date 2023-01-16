@@ -15,7 +15,6 @@ export function Sidebar() {
   const sharedStyles: FlexProps = {
     pos: 'fixed',
     left: '0',
-    h: '100vh',
     bg: 'background.400',
     direction: 'column',
     py: '4',
@@ -26,6 +25,7 @@ export function Sidebar() {
     return (
       <>
         <Flex
+          h="100vh"
           top={sidebarIsOpen ? '0' : '-100vh'}
           right="0"
           zIndex="sticky"
@@ -45,15 +45,20 @@ export function Sidebar() {
 
   const sidebarSizes: FlexProps = {
     minW: '400px',
-    h: '100vh',
-    minH: '100vh',
   };
 
   return (
     <>
       <Box {...sidebarSizes} />
 
-      <Flex top="0" justify="space-between" {...sharedStyles} {...sidebarSizes}>
+      <Flex
+        top="0"
+        bottom="0"
+        left="0"
+        justify="space-between"
+        {...sharedStyles}
+        {...sidebarSizes}
+      >
         <Content />
       </Flex>
     </>

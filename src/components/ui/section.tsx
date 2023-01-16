@@ -6,12 +6,14 @@ import { Replace } from '$utils/replace';
 
 interface SectionProps extends Replace<FlexProps, { title?: ReactNode }> {
   dataScroll?: string;
+  underlineHeight?: string;
 }
 
 export function Section({
   title,
   dataScroll,
   children,
+  underlineHeight,
   ...props
 }: SectionProps) {
   return (
@@ -19,7 +21,7 @@ export function Section({
       {dataScroll && <div data-scroll={dataScroll} />}
 
       <Flex w="full" as="section" direction="column" {...props}>
-        {title && <Title>{title}</Title>}
+        {title && <Title underlineHeight={underlineHeight}>{title}</Title>}
         {children}
       </Flex>
     </>
