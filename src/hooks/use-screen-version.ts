@@ -8,7 +8,7 @@ export function useScreenVersion(option: 'SM' | 'MD' | 'LG') {
       md: 'MD',
       lg: 'LG',
     },
-    { ssr: false },
+    { ssr: true },
   );
 
   return value === option;

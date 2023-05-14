@@ -11,7 +11,6 @@ import {
 import { getProject } from '$http/get-project';
 import { findProjects } from '$http/find-project';
 
-import SEO from 'next-seo.config';
 import { Analytics } from '$components/analytics';
 
 export default function Project(props: ProjectTemplateProps) {
@@ -20,7 +19,6 @@ export default function Project(props: ProjectTemplateProps) {
       <NextSeo
         title={`${props.project.name} | Silvano Marques`}
         description={markdownToTxt(props.project.description)}
-        canonical={SEO.openGraph.url}
         openGraph={{
           images: [
             { url: String(props.project.thumbnail), alt: props.project.name },

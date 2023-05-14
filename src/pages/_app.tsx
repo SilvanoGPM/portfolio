@@ -1,5 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { Titillium_Web } from '@next/font/google';
+import { Titillium_Web } from 'next/font/google';
 import { AppProps } from 'next/app';
 import { Router } from 'next/router';
 import NextNProgress from 'nextjs-progressbar';
