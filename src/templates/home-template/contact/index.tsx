@@ -75,6 +75,7 @@ export function Contact() {
 
         <Textarea
           {...register('message')}
+          id="message"
           label="Mensagem"
           error={formState.errors.message}
         />
