@@ -1,9 +1,10 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 import { ExternalLink } from '$components/chakra/external-link';
 import { Title } from '$components/chakra/title';
 import { DefaultLayout } from '$components/layout/default-layout';
 import { Markdown } from '$components/ui/markdown';
+import { HighlightText } from '$components/chakra/highlight-text';
 
 interface Post {
   slug: string;
@@ -25,11 +26,22 @@ export function PostTemplate({ post }: PostTemplateProps) {
   return (
     <DefaultLayout>
       <Box as="main" mt={{ base: '16', lg: '8' }}>
+        <Box mx="auto" mb="2" maxW={maxW}>
+          <Text>
+            Powered by{' '}
+            <ExternalLink href="https://www.tabnews.com.br/">
+              {' '}
+              <HighlightText>TabNews</HighlightText>
+            </ExternalLink>
+            .
+          </Text>
+        </Box>
+
         <ExternalLink
           href={href}
           display="table"
           animated={false}
-          mb="2rem"
+          mb="8"
           maxW={maxW}
           mx="auto"
         >
