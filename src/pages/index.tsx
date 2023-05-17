@@ -17,16 +17,6 @@ interface InfoProps {
   description: string;
 }
 
-interface RawProject {
-  slug?: string;
-  name?: string;
-  category?: string;
-  techs: string[];
-  thumbnail?: {
-    url: string;
-  };
-}
-
 interface HomeProps {
   info: InfoProps;
   projects: Project[];
@@ -72,12 +62,13 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const info = data.info as InfoProps;
   const projectsRaw = data.allProjects;
 
-  const projects = projectsRaw.map((project: RawProject) => ({
-    ...project,
+  const projects = projectsRaw.map((project) => ({
     slug: String(project.slug),
     name: String(project.name),
     category: project.category as Category,
-    techs: project.techs || [],
+    techs: (project.techs as string[]) || [],
+    repository: project.repository,
+    url: project.url,
     thumbnail: project.thumbnail ? String(project.thumbnail?.url) : null,
   }));
 
