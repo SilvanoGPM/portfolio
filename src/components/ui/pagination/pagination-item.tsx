@@ -17,7 +17,7 @@ export function PaginationItem({
       size="sm"
       fontSize="xs"
       width="4"
-      disabled={isCurrent}
+      isDisabled={isCurrent}
       _disabled={{
         bg: 'brand.100',
         borderColor: 'brand.100',
