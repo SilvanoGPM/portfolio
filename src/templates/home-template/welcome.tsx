@@ -41,7 +41,7 @@ export function Welcome() {
       </Box>
 
       <Box maxH="400px">
-        <Lottie animation={devAnimation} />
+        <Lottie speed={0.5} animation={devAnimation} />
       </Box>
     </Section>
   );

@@ -12,11 +12,12 @@ export function Lottie({
   animation,
   autoplay = true,
   loop = true,
+  speed,
   ...props
 }: LottieProps) {
   return (
     <Box {...props}>
-      <Player autoplay={autoplay} loop={loop} src={animation} />
+      <Player autoplay={autoplay} loop={loop} src={animation} speed={speed} />
     </Box>
   );
 }
