@@ -28,8 +28,8 @@ export function Welcome() {
 
         <Box fontSize="2xl" fontWeight="bold">
           <ReactTypingEffect
-            text={['Front-end.', 'Back-end.']}
             staticText="Desenvolvedor"
+            text={['Front-end.', 'Back-end.', 'FullStack.']}
           />
         </Box>
 

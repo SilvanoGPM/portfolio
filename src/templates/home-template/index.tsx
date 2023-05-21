@@ -1,6 +1,7 @@
 import { VStack } from '@chakra-ui/react';
 
 import { DefaultLayout } from '$components/layout/default-layout';
+import { BackToTop } from '$components/ui/back-to-top';
 
 import { Welcome } from './welcome';
 import { Technologies } from './technologies';
@@ -33,6 +34,8 @@ export function HomeTemplate({ projects, info }: HomeTemplateProps) {
         <Projects projects={projects} />
         <Contact />
       </VStack>
+
+      <BackToTop />
     </DefaultLayout>
   );
 }
