@@ -13,7 +13,7 @@ export function Markdown({
 }: Replace<StackProps, { children: string }>) {
   return (
     <VStack
-      fontSize="2xl"
+      fontSize={{ base: 'lg', sm: 'xl', md: '2xl' }}
       align="start"
       {...props}
       sx={{ ...tagStyles, ...props.sx }}

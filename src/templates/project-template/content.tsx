@@ -19,15 +19,22 @@ export function Content({ project }: ContentProps) {
       p={['4', '8']}
       sx={glassmorphismContainer({ bg: 'backgroundAlpha.100' })}
     >
-      <Markdown>{project.description}</Markdown>
+      <Flex
+        w="full"
+        direction={{ base: 'column-reverse', md: 'row' }}
+        justify={{ base: 'center', md: 'space-between' }}
+        align={{ base: 'center', md: 'space-between' }}
+      >
+        <TechList techs={project.techs} />
 
-      <Flex w="full" mt="8" direction="column" justify="center" align="start">
         <Flex fontSize="6xl" align="center">
           <Links url={project.url} repository={project.repository} />
         </Flex>
-
-        <TechList techs={project.techs} />
       </Flex>
+
+      <Markdown mt="8" textAlign="justify">
+        {project.description}
+      </Markdown>
 
       <Box
         mt="16"

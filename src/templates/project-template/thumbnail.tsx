@@ -18,7 +18,7 @@ export function Thumbnail({ project }: ThumbnailProps) {
         mt="4"
         src={String(project.thumbnail)}
         alt={project.name}
-        objectFit="contain"
+        objectFit="cover"
         maxH="400px"
         h="400px"
       />

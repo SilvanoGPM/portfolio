@@ -3,6 +3,7 @@ import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import rangeParser from 'parse-numeric-range';
 import type { NormalComponents } from 'react-markdown/lib/complex-types';
 import type { SpecialComponents } from 'react-markdown/lib/ast-to-react';
+import { Box } from '@chakra-ui/react';
 
 import { Image } from '$components/chakra/image';
 
@@ -104,5 +105,21 @@ export const components: Components = {
     }
 
     return <p>{paragraph.children}</p>;
+  },
+
+  ol(props) {
+    return (
+      <Box as="ol" style={{ paddingLeft: '24px' }}>
+        {props.children}
+      </Box>
+    );
+  },
+
+  li(props) {
+    return (
+      <Box as="li" mt="4">
+        {props.children}
+      </Box>
+    );
   },
 };

@@ -1,6 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
 import { SplashScreen } from '$components/ui/splash-screen';
+import { ColorModeScript } from '@chakra-ui/react';
 
 export default function Document() {
   return (
@@ -19,6 +20,7 @@ export default function Document() {
       </Head>
 
       <body style={{ overflow: 'hidden' }}>
+        <ColorModeScript initialColorMode="light" />
         <SplashScreen />
         <Main />
         <NextScript />
