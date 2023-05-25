@@ -22,8 +22,8 @@
 ## :sparkles: Imagens
 
 ![Home](https://user-images.githubusercontent.com/59753526/213937325-221b8f3b-d618-424b-b2e1-a7ff861a6a93.png)
-![AboutMe](https://user-images.githubusercontent.com/59753526/213937326-935e50e7-b7b4-4cf4-b66d-fedfd135b55c.png)
-![Techs](https://user-images.githubusercontent.com/59753526/213937327-875a7297-018a-402a-b1ac-746553995dcb.png)
-![Services](https://user-images.githubusercontent.com/59753526/213937320-f9ec2a56-e3ee-4ae7-ab31-cc28f0b11e3b.png)
+![AboutMe](https://github.com/SilvanoGPM/portfolio/assets/59753526/21b3cef9-0181-4180-84be-5aa5c5689691.png)
+![Techs](https://github.com/SilvanoGPM/portfolio/assets/59753526/0db60dfe-df03-4cb7-ad6f-0c9bedff76f6.png)
+![Services](https://github.com/SilvanoGPM/portfolio/assets/59753526/2bade584-42df-4997-baf5-5d9f05e88a9d.png)
 ![Projects](https://user-images.githubusercontent.com/59753526/213937324-64b6d635-8c54-4052-9e49-5196fbbe3c2b.png)
 ![Contact](https://user-images.githubusercontent.com/59753526/213937322-0c1d575b-b106-48bc-b85f-7405fee7ffa7.png)
