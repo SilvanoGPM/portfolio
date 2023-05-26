@@ -30,8 +30,8 @@ export function HomeTemplate({ projects, info }: HomeTemplateProps) {
         <Welcome />
         <AboutMe text={info.aboutMe} />
         <Technologies technologies={info.techs} />
-        <Services {...info} />
         <Projects projects={projects} />
+        <Services {...info} />
         <Contact />
       </VStack>
 
