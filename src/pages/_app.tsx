@@ -6,6 +6,7 @@ import NextNProgress from 'nextjs-progressbar';
 import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { DefaultSeo } from 'next-seo';
+import { Analytics } from '@vercel/analytics/react';
 
 import { useUIStore } from '$stores/ui';
 import { theme } from '$styles/themes';
@@ -54,6 +55,7 @@ function App({ Component, pageProps }: AppProps) {
       <ChakraProvider theme={theme}>
         <QueryClientProvider client={queryClient}>
           <Component {...pageProps} />
+          <Analytics />
           <ReactQueryDevtools />
         </QueryClientProvider>
       </ChakraProvider>
