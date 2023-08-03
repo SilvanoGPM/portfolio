@@ -37,7 +37,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
         size="lg"
         bg="background.300"
         _hover={{ bg: 'background.400' }}
-        sx={glassmorphismContainer({ bg: 'backgroundAlpha.100' })}
+        sx={glassmorphismContainer({ bg: '.100' })}
         {...props}
       />
 

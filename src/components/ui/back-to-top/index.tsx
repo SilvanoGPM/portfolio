@@ -52,7 +52,7 @@ export function BackToTop() {
           icon={<Icon as={RiArrowUpCircleFill} fontSize="2xl" color="white" />}
           transition="0.2s ease-in-out"
           _hover={{
-            boxShadow: '5px 5px 30px rgba(255, 0, 0, 0.5)',
+            boxShadow: 'red',
           }}
         />
       </Box>

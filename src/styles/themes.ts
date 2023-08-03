@@ -11,6 +11,10 @@ export const theme = extendTheme({
     Button,
   },
 
+  shadows: {
+    red: '5px 5px 30px rgba(255, 0, 0, 0.5)',
+  },
+
   colors: {
     brand: {
       '900': '#6b2222',
@@ -23,6 +27,16 @@ export const theme = extendTheme({
       '200': '#d06d6d',
       '100': '#d78282',
       '50': '#dd9797',
+
+      'alpha.900': 'rgba(179, 57, 57, 0.9)',
+      'alpha.800': 'rgba(179, 57, 57, 0.8)',
+      'alpha.700': 'rgba(179, 57, 57, 0.7)',
+      'alpha.600': 'rgba(179, 57, 57, 0.6)',
+      'alpha.500': 'rgba(179, 57, 57, 0.5)',
+      'alpha.400': 'rgba(179, 57, 57, 0.4)',
+      'alpha.300': 'rgba(179, 57, 57, 0.3)',
+      'alpha.200': 'rgba(179, 57, 57, 0.2)',
+      'alpha.100': 'rgba(179, 57, 57, 0.1)',
     },
 
     background: {
