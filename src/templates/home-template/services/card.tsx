@@ -36,7 +36,7 @@ export function Card({ Icon, title, more, description }: CardProps) {
       direction="column"
       h="300px"
       pt="4"
-      sx={glassmorphismContainer({ bg: 'backgroundAlpha.100' })}
+      sx={glassmorphismContainer()}
     >
       <Flex px="4" direction="column">
         <Flex align="center">

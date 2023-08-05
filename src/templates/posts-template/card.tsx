@@ -29,7 +29,7 @@ export function Card({ post }: CardProps) {
       direction={{ base: 'column', md: 'row' }}
       borderBottom="8px"
       borderBottomColor="brand.500"
-      sx={glassmorphismContainer({ bg: 'backgroundAlpha.100' })}
+      sx={glassmorphismContainer()}
     >
       <Flex
         flex="1"

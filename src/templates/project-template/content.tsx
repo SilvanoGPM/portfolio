@@ -15,10 +15,7 @@ interface ContentProps {
 
 export function Content({ project }: ContentProps) {
   return (
-    <Box
-      p={['4', '8']}
-      sx={glassmorphismContainer({ bg: 'backgroundAlpha.100' })}
-    >
+    <Box p={['4', '8']} sx={glassmorphismContainer()}>
       <Flex
         w="full"
         direction={{ base: 'column-reverse', md: 'row' }}

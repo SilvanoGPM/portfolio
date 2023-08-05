@@ -5,36 +5,26 @@ export const Button: ComponentStyleConfig = {
     colorScheme: 'brand',
   },
 
-  variants: {
-    solid: ({ colorScheme }) => ({
-      color: colorScheme === 'brand' ? 'white' : 'inherit',
-      border: '2px solid',
-      borderColor: `${colorScheme}.500`,
-      transition: '0.2s filter',
-      rounded: 'none',
-      _disabled: {
-        opacity: 0.5,
-        bg: `${colorScheme}.500`,
-        _hover: { filter: 'brightness(1)' },
-      },
-      _hover: { filter: 'brightness(0.9)' },
-    }),
+  baseStyle: {
+    rounded: 'none',
+  },
 
-    outline: ({ colorScheme }) => ({
-      border: '2px solid',
-      borderColor: `${colorScheme}.500`,
-      rounded: 'none',
-      color: `${colorScheme}.500`,
-      transition: '0.2s ease-in-out',
-      bg: 'transparent',
+  variants: {
+    outline: {
+      bg: 'brand.alpha.100',
+      borderColor: 'brand.alpha.300',
+      color: 'white',
+      fontWeight: '600',
+
       _hover: {
-        bg: `${colorScheme}.500`,
-        color: 'white',
+        bg: 'brand.alpha.200',
+        borderColor: 'brand.alpha.300',
       },
+
       _active: {
-        bg: `${colorScheme}.500`,
-        color: 'white',
+        bg: 'brand.alpha.300',
+        borderColor: 'brand.alpha.400',
       },
-    }),
+    },
   },
 };

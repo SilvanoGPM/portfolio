@@ -1,5 +1,6 @@
-import { Button, VStack } from '@chakra-ui/react';
+import { Button, Icon, VStack } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import { AiFillEye } from 'react-icons/ai';
 
 import { Section } from '$components/ui/section';
 import { PROJECTS } from '$shared/sections';
@@ -40,6 +41,7 @@ export function Projects({ projects }: ProjectsProps) {
             alignSelf="end"
             as={NextLink}
             href="/projects"
+            rightIcon={<Icon as={AiFillEye} />}
           >
             Ver todos os projetos
           </Button>

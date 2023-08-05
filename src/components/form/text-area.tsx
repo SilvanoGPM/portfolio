@@ -37,7 +37,7 @@ const TextareaBase: ForwardRefRenderFunction<
         size="lg"
         bg="background.300"
         _hover={{ bg: 'background.400' }}
-        sx={glassmorphismContainer({ bg: 'backgroundAlpha.100' })}
+        sx={glassmorphismContainer()}
         {...props}
       />
 

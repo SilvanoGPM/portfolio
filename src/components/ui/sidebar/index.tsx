@@ -18,7 +18,7 @@ export function Sidebar() {
     bg: 'background.400',
     direction: 'column',
     py: '4',
-    sx: glassmorphismContainer({ bg: 'backgroundAlpha.600', blur: '2px' }),
+    sx: glassmorphismContainer({ bg: 'background.alpha.600', blur: '2px' }),
   };
 
   if (!isLargeScreen) {

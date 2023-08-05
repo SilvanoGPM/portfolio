@@ -1,6 +1,7 @@
-import { Button, useToast, VStack } from '@chakra-ui/react';
+import { Button, Icon, useToast, VStack } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { RiSendPlane2Fill } from 'react-icons/ri';
 
 import { Input } from '$components/form/input';
 import { Textarea } from '$components/form/text-area';
@@ -80,7 +81,12 @@ export function Contact() {
           error={formState.errors.message}
         />
 
-        <Button type="submit" w="full" variant="outline">
+        <Button
+          type="submit"
+          w="full"
+          variant="outline"
+          rightIcon={<Icon as={RiSendPlane2Fill} />}
+        >
           Enviar
         </Button>
       </VStack>

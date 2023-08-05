@@ -47,7 +47,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         px="4"
         borderRightColor={{ base: 'none', lg: 'brand.500' }}
         borderRightWidth={{ base: 'none', lg: '8px' }}
-        sx={glassmorphismContainer({ bg: 'backgroundAlpha.100' })}
+        sx={glassmorphismContainer()}
       >
         <Center h="full">
           <Heading

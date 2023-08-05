@@ -1,5 +1,5 @@
 interface GlassmorphismContainerProps {
-  bg: string;
+  bg?: string;
   blur?: string;
 }
 
@@ -62,9 +62,9 @@ export const linkAnimation = {
 };
 
 export function glassmorphismContainer({
-  bg,
+  bg = 'background.alpha.100',
   blur = '5px',
-}: GlassmorphismContainerProps) {
+}: GlassmorphismContainerProps = {}) {
   return {
     '&': {
       backdropFilter: `blur(${blur})`,
