@@ -1,7 +1,7 @@
 import { Box, Center, CircularProgress, Text } from '@chakra-ui/react';
 
 import { useSplashScreen } from '$hooks/use-splash-screen';
-import { theme } from '$styles/themes';
+import { theme } from '$styles/theme';
 
 // Para as cores utilizar o objeto theme porque o componente não consegue acessar
 // as informações do CSS para obter as cores.

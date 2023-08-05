@@ -26,7 +26,7 @@ export function Welcome() {
           Marques
         </Heading>
 
-        <Box fontSize="2xl" fontWeight="bold">
+        <Box fontSize="2xl" fontWeight="bold" color="white">
           <ReactTypingEffect
             staticText="Desenvolvedor"
             text={['Front-end.', 'Back-end.', 'FullStack.']}

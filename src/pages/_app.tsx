@@ -9,7 +9,7 @@ import { DefaultSeo } from 'next-seo';
 import { Analytics } from '@vercel/analytics/react';
 
 import { useUIStore } from '$stores/ui';
-import { theme } from '$styles/themes';
+import { theme } from '$styles/theme';
 import { useSplashScreen } from '$hooks/use-splash-screen';
 import { queryClient } from '$services/query-client';
 import { useScrollLock } from '$hooks/use-scroll-lock';

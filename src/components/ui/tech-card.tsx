@@ -25,6 +25,7 @@ export function TechCard({ name, colored }: TechCardProps) {
       borderBottomColor="transparent"
       borderBottomWidth="4px"
       transition="0.2s ease-in"
+      color="white"
       sx={glassmorphismContainer()}
       _hover={{
         borderColor: 'brand.500',

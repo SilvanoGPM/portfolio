@@ -5,7 +5,7 @@ import { ExternalLink } from '$components/chakra/external-link';
 
 export function Footer() {
   return (
-    <HStack fontSize="4xl" justify="center">
+    <HStack fontSize="4xl" justify="center" color="white">
       <ExternalLink
         href="https://github.com/SilvanoGPM"
         animated={false}

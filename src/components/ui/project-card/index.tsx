@@ -60,11 +60,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </Heading>
         </Center>
 
-        <Box pos="absolute" left="4" bottom="4" fontSize="4xl">
+        <Box pos="absolute" left="4" bottom="4" fontSize="4xl" color="white">
           <Links repository={project.repository} url={project.url} />
         </Box>
 
-        <Box pos="absolute" right="4" bottom="4">
+        <Box pos="absolute" right="4" bottom="4" color="white">
           <Link
             href={href}
             animated={false}
