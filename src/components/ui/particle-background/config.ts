@@ -1,10 +1,12 @@
 /* eslint-disable */
 
+import { theme } from '$styles/theme';
+
 export const config = {
   autoPlay: true,
   background: {
     color: {
-      value: "#111111"
+      value: theme.colors.background['500'],
     },
     image: "",
     position: "",
@@ -16,7 +18,7 @@ export const config = {
     composite: "destination-out",
     cover: {
       color: {
-        value: "#fff"
+        value: theme.colors.white
       },
       opacity: 1
     },
@@ -230,7 +232,7 @@ export const config = {
       }
     },
     color: {
-      value: "#b33939",
+      value: theme.colors.brand['500'],
       animation: {
         h: {
           count: 0,
@@ -544,7 +546,7 @@ export const config = {
       shadow: {
         blur: false,
         color: {
-          value: "#b33939"
+          value: theme.colors.brand['500']
         },
         enable: false
       },
