@@ -2,11 +2,15 @@ import { Logo } from './logo';
 import { Navbar } from './navbar';
 import { Footer } from './footer';
 
-export function Content() {
+export interface ContentProps {
+  isLargeScreen: boolean;
+}
+
+export function Content({ isLargeScreen }: ContentProps) {
   return (
     <>
       <Logo />
-      <Navbar />
+      <Navbar isLargeScreen={isLargeScreen} />
       <Footer />
     </>
   );

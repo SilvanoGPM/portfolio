@@ -10,9 +10,8 @@ import devAnimation from '$assets/lottie/dev.json';
 export function Welcome() {
   return (
     <Section
-      h="100vh"
-      justify="center"
-      mt={{ base: '28', md: '0' }}
+      justify="space-between"
+      mt={{ base: '20', md: '8', lg: '0' }}
       direction={{ base: 'column', md: 'row' }}
       align="center"
     >

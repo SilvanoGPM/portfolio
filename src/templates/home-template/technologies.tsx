@@ -12,7 +12,7 @@ export interface TechnologiesProps {
 
 export function Technologies({ technologies }: TechnologiesProps) {
   return (
-    <Section title="Tecnologias" maxW="900px">
+    <Section title="Tecnologias">
       <TechList techs={technologies} w="full" />
 
       <Text mt="10" maxW="400px">

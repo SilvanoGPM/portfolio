@@ -12,7 +12,7 @@ export const config = {
     position: "",
     repeat: "",
     size: "",
-    opacity: 1
+    opacity: 0.1
   },
   backgroundMask: {
     composite: "destination-out",
@@ -20,7 +20,7 @@ export const config = {
       color: {
         value: theme.colors.white
       },
-      opacity: 1
+      opacity: 0.1
     },
     enable: false
   },

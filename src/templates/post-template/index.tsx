@@ -26,7 +26,7 @@ export function PostTemplate({ post }: PostTemplateProps) {
   return (
     <DefaultLayout>
       <Box as="main" mt={{ base: '16', lg: '8' }}>
-        <Box mx="auto" mb="2" maxW={maxW}>
+        <Box mb="2" maxW={maxW}>
           <Text>
             Powered by{' '}
             <ExternalLink href="https://www.tabnews.com.br/">
@@ -43,14 +43,13 @@ export function PostTemplate({ post }: PostTemplateProps) {
           animated={false}
           mb="8"
           maxW={maxW}
-          mx="auto"
         >
           <Title underlineHeight="0" as="h1">
             {post.title}
           </Title>
         </ExternalLink>
 
-        <Markdown as="article" textAlign="justify" maxW={maxW} mx="auto">
+        <Markdown as="article" textAlign="justify">
           {post.content}
         </Markdown>
       </Box>
