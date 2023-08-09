@@ -9,19 +9,13 @@ interface TechCardProps {
   colored: boolean;
 }
 
-const BIG_STRING_LENGTH = 15;
-
 export function TechCard({ name, colored }: TechCardProps) {
-  const isBigText = name.length >= BIG_STRING_LENGTH;
-
   return (
     <Center
       cursor="pointer"
-      flexDir="column"
       bg="black"
-      w="20"
-      h="20"
-      p="8"
+      p="2"
+      px="4"
       borderBottomColor="transparent"
       borderBottomWidth="4px"
       transition="0.2s ease-in"
@@ -32,18 +26,14 @@ export function TechCard({ name, colored }: TechCardProps) {
         boxShadow: 'red',
       }}
     >
-      <Tech
-        name={name}
-        colored={colored}
-        bottomGap={!isBigText}
-        fontSize="3xl"
-      />
+      <Tech name={name} colored={colored} fontSize="3xl" />
 
       <Text
+        ml="4"
         fontWeight="bold"
-        fontSize={isBigText ? 'x-small' : 'small'}
         textTransform="uppercase"
         textAlign="center"
+        fontSize="small"
       >
         {name}
       </Text>
