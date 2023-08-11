@@ -1,6 +1,7 @@
 import { Button, ButtonProps } from '@chakra-ui/react';
 
 import { scrollToElement } from '$utils/scroll-to-element';
+import { useUIStore } from '$stores/ui';
 
 interface ScrollButtonProps extends ButtonProps {
   dataScroll: string;
@@ -13,7 +14,10 @@ export function ScrollButton({
   children,
   ...props
 }: ScrollButtonProps) {
+  const { setHeaderInTop } = useUIStore();
+
   function handleScroll() {
+    setHeaderInTop(false);
     beforeScroll?.();
     scrollToElement(dataScroll);
   }

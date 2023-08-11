@@ -19,7 +19,9 @@ interface ContactFormData {
 }
 
 export function Contact() {
-  const toast = useToast();
+  const toast = useToast({
+    position: 'bottom-left',
+  });
 
   const { register, handleSubmit, formState, reset } = useForm<ContactFormData>(
     {
@@ -60,7 +62,7 @@ export function Contact() {
         spacing="8"
         p="8"
         w="full"
-        sx={glassmorphismContainer({ bg: 'background.500' })}
+        sx={glassmorphismContainer({ bg: 'background.alpha.500' })}
       >
         <Input
           {...register('email')}

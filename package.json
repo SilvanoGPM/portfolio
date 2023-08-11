@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "eslint src --max-warnings=0",
     "prepare": "husky install",
-    "test": "jest --findRelatedTests --passWithNoTests --bail",
+    "test": "jest --passWithNoTests --bail",
     "test:watch": "npm run test --watch",
     "generate-ts-types": "graphql-codegen --config graphql.config.yml",
     "analyze": "cross-env ANALYZE=true npm run build"

@@ -2,9 +2,8 @@ import { ReactNode } from 'react';
 import { Box, Flex } from '@chakra-ui/react';
 
 import { Header } from '$components/ui/header';
-import { ParticleBackground } from '$components/ui/particle-background';
 import { Footer } from '$components/ui/footer';
-import { thinScrollbar } from '$styles/tokens';
+import { ParticleBackground } from '$components/ui/particle-background';
 
 interface DefaultLayoutProps {
   children: ReactNode;
@@ -12,7 +11,7 @@ interface DefaultLayoutProps {
 
 export function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
-    <Flex sx={thinScrollbar}>
+    <>
       <ParticleBackground />
 
       <Flex
@@ -32,6 +31,6 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
           <Footer />
         </Box>
       </Flex>
-    </Flex>
+    </>
   );
 }
