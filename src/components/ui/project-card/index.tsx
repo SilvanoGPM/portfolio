@@ -50,7 +50,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
       <Image
         src={String(project.thumbnail)}
         alt={project.name}
-        w="50%"
+        w={{ base: '100%', lg: '50%' }}
+        h={{ base: '250px', lg: 'auto' }}
+        mb={{ base: '4', lg: '0' }}
         objectFit="cover"
         objectPosition="center"
         rounded="lg"
@@ -60,8 +62,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
       <VStack
         w={{ base: 'full', lg: '50%' }}
         h={{ base: '50%', lg: 'full' }}
+        ml={{ base: '0', lg: '4' }}
         align="start"
-        ml="4"
       >
         <Flex
           align="center"
@@ -70,10 +72,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
         >
           <Heading
             as="h3"
-            color="inherit"
+            color="white"
             fontSize={{ base: 'xl', md: '2xl' }}
             textTransform="uppercase"
             mr="2"
+            transition="0.2s ease-in-out"
+            _groupHover={{ color: 'brand.500' }}
           >
             {project.name}
           </Heading>

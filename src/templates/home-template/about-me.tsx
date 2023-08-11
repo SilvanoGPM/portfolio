@@ -1,5 +1,5 @@
 import { Flex, Text, Icon } from '@chakra-ui/react';
-import { RiPhoneFill } from 'react-icons/ri';
+import { AiFillPhone } from 'react-icons/ai';
 
 import { Section } from '$components/layout/section';
 import { ABOUT_ME, CONTACT } from '$shared/sections';
@@ -55,7 +55,7 @@ export function AboutMe({ text }: AboutMeProps) {
         Ficou com alguma dúvida? <br /> Entre em contato agora mesmo.
       </Text>
 
-      <ScrollButton dataScroll={CONTACT} rightIcon={<Icon as={RiPhoneFill} />}>
+      <ScrollButton dataScroll={CONTACT} rightIcon={<Icon as={AiFillPhone} />}>
         Contato
       </ScrollButton>
     </Section>

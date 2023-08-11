@@ -1,6 +1,6 @@
-import { Box, Icon, IconButton, LightMode, useBoolean } from '@chakra-ui/react';
+import { Box, Icon, IconButton, useBoolean } from '@chakra-ui/react';
 import { useEffect } from 'react';
-import { RiArrowUpCircleFill } from 'react-icons/ri';
+import { AiFillCaretUp } from 'react-icons/ai';
 
 import { debounce } from '$utils/debounce';
 
@@ -35,27 +35,26 @@ export function BackToTop() {
   }`;
 
   return (
-    <LightMode>
-      <Box
-        pos="fixed"
-        zIndex="overlay"
-        right="1rem"
-        bottom="1rem"
-        className={containerClassName}
-      >
-        <IconButton
-          w="40px"
-          h="40px"
-          aria-label="Voltar ao topo"
-          rounded="full"
-          onClick={backToTop}
-          icon={<Icon as={RiArrowUpCircleFill} fontSize="2xl" color="white" />}
-          transition="0.2s ease-in-out"
-          _hover={{
-            boxShadow: 'red',
-          }}
-        />
-      </Box>
-    </LightMode>
+    <Box
+      flexDir="column"
+      pos="fixed"
+      zIndex="overlay"
+      right="1rem"
+      bottom="1rem"
+      className={containerClassName}
+    >
+      <IconButton
+        w="40px"
+        h="40px"
+        aria-label="Voltar ao topo"
+        rounded="full"
+        onClick={backToTop}
+        icon={<Icon as={AiFillCaretUp} fontSize="2xl" color="white" />}
+        transition="0.2s ease-in-out"
+        _hover={{
+          boxShadow: 'red',
+        }}
+      />
+    </Box>
   );
 }

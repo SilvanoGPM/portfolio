@@ -1,5 +1,5 @@
 import { Text, Icon } from '@chakra-ui/react';
-import { RiRocketFill } from 'react-icons/ri';
+import { AiOutlineRocket } from 'react-icons/ai';
 
 import { Section } from '$components/layout/section';
 import { ScrollButton } from '$components/ui/scroll-button';
@@ -22,7 +22,7 @@ export function Technologies({ technologies }: TechnologiesProps) {
 
       <ScrollButton
         dataScroll={PROJECTS}
-        rightIcon={<Icon as={RiRocketFill} />}
+        rightIcon={<Icon as={AiOutlineRocket} />}
       >
         Ver projetos
       </ScrollButton>

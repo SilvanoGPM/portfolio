@@ -1,4 +1,4 @@
-import { Badge, Box, Center, HStack } from '@chakra-ui/react';
+import { Badge, Box, Center, Flex } from '@chakra-ui/react';
 
 import { Project } from '.';
 import { CategoryIcon } from './category-icon';
@@ -9,7 +9,7 @@ interface TechListProps {
 
 export function TechList({ project }: TechListProps) {
   return (
-    <HStack>
+    <Flex wrap="wrap" gap="2">
       <Badge>
         <Center>
           <CategoryIcon category={project.category} />
@@ -20,6 +20,6 @@ export function TechList({ project }: TechListProps) {
       {project.techs.map((tech) => (
         <Badge key={tech}>{tech}</Badge>
       ))}
-    </HStack>
+    </Flex>
   );
 }

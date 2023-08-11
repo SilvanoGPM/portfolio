@@ -19,14 +19,14 @@ export function PaginationItem({
       width="4"
       isDisabled={isCurrent}
       _disabled={{
-        bg: 'brand.100',
-        borderColor: 'brand.100',
+        bg: 'brand.300',
+        borderColor: 'brand.300',
         cursor: 'default',
       }}
       _hover={{
         _disabled: {
-          bg: 'brand.100',
-          borderColor: 'brand.100',
+          bg: 'brand.300',
+          borderColor: 'brand.300',
         },
       }}
     >

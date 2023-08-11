@@ -11,7 +11,7 @@ export interface Project {
   thumbnail?: { url?: string } | null;
 }
 
-const LONG_TEXT_LENGTH = 185;
+const LONG_TEXT_LENGTH = 165;
 
 export function formatProject(project: Project) {
   const descriptionIsLong =
@@ -19,7 +19,7 @@ export function formatProject(project: Project) {
 
   const description = descriptionIsLong
     ? markdownToTxt(String(project.description)).slice(0, LONG_TEXT_LENGTH) +
-      '...'
+      '... (clique para continuar lendo.)'
     : String(project.description);
 
   return {

@@ -1,7 +1,7 @@
 import { Button, Icon, useToast, VStack } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { RiSendPlane2Fill } from 'react-icons/ri';
+import { AiOutlineSend } from 'react-icons/ai';
 
 import { Input } from '$components/form/input';
 import { Textarea } from '$components/form/text-area';
@@ -87,7 +87,7 @@ export function Contact() {
           type="submit"
           w="full"
           variant="outline"
-          rightIcon={<Icon as={RiSendPlane2Fill} />}
+          rightIcon={<Icon as={AiOutlineSend} />}
         >
           Enviar
         </Button>

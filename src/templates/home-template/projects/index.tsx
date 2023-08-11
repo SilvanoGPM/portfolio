@@ -42,8 +42,9 @@ export function Projects({ projects }: ProjectsProps) {
             mt="8"
             textAlign="start"
             display="inline-block"
+            color="white"
           >
-            <Center fontSize="2xl" fontWeight="black">
+            <Center fontSize={['xl', '2xl']} fontWeight="black">
               <Text mr="2">Ver todos os projetos</Text>
               <Icon as={AiOutlineArrowRight} />
             </Center>
