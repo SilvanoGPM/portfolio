@@ -2,6 +2,7 @@ import { extendTheme } from '@chakra-ui/react';
 
 import { Button } from './components/button';
 import { Heading } from './components/heading';
+import { Badge } from './components/badge';
 import { thinScrollbar } from './tokens';
 
 export const theme = extendTheme({
@@ -11,6 +12,7 @@ export const theme = extendTheme({
   components: {
     Button,
     Heading,
+    Badge,
   },
 
   shadows: {

@@ -19,7 +19,11 @@ export function Welcome() {
         <Text fontWeight="bold">Seja bem vindo(a), meu nome é</Text>
 
         <Heading as="h1" textTransform="uppercase" fontWeight="black">
-          <Text as="span" color="brand.500">
+          <Text
+            as="span"
+            bgClip="text"
+            bgGradient="linear(to-r, brand.500, brand.200)"
+          >
             Silvano
           </Text>{' '}
           Marques

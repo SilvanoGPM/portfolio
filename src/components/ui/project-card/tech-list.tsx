@@ -1,9 +1,7 @@
-import { HStack, Tooltip } from '@chakra-ui/react';
-
-import { Tech } from '$components/ui/tech';
+import { Badge, Box, Center, HStack } from '@chakra-ui/react';
 
 import { Project } from '.';
-import { Category } from './category';
+import { CategoryIcon } from './category-icon';
 
 interface TechListProps {
   project: Project;
@@ -12,12 +10,15 @@ interface TechListProps {
 export function TechList({ project }: TechListProps) {
   return (
     <HStack>
-      <Category category={project.category} />
+      <Badge>
+        <Center>
+          <CategoryIcon category={project.category} />
+          <Box ml="2">{project.category}</Box>
+        </Center>
+      </Badge>
 
       {project.techs.map((tech) => (
-        <Tooltip key={tech} label={tech}>
-          <Tech name={tech} fontSize="2xl" />
-        </Tooltip>
+        <Badge key={tech}>{tech}</Badge>
       ))}
     </HStack>
   );

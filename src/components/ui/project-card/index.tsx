@@ -1,18 +1,19 @@
-import { Box, Center, Flex, Heading, Icon } from '@chakra-ui/react';
-import { AiFillEye } from 'react-icons/ai';
+import { Flex, Heading, Icon, Spacer, Text, VStack } from '@chakra-ui/react';
 
 import { glassmorphismContainer } from '$styles/tokens';
 import { Link } from '$components/chakra/internal-link';
 
 import { TechList } from './tech-list';
 import { Links } from './links';
-import { Thumbnail } from './thumbnail';
+import { Image } from '$components/chakra/image';
+import { AiOutlineLink } from 'react-icons/ai';
 
 export type Category = 'web' | 'mobile' | 'api' | 'other';
 
 export interface Project {
   slug: string;
   name: string;
+  description: string;
   category: Category;
   url?: string | null;
   repository?: string | null;
@@ -29,60 +30,65 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <Flex
+      role="group"
+      as={Link}
+      href={href}
+      animated={false}
+      aria-label="Saiba mais sobre este projeto"
       direction={{ base: 'column', lg: 'row' }}
-      h={{ base: '400px', lg: '250px' }}
       w="full"
-      transition="0.2s ease-in"
+      p="4"
+      borderWidth="1px"
+      borderColor="brand.alpha.100"
+      transition="0.2s ease-in-out"
+      sx={glassmorphismContainer()}
+      _hover={{
+        shadow: 'red',
+        textDecor: 'none',
+      }}
     >
-      <Thumbnail
-        href={href}
-        thumbnail={project.thumbnail}
-        name={project.name}
+      <Image
+        src={String(project.thumbnail)}
+        alt={project.name}
+        w="50%"
+        objectFit="cover"
+        objectPosition="center"
+        rounded="lg"
+        overflow="hidden"
       />
 
-      <Box
-        pos="relative"
-        w={{ base: 'full', lg: '40%' }}
+      <VStack
+        w={{ base: 'full', lg: '50%' }}
         h={{ base: '50%', lg: 'full' }}
-        px="4"
-        borderRightColor={{ base: 'none', lg: 'brand.500' }}
-        borderRightWidth={{ base: 'none', lg: '8px' }}
-        sx={glassmorphismContainer()}
+        align="start"
+        ml="4"
       >
-        <Center h="full">
+        <Flex
+          align="center"
+          transition="0.2s ease-in-out"
+          _groupHover={{ color: 'brand.500' }}
+        >
           <Heading
             as="h3"
+            color="inherit"
             fontSize={{ base: 'xl', md: '2xl' }}
             textTransform="uppercase"
-            textAlign="center"
+            mr="2"
           >
             {project.name}
           </Heading>
-        </Center>
 
-        <Box pos="absolute" left="4" bottom="4" fontSize="4xl" color="white">
-          <Links repository={project.repository} url={project.url} />
-        </Box>
+          <Icon as={AiOutlineLink} />
+        </Flex>
 
-        <Box pos="absolute" right="4" bottom="4" color="white">
-          <Link
-            href={href}
-            animated={false}
-            aria-label="Saiba mais sobre este projeto"
-          >
-            <Icon
-              as={AiFillEye}
-              fontSize="4xl"
-              transition="0.2s ease-in-out"
-              _hover={{ color: 'brand.500' }}
-            />
-          </Link>
-        </Box>
+        <Text>{project.description}</Text>
 
-        <Box pos="absolute" left="4" top="4">
-          <TechList project={project} />
-        </Box>
-      </Box>
+        <Spacer />
+
+        <TechList project={project} />
+
+        <Links repository={project.repository} url={project.url} />
+      </VStack>
     </Flex>
   );
 }

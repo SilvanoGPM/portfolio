@@ -1,4 +1,4 @@
-import { Icon } from '@chakra-ui/react';
+import { Button, HStack, Icon } from '@chakra-ui/react';
 import { AiFillGithub, AiOutlineGlobal } from 'react-icons/ai';
 
 import { ExternalLink } from '$components/chakra/external-link';
@@ -10,26 +10,26 @@ interface LinksProps {
 
 export function Links({ repository, url }: LinksProps) {
   return (
-    <>
-      {repository && (
-        <ExternalLink
-          href={repository}
-          animated={false}
-          aria-label="Repositório do projeto"
-        >
-          <Icon as={AiFillGithub} />
+    <HStack w="full">
+      {url && (
+        <ExternalLink href={url} animated={false} w="full">
+          <Button rightIcon={<Icon as={AiOutlineGlobal} />} w="full">
+            Live Preview
+          </Button>
         </ExternalLink>
       )}
 
-      {url && (
-        <ExternalLink
-          href={url}
-          animated={false}
-          aria-label="Página do projeto"
-        >
-          <Icon as={AiOutlineGlobal} />
+      {repository && (
+        <ExternalLink href={repository} animated={false} w="full">
+          <Button
+            rightIcon={<Icon as={AiFillGithub} />}
+            variant="outline"
+            w="full"
+          >
+            Repositório do projeto
+          </Button>
         </ExternalLink>
       )}
-    </>
+    </HStack>
   );
 }

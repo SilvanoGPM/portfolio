@@ -37,6 +37,11 @@ export function Card({ Icon, title, more, description }: CardProps) {
       h="300px"
       pt="4"
       sx={glassmorphismContainer()}
+      transition="0.2s ease-in-out"
+      _hover={{
+        shadow: 'red',
+        textDecor: 'none',
+      }}
     >
       <Flex px="4" direction="column">
         <Flex align="center">

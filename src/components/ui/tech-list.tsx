@@ -10,12 +10,7 @@ interface TechListProps extends FlexProps {
 
 export function TechList({ techs, ...props }: TechListProps) {
   return (
-    <Flex
-      wrap="wrap"
-      gap="1rem"
-      justify={{ base: 'space-between', lg: 'start' }}
-      {...props}
-    >
+    <Flex wrap="wrap" gap="1rem" {...props}>
       {techs.map((tech) => (
         <TechCard key={tech} name={tech} colored={!blackLogos.includes(tech)} />
       ))}

@@ -1,11 +1,14 @@
-import { FindProjectsParams, findProjects } from '$http/find-project';
 import { useQuery, UseQueryResult } from 'react-query';
+
+import { FindProjectsParams, findProjects } from '$http/find-project';
+import { formatProject } from '$utils/format-project';
 
 type Category = 'web' | 'api' | 'mobile' | 'other';
 
 interface Project {
   slug: string;
   name: string;
+  description: string;
   category: Category;
   url?: string | null;
   repository?: string | null;
@@ -24,14 +27,7 @@ export function useFindProjects(params: FindProjectsParams) {
 
   const total = oldData?._allProjectsMeta.count || 0;
 
-  const data = oldData?.allProjects.map((project) => ({
-    ...project,
-    slug: String(project.slug),
-    name: String(project.name),
-    category: project.category as Category,
-    techs: (project.techs as string[]) || [],
-    thumbnail: project.thumbnail ? String(project.thumbnail?.url) : null,
-  }));
+  const data = oldData?.allProjects.map(formatProject);
 
   return { data, total, ...rest } as UseQueryResult<Project[], unknown> & {
     total: number;

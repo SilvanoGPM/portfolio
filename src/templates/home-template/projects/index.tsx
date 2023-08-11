@@ -1,16 +1,17 @@
-import { Button, Icon, VStack } from '@chakra-ui/react';
-import NextLink from 'next/link';
-import { AiFillEye } from 'react-icons/ai';
+import { Center, Icon, Text, VStack } from '@chakra-ui/react';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 import { Section } from '$components/layout/section';
 import { PROJECTS } from '$shared/sections';
 import { ProjectCard } from '$components/ui/project-card';
+import { Link } from '$components/chakra/internal-link';
 
 export type Category = 'web' | 'mobile' | 'api' | 'other';
 
 export interface Project {
   slug: string;
   name: string;
+  description: string;
   category: Category;
   url?: string | null;
   repository?: string | null;
@@ -32,20 +33,22 @@ export function Projects({ projects }: ProjectsProps) {
           {projects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
-
-          <Button
-            size="lg"
-            maxW={{ base: '100%', lg: '40%' }}
-            w="full"
-            variant="outline"
-            alignSelf="end"
-            as={NextLink}
-            href="/projects"
-            rightIcon={<Icon as={AiFillEye} />}
-          >
-            Ver todos os projetos
-          </Button>
         </VStack>
+
+        <Center>
+          <Link
+            href="/projects"
+            animated={false}
+            mt="8"
+            textAlign="start"
+            display="inline-block"
+          >
+            <Center fontSize="2xl" fontWeight="black">
+              <Text mr="2">Ver todos os projetos</Text>
+              <Icon as={AiOutlineArrowRight} />
+            </Center>
+          </Link>
+        </Center>
       </Section>
     </>
   );

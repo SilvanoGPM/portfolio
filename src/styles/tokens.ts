@@ -69,6 +69,7 @@ export function glassmorphismContainer({
     '&': {
       backdropFilter: `blur(${blur})`,
       boxShadow: 'dark-lg',
+      rounded: 'lg',
       bg,
     },
   };

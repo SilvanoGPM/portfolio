@@ -4,8 +4,9 @@ import { NextSeo } from 'next-seo';
 import { request } from '$services/dato';
 import { HomeTemplate } from '$templates/home-template';
 import { GetInfoAndLatestProjectsDocument } from '$graphql/generated';
-import { Project, Category } from '$templates/home-template/projects';
+import { Project } from '$templates/home-template/projects';
 import { Analytics } from '$components/analytics';
+import { formatProject } from '$utils/format-project';
 
 interface InfoProps {
   aboutMe: string;
@@ -62,15 +63,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const info = data.info as InfoProps;
   const projectsRaw = data.allProjects;
 
-  const projects = projectsRaw.map((project) => ({
-    slug: String(project.slug),
-    name: String(project.name),
-    category: project.category as Category,
-    techs: (project.techs as string[]) || [],
-    repository: project.repository,
-    url: project.url,
-    thumbnail: project.thumbnail ? String(project.thumbnail?.url) : null,
-  }));
+  const projects = projectsRaw.map(formatProject);
 
   return {
     revalidate: 60 * 60 * 24 * 7, // one week

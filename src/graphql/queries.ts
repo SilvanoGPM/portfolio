@@ -15,6 +15,7 @@ export const GET_INFO_AND_LATEST_PROJECTS = gql`
     allProjects(first: $first) {
       slug
       name
+      description
       category
       url
       repository
@@ -36,6 +37,7 @@ export const FIND_PROJECTS = gql`
       slug
       name
       category
+      description
       url
       repository
       techs

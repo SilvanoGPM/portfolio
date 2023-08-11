@@ -6,7 +6,7 @@ export const Button: ComponentStyleConfig = {
   },
 
   baseStyle: {
-    rounded: 'none',
+    rounded: 'lg',
   },
 
   variants: {

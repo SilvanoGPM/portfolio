@@ -1,27 +1,11 @@
 import { ApiIcon, OtherIcon, WebIcon } from '$components/chakra/icons';
 
 export const categories = {
-  web: {
-    Icon: WebIcon,
-    color: 'teal.400',
-    text: 'Website',
-  },
+  web: WebIcon,
 
-  api: {
-    Icon: ApiIcon,
-    color: 'green.400',
-    text: 'API',
-  },
+  api: ApiIcon,
 
-  other: {
-    Icon: OtherIcon,
-    color: 'purple.700',
-    text: 'Software',
-  },
+  other: OtherIcon,
 
-  mobile: {
-    Icon: OtherIcon,
-    color: 'pink.300',
-    text: 'Aplicativo',
-  },
+  mobile: OtherIcon,
 };

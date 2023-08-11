@@ -16,13 +16,12 @@ export function TechCard({ name, colored }: TechCardProps) {
       bg="black"
       p="2"
       px="4"
-      borderBottomColor="transparent"
-      borderBottomWidth="4px"
+      borderLeftColor="brand.500"
+      borderLeftWidth="4px"
       transition="0.2s ease-in"
       color="white"
       sx={glassmorphismContainer()}
       _hover={{
-        borderColor: 'brand.500',
         boxShadow: 'red',
       }}
     >

@@ -35,6 +35,6 @@ export const options: ISourceOptions = {
     },
   },
   background: {
-    image: 'radial-gradient(#4a0000, #000)',
+    image: 'radial-gradient(#6b2222, #111111 80%)',
   },
 };
