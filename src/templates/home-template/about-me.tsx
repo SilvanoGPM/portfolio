@@ -1,7 +1,7 @@
 import { Flex, Text, Icon } from '@chakra-ui/react';
 import { RiPhoneFill } from 'react-icons/ri';
 
-import { Section } from '$components/ui/section';
+import { Section } from '$components/layout/section';
 import { ABOUT_ME, CONTACT } from '$shared/sections';
 import { ScrollButton } from '$components/ui/scroll-button';
 import { Image } from '$components/chakra/image';

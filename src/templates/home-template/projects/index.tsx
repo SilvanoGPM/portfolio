@@ -2,7 +2,7 @@ import { Button, Icon, VStack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { AiFillEye } from 'react-icons/ai';
 
-import { Section } from '$components/ui/section';
+import { Section } from '$components/layout/section';
 import { PROJECTS } from '$shared/sections';
 import { ProjectCard } from '$components/ui/project-card';
 

@@ -6,7 +6,7 @@ import { RiSendPlane2Fill } from 'react-icons/ri';
 import { Input } from '$components/form/input';
 import { Textarea } from '$components/form/text-area';
 import { glassmorphismContainer } from '$styles/tokens';
-import { Section } from '$components/ui/section';
+import { Section } from '$components/layout/section';
 import { sendEmail } from '$http/send-email';
 
 import { contactFormSchema } from './form-schema';

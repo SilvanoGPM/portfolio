@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import { Box, Flex } from '@chakra-ui/react';
 
-import { Header } from '$components/ui/header';
-import { Footer } from '$components/ui/footer';
-import { ParticleBackground } from '$components/ui/particle-background';
+import { Header } from './header';
+import { Footer } from './footer';
+import { ParticleBackground } from './particle-background';
 
 interface DefaultLayoutProps {
   children: ReactNode;

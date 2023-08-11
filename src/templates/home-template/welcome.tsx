@@ -1,7 +1,7 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
 import ReactTypingEffect from 'react-typing-effect';
 
-import { Section } from '$components/ui/section';
+import { Section } from '$components/layout/section';
 import { ABOUT_ME } from '$shared/sections';
 import { ScrollButton } from '$components/ui/scroll-button';
 import { Lottie } from '$components/ui/lottie';
