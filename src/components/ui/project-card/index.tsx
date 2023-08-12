@@ -1,12 +1,12 @@
 import { Flex, Heading, Icon, Spacer, Text, VStack } from '@chakra-ui/react';
 
 import { glassmorphismContainer } from '$styles/tokens';
-import { Link } from '$components/chakra/internal-link';
 
 import { TechList } from './tech-list';
 import { Links } from './links';
 import { Image } from '$components/chakra/image';
 import { AiOutlineLink } from 'react-icons/ai';
+import { Link } from '@chakra-ui/next-js';
 
 export type Category = 'web' | 'mobile' | 'api' | 'other';
 
@@ -33,7 +33,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
       role="group"
       as={Link}
       href={href}
-      animated={false}
       aria-label="Saiba mais sobre este projeto"
       direction={{ base: 'column', lg: 'row' }}
       w="full"

@@ -9,8 +9,6 @@ import {
   TextareaProps as ChakraTextareaProps,
 } from '@chakra-ui/react';
 
-import { glassmorphismContainer } from '$styles/tokens';
-
 interface TextareaProps extends ChakraTextareaProps {
   name: string;
   label?: string;
@@ -29,15 +27,20 @@ const TextareaBase: ForwardRefRenderFunction<
         ref={ref}
         id={name}
         name={name}
-        border="2px"
+        border="0"
+        borderBottom="1px"
         borderColor="brand.300"
         focusBorderColor="brand.500"
         borderRadius="none"
         variant="filled"
         size="lg"
-        bg="background.300"
-        _hover={{ bg: 'background.400' }}
-        sx={glassmorphismContainer()}
+        bg="transparent"
+        rounded="none"
+        _hover={{ bg: 'background.alpha.200' }}
+        _placeholder={{
+          color: 'brand.500',
+          m: 0,
+        }}
         {...props}
       />
 

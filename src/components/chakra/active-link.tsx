@@ -1,9 +1,9 @@
 import { LinkProps as ChakraLinkProps } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { Link } from '@chakra-ui/next-js';
 
 import { Replace } from '$utils/replace';
-
-import { Link } from './internal-link';
+import { linkAnimation } from '$styles/tokens';
 
 interface ActiveLinkProps extends Replace<ChakraLinkProps, { href: string }> {
   shouldMatchExactHref?: boolean;
@@ -46,6 +46,7 @@ export function ActiveLink({
       textTransform="uppercase"
       fontWeight="semibold"
       fontSize="2xl"
+      sx={linkAnimation}
     >
       {children}
     </Link>

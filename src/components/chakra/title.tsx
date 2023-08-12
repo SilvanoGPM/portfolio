@@ -17,7 +17,13 @@ export function Title({
         {children}
       </Heading>
 
-      <Box h={underlineHeight} width={underlineWidth} bg="brand.500" mb="4" />
+      <Box
+        h={underlineHeight}
+        width={underlineWidth}
+        bg="brand.500"
+        mb="4"
+        mx={props.textAlign === 'center' ? 'auto' : '0'}
+      />
     </>
   );
 }

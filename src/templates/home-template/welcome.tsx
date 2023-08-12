@@ -7,6 +7,8 @@ import { ScrollButton } from '$components/ui/scroll-button';
 import { Lottie } from '$components/ui/lottie';
 import devAnimation from '$assets/lottie/dev.json';
 
+import styles from './welcome.module.css';
+
 export function Welcome() {
   return (
     <Section
@@ -22,7 +24,8 @@ export function Welcome() {
           <Text
             as="span"
             bgClip="text"
-            bgGradient="linear(to-r, brand.500, brand.200)"
+            bgGradient="linear(to-r, brand.500, brand.900)"
+            className={styles.animatedGradientText}
           >
             Silvano
           </Text>{' '}

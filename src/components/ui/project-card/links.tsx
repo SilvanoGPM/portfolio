@@ -14,7 +14,7 @@ export function Links({ repository, url }: LinksProps) {
       {url && (
         <ExternalLink href={url} animated={false} w="full">
           <Button rightIcon={<Icon as={AiOutlineGlobal} />} w="full">
-            Live Preview
+            Visitar Site
           </Button>
         </ExternalLink>
       )}

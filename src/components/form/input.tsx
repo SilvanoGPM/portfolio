@@ -7,37 +7,40 @@ import {
   FormLabel,
   Input as ChakraInput,
   InputProps as ChakraInputProps,
+  FormControlProps,
 } from '@chakra-ui/react';
-
-import { glassmorphismContainer } from '$styles/tokens';
 
 interface InputProps extends ChakraInputProps {
   name: string;
   label?: string;
   error?: FieldError;
+  formControlProps?: FormControlProps;
 }
 
 const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  { name, label, error, ...props },
+  { name, label, error, formControlProps, ...props },
   ref,
 ) => {
   return (
-    <FormControl isInvalid={Boolean(error)}>
+    <FormControl flex="1" {...formControlProps} isInvalid={Boolean(error)}>
       {Boolean(label) && <FormLabel htmlFor={name}>{label}</FormLabel>}
 
       <ChakraInput
         ref={ref}
         id={name}
         name={name}
-        borderRadius="none"
-        border="2px"
+        borderWidth="0"
+        borderBottom="1px"
         borderColor="brand.300"
         focusBorderColor="brand.700"
         variant="filled"
-        size="lg"
-        bg="background.300"
-        _hover={{ bg: 'background.400' }}
-        sx={glassmorphismContainer()}
+        bg="transparent"
+        rounded="none"
+        _hover={{ bg: 'background.alpha.200' }}
+        _placeholder={{
+          color: 'brand.500',
+          m: 0,
+        }}
         {...props}
       />
 

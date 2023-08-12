@@ -1,8 +1,8 @@
 import { Box, Flex, Icon, Tooltip, IconButton } from '@chakra-ui/react';
 import { AiFillEye, AiOutlineClockCircle } from 'react-icons/ai';
+import { Link } from '@chakra-ui/next-js';
 
 import { ExternalLink } from '$components/chakra/external-link';
-import { Link } from '$components/chakra/internal-link';
 import { glassmorphismContainer } from '$styles/tokens';
 import tabnewsImg from '$assets/tabnews.png';
 import { Image } from '$components/chakra/image';
@@ -66,7 +66,6 @@ export function Card({ post }: CardProps) {
           href={link}
           key={post.slug}
           fontSize={['xl', '2xl', '3xl', '3xl', '4xl']}
-          animated={false}
           aria-label="Saiba mais sobre este post"
         >
           {post.title}
@@ -74,11 +73,7 @@ export function Card({ post }: CardProps) {
       </Flex>
 
       <Box w={{ base: 'full', md: '20%' }} h="full">
-        <Link
-          href={link}
-          animated={false}
-          aria-label="Saiba mais sobre este post"
-        >
+        <Link href={link} aria-label="Saiba mais sobre este post">
           <IconButton
             w="full"
             h="full"

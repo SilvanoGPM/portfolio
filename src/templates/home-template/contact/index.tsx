@@ -1,4 +1,4 @@
-import { Button, Icon, useToast, VStack } from '@chakra-ui/react';
+import { Button, Icon, useToast, VStack, Text, Flex } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { AiOutlineSend } from 'react-icons/ai';
@@ -55,37 +55,46 @@ export function Contact() {
   });
 
   return (
-    <Section title="Contato" w="full" dataScroll={CONTACT}>
-      <VStack
-        as="form"
-        onSubmit={handleContact}
-        spacing="8"
-        p="8"
-        w="full"
-        sx={glassmorphismContainer({ bg: 'background.alpha.500' })}
-      >
-        <Input
-          {...register('email')}
-          label="E-mail"
-          error={formState.errors.email}
-        />
+    <Section
+      title="Contato"
+      w="full"
+      dataScroll={CONTACT}
+      p="8"
+      textAlign="center"
+      sx={glassmorphismContainer({ bg: 'background.alpha.500' })}
+    >
+      <Text mb="8" maxW="600px" fontWeight="bold" mx="auto">
+        Vamos criar algo incrível juntos, estou aqui para transformar suas
+        ideias em código. Acesse minhas redes no canto superior ou me envie um
+        E-mail.
+      </Text>
 
-        <Input
-          {...register('name')}
-          label="Nome"
-          error={formState.errors.name}
-        />
+      <VStack as="form" onSubmit={handleContact} spacing="4" w="full">
+        <Flex wrap="wrap" gap="2" w="full">
+          <Input
+            {...register('name')}
+            placeholder="Nome *"
+            error={formState.errors.name}
+          />
+
+          <Input
+            {...register('email')}
+            placeholder="E-mail *"
+            error={formState.errors.email}
+          />
+        </Flex>
 
         <Textarea
           {...register('message')}
           id="message"
-          label="Mensagem"
+          placeholder="Mensagem *"
           error={formState.errors.message}
         />
 
         <Button
           type="submit"
           w="full"
+          size="lg"
           variant="outline"
           rightIcon={<Icon as={AiOutlineSend} />}
         >

@@ -1,10 +1,10 @@
 import { Center, Icon, Text, VStack } from '@chakra-ui/react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import { Link } from '@chakra-ui/next-js';
 
 import { Section } from '$components/layout/section';
 import { PROJECTS } from '$shared/sections';
 import { ProjectCard } from '$components/ui/project-card';
-import { Link } from '$components/chakra/internal-link';
 
 export type Category = 'web' | 'mobile' | 'api' | 'other';
 
@@ -38,7 +38,6 @@ export function Projects({ projects }: ProjectsProps) {
         <Center>
           <Link
             href="/projects"
-            animated={false}
             mt="8"
             textAlign="start"
             display="inline-block"

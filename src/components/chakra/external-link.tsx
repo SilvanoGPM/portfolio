@@ -15,7 +15,7 @@ export function ExternalLink({
     <Link
       _hover={{ color: 'brand.500' }}
       transition="0.2s ease-in-out"
-      target="_blank"
+      isExternal
       sx={animated ? linkAnimation : props.sx}
       {...props}
     >

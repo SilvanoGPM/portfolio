@@ -10,8 +10,6 @@ interface NameProps {
 }
 
 export function Name({ project }: NameProps) {
-  console.log(project);
-
   return (
     <Flex align="center" gap="1rem">
       <Box mb="-4">

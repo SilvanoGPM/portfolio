@@ -16,6 +16,8 @@ export function Thumbnail({ project }: ThumbnailProps) {
     >
       <Image
         mt="4"
+        roundedTop="lg"
+        overflow="hidden"
         src={String(project.thumbnail)}
         alt={project.name}
         objectFit="cover"

@@ -13,7 +13,8 @@
     "analyze": "cross-env ANALYZE=true npm run build"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.4.6",
+    "@chakra-ui/next-js": "^2.1.5",
+    "@chakra-ui/react": "^2.8.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@graphql-codegen/cli": "^2.16.3",

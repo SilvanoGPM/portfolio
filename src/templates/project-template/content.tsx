@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 import { TechList } from '$components/ui/tech-list';
 import { Links } from '$components/ui/project-card/links';
@@ -16,25 +16,30 @@ interface ContentProps {
 export function Content({ project }: ContentProps) {
   return (
     <Box p={['4', '8']} sx={glassmorphismContainer()}>
-      <Flex
-        w="full"
-        direction={{ base: 'column-reverse', md: 'row' }}
-        justify={{ base: 'center', md: 'space-between' }}
-        align={{ base: 'center', md: 'space-between' }}
-      >
-        <TechList techs={project.techs} />
+      <Title as="h2" fontSize="2xl" underlineWidth="35px">
+        Links
+      </Title>
 
-        <Flex fontSize="6xl" align="center">
-          <Links url={project.url} repository={project.repository} />
-        </Flex>
-      </Flex>
+      <Links url={project.url} repository={project.repository} />
 
-      <Markdown mt="8" textAlign="justify">
-        {project.description}
-      </Markdown>
+      <Box mt="8">
+        <Title as="h2" fontSize="2xl" underlineWidth="100px">
+          Descrição
+        </Title>
+
+        <Markdown textAlign="justify">{project.description}</Markdown>
+      </Box>
+
+      <Box mt="8">
+        <Title as="h2" fontSize="2xl" underlineWidth="100px">
+          Tecnologias
+        </Title>
+
+        <TechList techs={project.techs} mb="8" />
+      </Box>
 
       <Box
-        mt="16"
+        mt="8"
         sx={{
           '.utterances': {
             maxWidth: '100%',
