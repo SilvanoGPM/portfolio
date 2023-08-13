@@ -45,6 +45,7 @@
     "react-typing-effect": "^2.0.5",
     "rehype-raw": "^6.1.1",
     "sharp": "^0.31.3",
+    "swiper": "^8.1.4",
     "tsparticles": "^2.7.1",
     "yup": "^0.32.11",
     "zustand": "^4.2.0"

@@ -1,35 +1,45 @@
-import { Button, Flex, Icon } from '@chakra-ui/react';
+import { Button, FlexProps, Icon, Wrap, WrapItem } from '@chakra-ui/react';
 import { AiFillGithub, AiOutlineGlobal } from 'react-icons/ai';
 
 import { ExternalLink } from '$components/chakra/external-link';
 
-interface LinksProps {
+interface LinksProps extends FlexProps {
   repository?: string | null;
   url?: string | null;
 }
 
-export function Links({ repository, url }: LinksProps) {
+export function Links({ repository, url, ...props }: LinksProps) {
   return (
-    <Flex gap="2" w="full" wrap="wrap">
+    <Wrap w="full" {...props}>
       {url && (
-        <ExternalLink href={url} animated={false} w="full">
-          <Button rightIcon={<Icon as={AiOutlineGlobal} />} w="full">
+        <WrapItem flex="1">
+          <Button
+            as={ExternalLink}
+            href={url}
+            animated={false}
+            rightIcon={<Icon as={AiOutlineGlobal} />}
+            variant="outline"
+            w="full"
+          >
             Visitar Site
           </Button>
-        </ExternalLink>
+        </WrapItem>
       )}
 
       {repository && (
-        <ExternalLink href={repository} animated={false} w="full">
+        <WrapItem flex="1">
           <Button
+            as={ExternalLink}
+            href={repository}
+            animated={false}
             rightIcon={<Icon as={AiFillGithub} />}
             variant="outline"
             w="full"
           >
             Repositório do projeto
           </Button>
-        </ExternalLink>
+        </WrapItem>
       )}
-    </Flex>
+    </Wrap>
   );
 }

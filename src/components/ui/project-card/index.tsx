@@ -1,11 +1,19 @@
-import { Flex, Heading, Icon, Spacer, Text, VStack } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Heading,
+  Icon,
+  Spacer,
+  Text,
+  VStack,
+} from '@chakra-ui/react';
 
 import { glassmorphismContainer } from '$styles/tokens';
 
 import { TechList } from './tech-list';
 import { Links } from './links';
 import { Image } from '$components/chakra/image';
-import { AiOutlineLink } from 'react-icons/ai';
+import { AiOutlineArrowRight, AiOutlineLink } from 'react-icons/ai';
 import { Link } from '@chakra-ui/next-js';
 
 export type Category = 'web' | 'mobile' | 'api' | 'other';
@@ -30,9 +38,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <Flex
-      role="group"
-      as={Link}
-      href={href}
+      pos="relative"
+      zIndex="1"
+      textAlign="start"
       aria-label="Saiba mais sobre este projeto"
       direction={{ base: 'column', lg: 'row' }}
       w="full"
@@ -69,17 +77,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
           transition="0.2s ease-in-out"
           _groupHover={{ color: 'brand.500' }}
         >
-          <Heading
-            as="h3"
-            color="white"
-            fontSize={{ base: 'xl', md: '2xl' }}
-            textTransform="uppercase"
-            mr="2"
-            transition="0.2s ease-in-out"
-            _groupHover={{ color: 'brand.500' }}
-          >
-            {project.name}
-          </Heading>
+          <Link href={href}>
+            <Heading
+              as="h3"
+              color="white"
+              fontSize={{ base: 'xl', md: '2xl' }}
+              textTransform="uppercase"
+              mr="2"
+              transition="0.2s ease-in-out"
+              _groupHover={{ color: 'brand.500' }}
+            >
+              {project.name}
+            </Heading>
+          </Link>
 
           <Icon as={AiOutlineLink} />
         </Flex>
@@ -89,6 +99,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <Spacer />
 
         <TechList project={project} />
+
+        <Button
+          as={Link}
+          href={href}
+          rightIcon={<Icon as={AiOutlineArrowRight} />}
+          w="full"
+        >
+          Ver projeto
+        </Button>
 
         <Links repository={project.repository} url={project.url} />
       </VStack>

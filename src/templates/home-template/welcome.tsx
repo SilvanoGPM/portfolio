@@ -44,7 +44,7 @@ export function Welcome() {
         speed={0.5}
         animation={devAnimation}
         transform="auto"
-        translateX={['-30px', '-30px', '40px']}
+        translateX={['0', '0', '40px']}
       />
     </Section>
   );

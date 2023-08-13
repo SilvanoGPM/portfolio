@@ -2,7 +2,6 @@ import { Box } from '@chakra-ui/react';
 
 import { TechList } from '$components/ui/tech-list';
 import { Links } from '$components/ui/project-card/links';
-import { glassmorphismContainer } from '$styles/tokens';
 import { Markdown } from '$components/ui/markdown';
 import { Comments } from '$components/ui/comments';
 
@@ -15,7 +14,7 @@ interface ContentProps {
 
 export function Content({ project }: ContentProps) {
   return (
-    <Box p={['4', '8']} sx={glassmorphismContainer()}>
+    <Box mt="4">
       <Title as="h2" fontSize="2xl" underlineWidth="35px">
         Links
       </Title>

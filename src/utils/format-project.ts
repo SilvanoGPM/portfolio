@@ -19,7 +19,7 @@ export function formatProject(project: Project) {
 
   const description = descriptionIsLong
     ? markdownToTxt(String(project.description)).slice(0, LONG_TEXT_LENGTH) +
-      '... (clique para continuar lendo.)'
+      '...'
     : String(project.description);
 
   return {

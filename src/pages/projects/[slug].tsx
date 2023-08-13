@@ -68,6 +68,9 @@ export const getStaticProps: GetStaticProps<ProjectTemplateProps> = async ({
     thumbnail: data.project.thumbnail
       ? String(data.project.thumbnail?.url)
       : null,
+    images: data.project.images
+      ? data.project.images.map((image) => image?.url || '')
+      : [],
   };
 
   return {

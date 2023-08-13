@@ -30,8 +30,8 @@ export function Card({ Icon, title, more, description }: CardProps) {
     <Flex
       role="group"
       cursor="pointer"
+      textAlign="start"
       flex="1"
-      display="flex"
       minW="250px"
       direction="column"
       h="300px"

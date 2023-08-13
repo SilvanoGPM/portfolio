@@ -1,4 +1,4 @@
-import { Badge, Box, Center } from '@chakra-ui/react';
+import { Badge, Box } from '@chakra-ui/react';
 import { Category } from '.';
 import { categories } from './categories';
 
@@ -10,11 +10,9 @@ export function CategoryBadge({ category }: CategoryProps) {
   const { icon: CategoryIcon, name } = categories[category];
 
   return (
-    <Badge>
-      <Center>
-        <CategoryIcon />
-        <Box ml="2">{name}</Box>
-      </Center>
+    <Badge display="flex" gap="1" alignItems="center">
+      <CategoryIcon />
+      <Box m="0">{name}</Box>
     </Badge>
   );
 }

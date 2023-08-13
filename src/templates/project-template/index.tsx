@@ -2,9 +2,10 @@ import { Box } from '@chakra-ui/react';
 
 import { DefaultLayout } from '$components/layout/default-layout';
 
-import { Thumbnail } from './thumbnail';
+import { ProjectSlider } from './project-slider';
 import { Name } from './name';
 import { Content } from './content';
+import { glassmorphismContainer } from '$styles/tokens';
 
 export type Category = 'web' | 'mobile' | 'api' | 'other';
 
@@ -16,6 +17,7 @@ export interface Project {
   repository?: string | null;
   techs: string[];
   thumbnail?: string | null;
+  images?: string[];
 }
 
 export interface ProjectTemplateProps {
@@ -25,10 +27,16 @@ export interface ProjectTemplateProps {
 export function ProjectTemplate({ project }: ProjectTemplateProps) {
   return (
     <DefaultLayout>
-      <Box as="main" mt="8" w="full">
+      <Box
+        as="main"
+        mt="8"
+        w="full"
+        p={['4', '8']}
+        sx={glassmorphismContainer()}
+      >
         <Name project={project} />
 
-        <Thumbnail project={project} />
+        <ProjectSlider project={project} />
 
         <Content project={project} />
       </Box>

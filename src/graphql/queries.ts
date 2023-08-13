@@ -60,6 +60,9 @@ export const GET_PROJECT = gql`
       category
       repository
       url
+      images {
+        url
+      }
       thumbnail {
         url
       }

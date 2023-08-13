@@ -38,13 +38,7 @@ export function Projects({ projects }: ProjectsProps) {
         ))}
       </VStack>
 
-      <Link
-        href="/projects"
-        mt="8"
-        textAlign="start"
-        display="inline-block"
-        color="white"
-      >
+      <Link href="/projects" mt="8" color="white">
         <Flex
           as={Text}
           fontSize={['xl', '2xl']}
