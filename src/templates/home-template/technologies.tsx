@@ -12,8 +12,8 @@ export interface TechnologiesProps {
 
 export function Technologies({ technologies }: TechnologiesProps) {
   return (
-    <Section title="Tecnologias">
-      <TechList techs={technologies} w="full" />
+    <Section title="Tecnologias" textAlign="center" align="center">
+      <TechList techs={technologies} w="full" justify="center" />
 
       <Text mt="10" maxW="400px">
         Você pode ver os projetos que eu desenvolvi utilizando algumas dessas
@@ -23,6 +23,8 @@ export function Technologies({ technologies }: TechnologiesProps) {
       <ScrollButton
         dataScroll={PROJECTS}
         rightIcon={<Icon as={AiOutlineRocket} />}
+        maxW="400px"
+        w="full"
       >
         Ver projetos
       </ScrollButton>

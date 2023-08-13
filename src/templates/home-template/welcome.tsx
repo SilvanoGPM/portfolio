@@ -5,9 +5,8 @@ import { Section } from '$components/layout/section';
 import { ABOUT_ME } from '$shared/sections';
 import { ScrollButton } from '$components/ui/scroll-button';
 import { Lottie } from '$components/ui/lottie';
+import { ShineText } from '$components/chakra/shine-text';
 import devAnimation from '$assets/lottie/dev.json';
-
-import styles from './welcome.module.css';
 
 export function Welcome() {
   return (
@@ -21,14 +20,9 @@ export function Welcome() {
         <Text fontWeight="bold">Seja bem vindo(a), meu nome é</Text>
 
         <Heading as="h1" textTransform="uppercase" fontWeight="black">
-          <Text
-            as="span"
-            bgClip="text"
-            bgGradient="linear(to-r, brand.500, brand.900)"
-            className={styles.animatedGradientText}
-          >
+          <ShineText as="span" bgGradient="linear(to-r, brand.500, brand.900)">
             Silvano
-          </Text>{' '}
+          </ShineText>{' '}
           Marques
         </Heading>
 
@@ -46,9 +40,12 @@ export function Welcome() {
         <ScrollButton dataScroll={ABOUT_ME}>Mais sobre mim 😃</ScrollButton>
       </Box>
 
-      <Box maxH="400px">
-        <Lottie speed={0.5} animation={devAnimation} />
-      </Box>
+      <Lottie
+        speed={0.5}
+        animation={devAnimation}
+        transform="auto"
+        translateX={['-30px', '-30px', '40px']}
+      />
     </Section>
   );
 }

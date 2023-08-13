@@ -1,4 +1,4 @@
-import { Flex, FlexProps } from '@chakra-ui/react';
+import { FlexProps, Wrap, WrapItem } from '@chakra-ui/react';
 
 import { TechCard } from './tech-card';
 
@@ -10,10 +10,12 @@ interface TechListProps extends FlexProps {
 
 export function TechList({ techs, ...props }: TechListProps) {
   return (
-    <Flex wrap="wrap" gap="1rem" {...props}>
+    <Wrap align="stretch" {...props}>
       {techs.map((tech) => (
-        <TechCard key={tech} name={tech} colored={!blackLogos.includes(tech)} />
+        <WrapItem key={tech}>
+          <TechCard name={tech} colored={!blackLogos.includes(tech)} />
+        </WrapItem>
       ))}
-    </Flex>
+    </Wrap>
   );
 }

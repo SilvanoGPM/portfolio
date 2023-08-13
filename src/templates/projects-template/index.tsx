@@ -10,6 +10,13 @@ import { FilterOptions } from '$components/ui/filter-options';
 import { useFindProjects } from './use-find-projects';
 import { DataList } from '$components/ui/data-list';
 
+import {
+  ApiIcon,
+  MobileIcon,
+  OtherIcon,
+  WebIcon,
+} from '$components/chakra/icons';
+
 export type Category = 'all' | 'web' | 'api' | 'mobile' | 'other';
 
 export function ProjectsTemplate() {
@@ -32,10 +39,10 @@ export function ProjectsTemplate() {
       <FilterOptions
         buttons={[
           { value: 'all', label: 'Todos' },
-          { value: 'web', label: 'Sites' },
-          { value: 'api', label: 'APIs' },
-          { value: 'mobile', label: 'Aplicativos' },
-          { value: 'other', label: 'Outros' },
+          { value: 'web', label: 'Sites', icon: <WebIcon /> },
+          { value: 'api', label: 'APIs', icon: <ApiIcon /> },
+          { value: 'mobile', label: 'Aplicativos', icon: <MobileIcon /> },
+          { value: 'other', label: 'Outros', icon: <OtherIcon /> },
         ]}
         value={category}
         setValue={handleChangeCategory}

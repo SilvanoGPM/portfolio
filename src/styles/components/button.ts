@@ -13,7 +13,7 @@ export const Button: ComponentStyleConfig = {
     outline: {
       bg: 'brand.alpha.100',
       borderColor: 'brand.alpha.300',
-      color: 'brand.500',
+      color: 'white',
       fontWeight: '600',
 
       _hover: {

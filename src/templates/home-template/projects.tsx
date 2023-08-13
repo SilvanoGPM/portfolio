@@ -25,7 +25,13 @@ export interface ProjectsProps {
 
 export function Projects({ projects }: ProjectsProps) {
   return (
-    <Section title="Projetos" dataScroll={PROJECTS} scrollMarginTop="120px">
+    <Section
+      title="Projetos"
+      dataScroll={PROJECTS}
+      scrollMarginTop="120px"
+      textAlign="center"
+      align="center"
+    >
       <VStack spacing="8">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />

@@ -7,8 +7,8 @@ interface SubTitleProps extends HeadingProps {
 
 export function Title({
   children,
-  underlineWidth = '150px',
-  underlineHeight = '1',
+  underlineWidth = '50px',
+  underlineHeight = '5px',
   ...props
 }: SubTitleProps) {
   return (
@@ -21,7 +21,9 @@ export function Title({
         h={underlineHeight}
         width={underlineWidth}
         bg="brand.500"
+        rounded="3xl"
         mb="4"
+        mt="2"
         mx={props.textAlign === 'center' ? 'auto' : '0'}
       />
     </>

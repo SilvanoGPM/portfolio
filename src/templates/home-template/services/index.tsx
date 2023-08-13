@@ -13,7 +13,7 @@ interface ServicesProps {
 
 export function Services({ api, web, other }: ServicesProps) {
   return (
-    <Section title="Serviços">
+    <Section title="Serviços" align="center" textAlign="center">
       <Flex
         align="center"
         justify={{ base: 'center', md: 'space-between' }}

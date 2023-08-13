@@ -27,7 +27,6 @@ export function ScrollButton({
       size="lg"
       maxW="400px"
       mt="2"
-      variant="outline"
       colorScheme="brand"
       onClick={handleScroll}
       {...props}

@@ -16,8 +16,7 @@ export function TechCard({ name, colored }: TechCardProps) {
       bg="black"
       p="2"
       px="4"
-      borderLeftColor="brand.500"
-      borderLeftWidth="4px"
+      h="60px"
       transition="0.2s ease-in"
       color="white"
       sx={glassmorphismContainer()}

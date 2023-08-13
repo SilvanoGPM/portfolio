@@ -1,11 +1,28 @@
-import { ApiIcon, OtherIcon, WebIcon } from '$components/chakra/icons';
+import {
+  ApiIcon,
+  MobileIcon,
+  OtherIcon,
+  WebIcon,
+} from '$components/chakra/icons';
 
 export const categories = {
-  web: WebIcon,
+  web: {
+    icon: WebIcon,
+    name: 'Site',
+  },
 
-  api: ApiIcon,
+  api: {
+    icon: ApiIcon,
+    name: 'API',
+  },
 
-  other: OtherIcon,
+  other: {
+    icon: OtherIcon,
+    name: 'Software',
+  },
 
-  mobile: OtherIcon,
+  mobile: {
+    icon: MobileIcon,
+    name: 'Aplicativo',
+  },
 };

@@ -1,7 +1,7 @@
 import { Badge, Box, Center, Flex } from '@chakra-ui/react';
 
 import { Title } from '$components/chakra/title';
-import { CategoryIcon } from '$components/ui/project-card/category-icon';
+import { CategoryBadge } from '$components/ui/project-card/category-badge';
 
 import { Project } from '.';
 
@@ -18,7 +18,7 @@ export function Name({ project }: NameProps) {
 
       <Badge>
         <Center>
-          <CategoryIcon category={project.category} />
+          <CategoryBadge category={project.category} />
           <Box ml="2">{project.category}</Box>
         </Center>
       </Badge>
