@@ -1,10 +1,14 @@
 import { POSTS_PER_PAGE } from '$shared/pagination';
 
 import { formatDate } from '$utils/date-format';
+import markdownToTxt from 'markdown-to-txt';
+
+import { getPost } from './get-post';
 
 interface Post {
   id: string;
   title: string;
+  description: string;
   slug: string;
   createdAt: string;
 }
@@ -27,12 +31,21 @@ function mapData(data?: RawPost[]) {
   return (
     data
       ?.filter((post) => post.parent_id === null)
-      .map<Post>((post) => ({
-        ...post,
-        title: String(post.title),
-        slug: String(post.slug),
-        createdAt: formatDate(new Date(post.created_at)),
-      })) || []
+      .map<Promise<Post>>(async (post) => {
+        const foundPost = await getPost(post.slug);
+
+        const description =
+          markdownToTxt(String(foundPost.content)).slice(0, 190) +
+          '... (clique no título para continuar lendo.)';
+
+        return {
+          ...post,
+          title: String(post.title),
+          description,
+          slug: String(post.slug),
+          createdAt: formatDate(new Date(post.created_at)),
+        };
+      }) || []
   );
 }
 
@@ -49,5 +62,5 @@ export async function findPosts({
   const response = await fetch(url);
   const data = await response.json();
 
-  return mapData(data);
+  return Promise.all(mapData(data));
 }

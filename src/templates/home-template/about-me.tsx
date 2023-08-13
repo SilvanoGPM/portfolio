@@ -15,7 +15,7 @@ interface AboutMeProps {
 
 export function AboutMe({ text }: AboutMeProps) {
   return (
-    <Section title="Sobre mim" dataScroll={ABOUT_ME}>
+    <Section title="Sobre mim" dataScroll={ABOUT_ME} scrollMarginTop="120px">
       <Flex
         wrap="wrap"
         w="full"

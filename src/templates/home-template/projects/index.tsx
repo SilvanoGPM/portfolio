@@ -1,4 +1,4 @@
-import { Center, Icon, Text, VStack } from '@chakra-ui/react';
+import { Flex, Icon, Text, VStack } from '@chakra-ui/react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from '@chakra-ui/next-js';
 
@@ -25,31 +25,31 @@ export interface ProjectsProps {
 
 export function Projects({ projects }: ProjectsProps) {
   return (
-    <>
-      <div data-scroll={PROJECTS} />
+    <Section title="Projetos" dataScroll={PROJECTS} scrollMarginTop="120px">
+      <VStack spacing="8">
+        {projects.map((project) => (
+          <ProjectCard key={project.slug} project={project} />
+        ))}
+      </VStack>
 
-      <Section title="Projetos">
-        <VStack spacing="8">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </VStack>
-
-        <Center>
-          <Link
-            href="/projects"
-            mt="8"
-            textAlign="start"
-            display="inline-block"
-            color="white"
-          >
-            <Center fontSize={['xl', '2xl']} fontWeight="black">
-              <Text mr="2">Ver todos os projetos</Text>
-              <Icon as={AiOutlineArrowRight} />
-            </Center>
-          </Link>
-        </Center>
-      </Section>
-    </>
+      <Link
+        href="/projects"
+        mt="8"
+        textAlign="start"
+        display="inline-block"
+        color="white"
+      >
+        <Flex
+          as={Text}
+          fontSize={['xl', '2xl']}
+          fontWeight="bold"
+          align="center"
+          gap="1"
+          mr="2"
+        >
+          Ver todos os projetos <Icon as={AiOutlineArrowRight} />
+        </Flex>
+      </Link>
+    </Section>
   );
 }

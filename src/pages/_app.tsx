@@ -28,10 +28,11 @@ function App({ Component, pageProps }: AppProps) {
 
   const { unlockScroll } = useScrollLock();
 
-  const { closeSidebar } = useUIStore();
+  const { closeSidebar, setHeaderInTop } = useUIStore();
 
   Router.events.on('routeChangeComplete', () => {
     unlockScroll();
+    setHeaderInTop(true);
     closeSidebar();
   });
 

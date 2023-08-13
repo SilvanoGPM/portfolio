@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, Tooltip, IconButton } from '@chakra-ui/react';
+import { Box, Flex, Icon, Tooltip, Text, Button } from '@chakra-ui/react';
 import { AiFillEye, AiOutlineClockCircle } from 'react-icons/ai';
 import { Link } from '@chakra-ui/next-js';
 
@@ -7,9 +7,10 @@ import { glassmorphismContainer } from '$styles/tokens';
 import tabnewsImg from '$assets/tabnews.png';
 import { Image } from '$components/chakra/image';
 
-interface Post {
+export interface Post {
   id: string;
   title: string;
+  description: string;
   slug: string;
   createdAt: string;
 }
@@ -23,24 +24,18 @@ export function Card({ post }: CardProps) {
 
   return (
     <Flex
-      w="full"
-      align="stretch"
-      h={{ base: 'auto', md: '300px' }}
-      direction={{ base: 'column', md: 'row' }}
-      borderBottom="8px"
-      borderBottomColor="brand.500"
-      color="white"
+      maxW="400px"
+      minH="400px"
+      direction="column"
+      overflow="hidden"
+      transition="0.2s ease-in-out"
       sx={glassmorphismContainer()}
+      _hover={{
+        boxShadow: 'red',
+      }}
     >
-      <Flex
-        flex="1"
-        p="8"
-        align="start"
-        justify="space-between"
-        gap="0.5rem"
-        direction="column"
-      >
-        <Flex gap="0.5rem">
+      <Flex flex="1" p="4" align="start" gap="0.5rem" direction="column">
+        <Flex gap="0.5rem" color="white">
           <ExternalLink
             href={`https://www.tabnews.com.br/silvanomarques/${post.slug}`}
             animated={false}
@@ -55,7 +50,7 @@ export function Card({ post }: CardProps) {
             />
           </ExternalLink>
 
-          <Tooltip label={post.createdAt} hasArrow>
+          <Tooltip label={post.createdAt} hasArrow bg="brand.500" color="white">
             <Box>
               <Icon as={AiOutlineClockCircle} fontSize="4xl" />
             </Box>
@@ -65,24 +60,22 @@ export function Card({ post }: CardProps) {
         <Link
           href={link}
           key={post.slug}
-          fontSize={['xl', '2xl', '3xl', '3xl', '4xl']}
+          fontSize={['xl', '2xl']}
+          fontWeight="bold"
+          color="white"
           aria-label="Saiba mais sobre este post"
         >
           {post.title}
         </Link>
+
+        <Text>{post.description}</Text>
       </Flex>
 
-      <Box w={{ base: 'full', md: '20%' }} h="full">
-        <Link href={link} aria-label="Saiba mais sobre este post">
-          <IconButton
-            w="full"
-            h="full"
-            fontSize="4xl"
-            aria-label="Visualizar post"
-            icon={<Icon as={AiFillEye} />}
-          />
-        </Link>
-      </Box>
+      <Link href={link} aria-label="Saiba mais sobre este post" w="full">
+        <Button rightIcon={<Icon as={AiFillEye} />} w="full">
+          Visualizar post
+        </Button>
+      </Link>
     </Flex>
   );
 }

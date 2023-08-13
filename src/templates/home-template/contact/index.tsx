@@ -57,8 +57,9 @@ export function Contact() {
   return (
     <Section
       title="Contato"
-      w="full"
       dataScroll={CONTACT}
+      scrollMarginTop="150px"
+      w="full"
       p="8"
       textAlign="center"
       sx={glassmorphismContainer({ bg: 'background.alpha.500' })}

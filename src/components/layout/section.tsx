@@ -18,9 +18,13 @@ export function Section({
 }: SectionProps) {
   return (
     <>
-      {dataScroll && <div data-scroll={dataScroll} />}
-
-      <Flex w="full" as="section" direction="column" {...props}>
+      <Flex
+        data-scroll={dataScroll}
+        w="full"
+        as="section"
+        direction="column"
+        {...props}
+      >
         {title && (
           <Title textAlign={props.textAlign} underlineHeight={underlineHeight}>
             {title}

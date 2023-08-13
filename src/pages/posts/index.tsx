@@ -1,9 +1,11 @@
 import Head from 'next/head';
 
-import { PostsTemplate } from '$templates/posts-template';
+import { PostsTemplate, PostsTemplateProps } from '$templates/posts-template';
 import { Analytics } from '$components/analytics';
+import { GetStaticProps } from 'next';
+import { findPosts } from '$http/find-posts';
 
-export default function Posts() {
+export default function Posts(props: PostsTemplateProps) {
   return (
     <>
       <Head>
@@ -12,7 +14,22 @@ export default function Posts() {
 
       <Analytics />
 
-      <PostsTemplate />
+      <PostsTemplate {...props} />
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<PostsTemplateProps> = async () => {
+  const posts = await findPosts({
+    page: 1,
+    size: 100,
+    strategy: 'new',
+  });
+
+  return {
+    revalidate: 60 * 60 * 24, // one day
+    props: {
+      posts,
+    },
+  };
+};
