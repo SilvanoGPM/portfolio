@@ -3,12 +3,12 @@ import { Box, Center, Flex, useEventListener } from '@chakra-ui/react';
 import { glassmorphismContainer } from '$styles/tokens';
 import { useUIStore } from '$stores/ui';
 import { useScreenVersion } from '$hooks/use-screen-version';
+import { throttle } from '$utils/throttle';
 
 import { Content } from './content';
 import { SidebarButtons } from './sidebar-buttons';
-import { debounce } from '$utils/debounce';
 
-const ON_SCROLL_DEBOUNCE_MILLIS = 50;
+const ON_SCROLL_THROTTLE_MILLIS = 200;
 const MIN_HEIGHT_TO_TOP = 50;
 
 export function Header() {
@@ -16,13 +16,13 @@ export function Header() {
 
   const isLargeScreen = useScreenVersion('LG');
 
-  const onScroll = debounce(() => {
+  function onScroll() {
     if (isLargeScreen) {
       setHeaderInTop(window.scrollY < MIN_HEIGHT_TO_TOP);
     }
-  }, ON_SCROLL_DEBOUNCE_MILLIS);
+  }
 
-  useEventListener('scroll', onScroll);
+  useEventListener('scroll', throttle(onScroll, ON_SCROLL_THROTTLE_MILLIS));
 
   if (!isLargeScreen) {
     return (

@@ -1,10 +1,17 @@
-import { Box, Icon, IconButton, useBoolean } from '@chakra-ui/react';
-import { useEffect } from 'react';
+import {
+  Box,
+  Icon,
+  IconButton,
+  useBoolean,
+  useEventListener,
+} from '@chakra-ui/react';
 import { AiFillCaretUp } from 'react-icons/ai';
-
-import { debounce } from '$utils/debounce';
+import { throttle } from '$utils/throttle';
 
 import styles from './styles.module.css';
+
+const ON_SCROLL_THROTTLE_MILLIS = 1000;
+const MIN_HEIGHT_TO_SHOW_BUTTON = 500;
 
 export function BackToTop() {
   const [showButton, changeShowButton] = useBoolean();
@@ -14,21 +21,17 @@ export function BackToTop() {
     changeShowButton.off();
   }
 
-  useEffect(() => {
-    function handleScroll() {
-      const position = window.pageYOffset;
+  function onScroll() {
+    const position = window.pageYOffset;
 
-      if (position >= 500) {
-        changeShowButton.on();
-      } else {
-        changeShowButton.off();
-      }
+    if (position >= MIN_HEIGHT_TO_SHOW_BUTTON) {
+      changeShowButton.on();
+    } else {
+      changeShowButton.off();
     }
+  }
 
-    window.addEventListener('scroll', debounce(handleScroll, 250));
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [changeShowButton]);
+  useEventListener('scroll', throttle(onScroll, ON_SCROLL_THROTTLE_MILLIS));
 
   const containerClassName = `${styles.default} ${
     showButton ? styles.show : styles.hide
