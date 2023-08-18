@@ -8,13 +8,16 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
+import { AiOutlineArrowRight, AiOutlineLink } from 'react-icons/ai';
+import { Link } from '@chakra-ui/next-js';
+
+import { Image } from '$components/chakra/image';
+import { SlideFade } from '$components/ui/animations/slide-fade';
 import { glassmorphismContainer } from '$styles/tokens';
 
 import { TechList } from './tech-list';
 import { Links } from './links';
-import { Image } from '$components/chakra/image';
-import { AiOutlineArrowRight, AiOutlineLink } from 'react-icons/ai';
-import { Link } from '@chakra-ui/next-js';
+import { Fade } from 'react-awesome-reveal';
 
 export type Category = 'web' | 'mobile' | 'api' | 'other';
 
@@ -71,45 +74,52 @@ export function ProjectCard({ project }: ProjectCardProps) {
         h={{ base: '50%', lg: 'full' }}
         ml={{ base: '0', lg: '4' }}
         align="start"
+        overflow="hidden"
       >
-        <Flex
-          align="center"
-          transition="0.2s ease-in-out"
-          _groupHover={{ color: 'brand.500' }}
-        >
-          <Link href={href}>
-            <Heading
-              as="h3"
-              color="white"
-              fontSize={{ base: 'xl', md: '2xl' }}
-              textTransform="uppercase"
-              mr="2"
-              transition="0.2s ease-in-out"
-              _groupHover={{ color: 'brand.500' }}
-            >
-              {project.name}
-            </Heading>
-          </Link>
+        <SlideFade direction="right">
+          <Flex
+            align="center"
+            transition="0.2s ease-in-out"
+            _groupHover={{ color: 'brand.500' }}
+          >
+            <Link href={href}>
+              <Heading
+                as="h3"
+                color="white"
+                fontSize={{ base: 'xl', md: '2xl' }}
+                textTransform="uppercase"
+                mr="2"
+                transition="0.2s ease-in-out"
+                _groupHover={{ color: 'brand.500' }}
+              >
+                {project.name}
+              </Heading>
+            </Link>
 
-          <Icon as={AiOutlineLink} />
-        </Flex>
+            <Icon as={AiOutlineLink} />
+          </Flex>
+        </SlideFade>
 
-        <Text>{project.description}</Text>
+        <SlideFade direction="right" delay={200}>
+          <Text>{project.description}</Text>
+        </SlideFade>
 
         <Spacer />
 
         <TechList project={project} />
 
-        <Button
-          as={Link}
-          href={href}
-          rightIcon={<Icon as={AiOutlineArrowRight} />}
-          w="full"
-        >
-          Ver projeto
-        </Button>
+        <Fade delay={500} cascade triggerOnce style={{ width: '100%' }}>
+          <Button
+            as={Link}
+            href={href}
+            rightIcon={<Icon as={AiOutlineArrowRight} />}
+            w="full"
+          >
+            Ver projeto
+          </Button>
 
-        <Links repository={project.repository} url={project.url} />
+          <Links repository={project.repository} url={project.url} />
+        </Fade>
       </VStack>
     </Flex>
   );

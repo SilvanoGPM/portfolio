@@ -16,7 +16,12 @@ export function Technologies({ technologies }: TechnologiesProps) {
     <Section title="Tecnologias" textAlign="center" align="center">
       <TechList techs={technologies} w="full" justify="center" />
 
-      <SlideFade delay={210 * technologies.length} direction="up" cascade>
+      <SlideFade
+        delay={210 * technologies.length}
+        direction="up"
+        cascade
+        damping={0.1}
+      >
         <Text mt="10" maxW="400px">
           Você pode ver os projetos que eu desenvolvi utilizando algumas dessas
           tecnologias.

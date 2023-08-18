@@ -1,6 +1,6 @@
 import { Box, Heading, HeadingProps } from '@chakra-ui/react';
 
-interface SubTitleProps extends HeadingProps {
+interface TitleProps extends HeadingProps {
   underlineWidth?: string;
   underlineHeight?: string;
 }
@@ -10,7 +10,7 @@ export function Title({
   underlineWidth = '50px',
   underlineHeight = '5px',
   ...props
-}: SubTitleProps) {
+}: TitleProps) {
   return (
     <>
       <Heading {...props} fontWeight="bold" textTransform="uppercase">
