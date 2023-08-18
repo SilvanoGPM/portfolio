@@ -1,5 +1,6 @@
 import { Flex, FlexProps } from '@chakra-ui/react';
 import { ReactNode } from 'react';
+import { Fade } from 'react-awesome-reveal';
 
 import { Title } from '$components/chakra/title';
 import { Replace } from '$utils/replace';
@@ -26,9 +27,14 @@ export function Section({
         {...props}
       >
         {title && (
-          <Title textAlign={props.textAlign} underlineHeight={underlineHeight}>
-            {title}
-          </Title>
+          <Fade triggerOnce>
+            <Title
+              textAlign={props.textAlign}
+              underlineHeight={underlineHeight}
+            >
+              {title}
+            </Title>
+          </Fade>
         )}
         {children}
       </Flex>

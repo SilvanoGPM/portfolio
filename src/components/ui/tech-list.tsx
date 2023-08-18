@@ -1,4 +1,5 @@
 import { FlexProps, Wrap, WrapItem } from '@chakra-ui/react';
+import { Fade } from 'react-awesome-reveal';
 
 import { TechCard } from './tech-card';
 
@@ -11,11 +12,13 @@ interface TechListProps extends FlexProps {
 export function TechList({ techs, ...props }: TechListProps) {
   return (
     <Wrap align="stretch" {...props}>
-      {techs.map((tech) => (
-        <WrapItem key={tech}>
-          <TechCard name={tech} colored={!blackLogos.includes(tech)} />
-        </WrapItem>
-      ))}
+      <Fade cascade triggerOnce damping={0.2}>
+        {techs.map((tech) => (
+          <WrapItem key={tech}>
+            <TechCard name={tech} colored={!blackLogos.includes(tech)} />
+          </WrapItem>
+        ))}
+      </Fade>
     </Wrap>
   );
 }
