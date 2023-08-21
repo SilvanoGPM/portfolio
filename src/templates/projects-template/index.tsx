@@ -1,13 +1,9 @@
-import { useState } from 'react';
-
 import { Title } from '$components/chakra/title';
 import { DefaultLayout } from '$components/layout/default-layout';
 import { ProjectCard } from '$components/ui/project-card';
 import { Pagination } from '$components/ui/pagination';
 import { PROJECTS_PER_PAGE } from '$shared/pagination';
 import { FilterOptions } from '$components/ui/filter-options';
-
-import { useFindProjects } from './use-find-projects';
 import { DataList } from '$components/ui/data-list';
 
 import {
@@ -17,18 +13,15 @@ import {
   WebIcon,
 } from '$components/chakra/icons';
 
+import { useFindProjects } from './use-find-projects';
+import { usePagination } from './use-pagination';
+
 export type Category = 'all' | 'web' | 'api' | 'mobile' | 'other';
 
 export function ProjectsTemplate() {
-  const [category, setCategory] = useState<Category>('all');
-  const [page, setPage] = useState(1);
+  const { page, category, setPage, setCategory } = usePagination();
 
   const projectsQuery = useFindProjects({ page, category });
-
-  function handleChangeCategory(category: Category) {
-    setPage(1);
-    setCategory(category);
-  }
 
   return (
     <DefaultLayout>
@@ -45,7 +38,7 @@ export function ProjectsTemplate() {
           { value: 'other', label: 'Outros', icon: <OtherIcon /> },
         ]}
         value={category}
-        setValue={handleChangeCategory}
+        setValue={setCategory}
       />
 
       <DataList

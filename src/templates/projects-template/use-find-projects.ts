@@ -22,6 +22,7 @@ export function useFindProjects(params: FindProjectsParams) {
     () => findProjects(params),
     {
       staleTime: Infinity,
+      keepPreviousData: true,
     },
   );
 

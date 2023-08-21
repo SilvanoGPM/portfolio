@@ -45,7 +45,7 @@ export function DataList<T>({
               {Boolean(afterList) && afterList}
             </VStack>
           ) : (
-            <Empty message={empty} />
+            <Empty message={empty} color="white" />
           )}
         </>
       )}
