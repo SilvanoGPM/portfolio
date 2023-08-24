@@ -4,11 +4,13 @@ import rangeParser from 'parse-numeric-range';
 import type { NormalComponents } from 'react-markdown/lib/complex-types';
 import type { SpecialComponents } from 'react-markdown/lib/ast-to-react';
 import { Box } from '@chakra-ui/react';
+import { ReactElement } from 'react';
 
 import { Image } from '$components/chakra/image';
 
 import { CustomHeader } from './custom-header';
 
+import { CopyCode } from './copy-code';
 import './highlight';
 
 type Components = Partial<
@@ -41,6 +43,21 @@ export const components: Components = {
 
   h6(props) {
     return <CustomHeader {...props} />;
+  },
+
+  pre({ children }) {
+    const code =
+      typeof children === 'string'
+        ? String(children)
+        : children.map((node) => (node as ReactElement).props.children).join();
+
+    return (
+      <Box as="pre" pos="relative">
+        <CopyCode code={code} />
+
+        {children}
+      </Box>
+    );
   },
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
