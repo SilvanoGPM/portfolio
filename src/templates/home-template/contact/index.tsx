@@ -1,16 +1,21 @@
-import { Button, Icon, useToast, VStack, Text, Flex } from '@chakra-ui/react';
-import { useForm } from 'react-hook-form';
+import { Button, Flex, Icon, Text, useToast, VStack } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { AiOutlineSend } from 'react-icons/ai';
+import { useForm } from 'react-hook-form';
+import {
+  AiOutlineMail,
+  AiOutlineMessage,
+  AiOutlineSend,
+  AiOutlineUser,
+} from 'react-icons/ai';
 
 import { Input } from '$components/form/input';
 import { Textarea } from '$components/form/text-area';
-import { glassmorphismContainer } from '$styles/tokens';
 import { Section } from '$components/layout/section';
 import { sendEmail } from '$http/send-email';
+import { glassmorphismContainer } from '$styles/tokens';
 
-import { contactFormSchema } from './form-schema';
 import { CONTACT } from '$shared/sections';
+import { contactFormSchema } from './form-schema';
 
 interface ContactFormData {
   email: string;
@@ -64,7 +69,7 @@ export function Contact() {
       textAlign="center"
       sx={glassmorphismContainer({ bg: 'background.alpha.500' })}
     >
-      <Text mb="8" maxW="600px" fontWeight="bold" mx="auto">
+      <Text mb="8" maxW="600px" mx="auto" color="gray.500">
         Vamos criar algo incrível juntos, estou aqui para transformar suas
         ideias em código. Acesse minhas redes no canto superior ou me envie um
         E-mail.
@@ -74,12 +79,14 @@ export function Contact() {
         <Flex wrap="wrap" gap="2" w="full">
           <Input
             {...register('name')}
+            icon={AiOutlineUser}
             placeholder="Nome *"
             error={formState.errors.name}
           />
 
           <Input
             {...register('email')}
+            icon={AiOutlineMail}
             placeholder="E-mail *"
             error={formState.errors.email}
           />
@@ -87,6 +94,7 @@ export function Contact() {
 
         <Textarea
           {...register('message')}
+          icon={AiOutlineMessage}
           id="message"
           placeholder="Mensagem *"
           error={formState.errors.message}

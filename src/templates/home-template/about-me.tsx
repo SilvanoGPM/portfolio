@@ -7,7 +7,7 @@ import { ABOUT_ME, CONTACT } from '$shared/sections';
 import { ScrollButton } from '$components/ui/scroll-button';
 import { Image } from '$components/chakra/image';
 
-import meImg from '$assets/me.png';
+import meImg from '$assets/me.jpeg';
 import { Markdown } from '$components/ui/markdown';
 import { SlideFade } from '$components/ui/animations/slide-fade';
 
@@ -17,16 +17,26 @@ interface AboutMeProps {
 
 export function AboutMe({ text }: AboutMeProps) {
   return (
-    <Section title="Sobre mim" dataScroll={ABOUT_ME} scrollMarginTop="120px">
+    <Section
+      title="Sobre mim"
+      dataScroll={ABOUT_ME}
+      scrollMarginTop="120px"
+      align={{ base: 'center', md: 'start' }}
+      textAlign={{ base: 'center', md: 'start' }}
+    >
       <Flex
-        wrap="wrap"
         w="full"
-        align="center"
-        justify="space-between"
+        flexDir={{ base: 'column', md: 'row' }}
+        justify={{ base: 'start', md: 'space-between' }}
         gap="1rem"
       >
         <Fade triggerOnce>
-          <Markdown maxW="550px" fontSize="xl" textAlign="justify" spacing="4">
+          <Markdown
+            maxW={{ base: 'none', md: '550px' }}
+            fontSize="xl"
+            textAlign="justify"
+            spacing="4"
+          >
             {text}
           </Markdown>
         </Fade>
@@ -34,6 +44,7 @@ export function AboutMe({ text }: AboutMeProps) {
         <Fade triggerOnce delay={300}>
           <Image
             alt="Silvano Marques"
+            objectFit="cover"
             src={meImg.src}
             filter={{
               base: 'contrast(100%) grayscale(0%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%)',
