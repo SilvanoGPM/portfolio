@@ -50,7 +50,13 @@ export function Card({ Icon, title, more, description, delay }: CardProps) {
         <Flex px="4" direction="column">
           <Fade delay={delay + 100}>
             <Flex align="center">
-              <Center boxSize="50px" p="2" bg="brand.alpha.100" mr="4">
+              <Center
+                boxSize="50px"
+                p="2"
+                bg="brand.alpha.100"
+                mr="4"
+                rounded="md"
+              >
                 <Icon color="brand.500" fontSize="3xl" />
               </Center>
 

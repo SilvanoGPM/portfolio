@@ -14,21 +14,10 @@ export function PaginationItem({
   return (
     <Button
       onClick={() => onPageChange(number)}
-      size="sm"
+      variant="outline"
       fontSize="xs"
       width="4"
       isDisabled={isCurrent}
-      _disabled={{
-        bg: 'brand.300',
-        borderColor: 'brand.300',
-        cursor: 'default',
-      }}
-      _hover={{
-        _disabled: {
-          bg: 'brand.300',
-          borderColor: 'brand.300',
-        },
-      }}
     >
       {number}
     </Button>

@@ -1,7 +1,8 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
 import { SplashScreen } from '$components/ui/splash-screen';
 import { ColorModeScript } from '@chakra-ui/react';
+import { theme } from '$styles/theme';
 
 export default function Document() {
   return (
@@ -16,7 +17,8 @@ export default function Document() {
           name="description"
           content="Meu portfolio com projetos e posts realizados por mim"
         />
-        <meta name="theme-color" content="#b33939" />
+
+        <meta name="theme-color" content={theme.colors.brand['500']} />
       </Head>
 
       <body style={{ overflow: 'hidden' }}>

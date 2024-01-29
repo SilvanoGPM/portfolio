@@ -1,14 +1,14 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
-import ReactTypingEffect from 'react-typing-effect';
+import { Box, Heading, Icon, Text } from '@chakra-ui/react';
 import { Fade, Zoom } from 'react-awesome-reveal';
+import { FaLaptopCode } from 'react-icons/fa';
+import ReactTypingEffect from 'react-typing-effect';
 
+import welcomeAnimation from '$assets/lottie/welcome.json';
 import { Section } from '$components/layout/section';
-import { ABOUT_ME } from '$shared/sections';
-import { ScrollButton } from '$components/ui/scroll-button';
-import { Lottie } from '$components/ui/lottie';
-import { ShineText } from '$components/chakra/shine-text';
-import devAnimation from '$assets/lottie/dev.json';
 import { SlideFade } from '$components/ui/animations/slide-fade';
+import { Lottie } from '$components/ui/lottie';
+import { ScrollButton } from '$components/ui/scroll-button';
+import { ABOUT_ME } from '$shared/sections';
 
 export function Welcome() {
   return (
@@ -20,24 +20,28 @@ export function Welcome() {
     >
       <Box>
         <Fade triggerOnce>
-          <Text fontWeight="bold">Seja bem vindo(a), meu nome é</Text>
+          <Text fontWeight="bold" color="white">
+            Seja bem vindo(a), meu nome é
+          </Text>
         </Fade>
 
         <Fade delay={500} triggerOnce>
-          <Heading as="h1" textTransform="uppercase" fontWeight="black">
-            <ShineText
-              as="span"
-              bgGradient="linear(to-r, brand.500, brand.900)"
-            >
+          <Heading
+            as="h1"
+            textTransform="uppercase"
+            fontWeight="black"
+            color="white"
+          >
+            <Text as="span" color="brand.500">
               Silvano
-            </ShineText>{' '}
+            </Text>{' '}
             Marques
           </Heading>
 
           <Box fontSize="2xl" fontWeight="bold" color="white">
             <ReactTypingEffect
               staticText="Desenvolvedor"
-              text={['Front-end.', 'Back-end.', 'FullStack.']}
+              text={['Front-end.', 'Web.']}
             />
           </Box>
         </Fade>
@@ -47,16 +51,22 @@ export function Welcome() {
             Programação, Sites, APIs, Open Source e muito café ☕.
           </Text>
 
-          <ScrollButton dataScroll={ABOUT_ME}>Mais sobre mim 😃</ScrollButton>
+          <ScrollButton
+            dataScroll={ABOUT_ME}
+            rightIcon={<Icon as={FaLaptopCode} />}
+          >
+            Mais sobre mim
+          </ScrollButton>
         </SlideFade>
       </Box>
 
       <Zoom duration={500} triggerOnce>
         <Lottie
           speed={0.5}
-          animation={devAnimation}
+          animation={welcomeAnimation}
           transform="auto"
           translateX={['0', '0', '40px']}
+          translateY="-14"
         />
       </Zoom>
     </Section>

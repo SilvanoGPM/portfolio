@@ -57,7 +57,7 @@ export default function Home({ info, projects }: HomeProps) {
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const data = await request(GetInfoAndLatestProjectsDocument, {
-    first: 3,
+    first: 4,
   });
 
   const info = data.info as InfoProps;

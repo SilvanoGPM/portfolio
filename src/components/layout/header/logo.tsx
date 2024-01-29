@@ -1,17 +1,25 @@
-import { Center, Image } from '@chakra-ui/react';
+import { Center } from '@chakra-ui/react';
 import Link from 'next/link';
-
-import logoImg from '$assets/logo.png';
 
 export function Logo() {
   return (
-    <Center h="100px">
+    <Center h="100px" fontSize="8rem" color="brand.500">
       <Link href="/" aria-label="Ir para o início">
-        <Image
-          alt="Letras S e M como se fosse um bloco de código HTML"
-          src={logoImg.src}
-          w="80px"
-        />
+        <svg
+          width="1em"
+          height="1em"
+          fill="currentColor"
+          aria-hidden="true"
+          focusable="false"
+          role="presentation"
+          version="1.0"
+          viewBox="0 0 250 86"
+        >
+          <path
+            d="M634 836c-17-13-19-30-22-167l-3-152 105-101 106-101V189l-42 3-43 3-3 63-3 62H610V210c0-104 1-112 25-135 23-24 30-25 143-25 172 0 167-5 167 190v152L837 494 729 597l3 54 3 54 43 3 42 3V589l63 3 62 3 3 80c4 94-3 139-24 160s-261 22-290 1zM1050 450V50h120v187c0 102 2 184 6 181 4-5 44-265 44-291 0-4 19-7 42-5l43 3 21 145 21 145 4-180 4-180h120l3 398 2 397h-64c-53 0-66-3-70-17-7-22-76-325-76-332 0-3-4-1-9 5-4 5-25 84-46 177l-38 167h-127V450zM1821 836c-12-15-291-752-291-771 0-21 40-55 65-55 13 0 32 10 42 23s81 191 157 395c136 363 139 372 122 397-12 18-25 25-50 25-18 0-39-6-45-14zM201 630C39 484 10 455 10 431s29-54 192-200C370 81 397 59 423 62c42 4 74 49 60 81-6 13-76 82-156 153S182 428 183 431s68 65 149 137c81 73 150 142 153 153 10 31-25 73-63 77-27 3-52-16-221-168zM2027 772c-20-22-22-66-4-84 8-7 75-69 151-137 75-69 135-128 134-132-2-4-69-66-150-138-128-114-148-136-148-161 0-17 9-39 21-51 38-38 67-21 264 157 232 208 228 191 79 324-274 245-267 240-300 240-17 0-38-8-47-18z"
+            transform="matrix(.1 0 0 -.1 0 86)"
+          ></path>
+        </svg>
       </Link>
     </Center>
   );

@@ -1,5 +1,5 @@
 import { Box, BoxProps } from '@chakra-ui/react';
-import { Player } from '@lottiefiles/react-lottie-player';
+import dynamic from 'next/dynamic';
 
 interface LottieProps extends BoxProps {
   animation: object;
@@ -7,6 +7,13 @@ interface LottieProps extends BoxProps {
   loop?: boolean;
   speed?: number;
 }
+
+const Player = dynamic(
+  () => import('@lottiefiles/react-lottie-player').then((mod) => mod.Player),
+  {
+    ssr: false,
+  },
+);
 
 export function Lottie({
   animation,
@@ -21,3 +28,5 @@ export function Lottie({
     </Box>
   );
 }
+
+export default Lottie;

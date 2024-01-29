@@ -10,7 +10,8 @@
     "test": "jest --passWithNoTests --bail",
     "test:watch": "npm run test --watch",
     "generate-ts-types": "graphql-codegen --config graphql.config.yml",
-    "analyze": "cross-env ANALYZE=true npm run build"
+    "analyze": "cross-env ANALYZE=true npm run build",
+    "brand-generator": "node ./scripts/generate-brand-pallete.js"
   },
   "dependencies": {
     "@chakra-ui/next-js": "^2.1.5",
@@ -23,8 +24,9 @@
     "@graphql-codegen/typescript-operations": "^2.5.12",
     "@graphql-typed-document-node/core": "^3.1.1",
     "@hookform/resolvers": "^2.9.10",
-    "@lottiefiles/react-lottie-player": "^3.5.0",
+    "@lottiefiles/react-lottie-player": "^3.5.3",
     "@vercel/analytics": "^1.0.1",
+    "chakra-react-select": "^4.7.6",
     "framer-motion": "^6.5.1",
     "graphql": "^16.6.0",
     "graphql-request": "^5.1.0",

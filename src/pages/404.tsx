@@ -19,12 +19,15 @@ export default function NotFound() {
         <Center
           as="section"
           flexDirection="column"
-          h={{ base: '80vh', lg: '55vh' }}
+          h={{ base: '80vh', lg: '80vh' }}
           w="full"
-          mt="16"
         >
           <Box maxH="400px">
-            <Lottie animation={notFound404Animation} />
+            <Lottie
+              animation={notFound404Animation}
+              transform="auto"
+              translateY={{ base: '0', lg: '-24' }}
+            />
           </Box>
         </Center>
       </DefaultLayout>

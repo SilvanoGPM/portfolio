@@ -1,40 +1,39 @@
+import { ColorTheme, colorThemes } from '$styles/color-theme';
 import { type ISourceOptions } from 'tsparticles-engine';
 
-export const options: ISourceOptions = {
-  fpsLimit: 40,
-  particles: {
-    number: {
-      value: 200,
-      density: {
+export function getOptions(color: ColorTheme): ISourceOptions {
+  const theme = colorThemes[color];
+
+  return {
+    fpsLimit: 30,
+    particles: {
+      number: {
+        value: 150,
+        density: {
+          enable: true,
+        },
+      },
+      color: {
+        value: [...Object.values(theme)],
+      },
+      opacity: {
+        value: { min: 0.1, max: 0.5 },
+      },
+      size: {
+        value: { min: 1, max: 3 },
+      },
+      move: {
         enable: true,
+        speed: 6,
+        random: false,
+      },
+      interactivity: {
+        events: {
+          onhover: {
+            enable: false,
+          },
+        },
       },
     },
-    color: {
-      value: ['#fdcf58', '#757676', '#f27d0c', '#800909', '#f07f13'],
-    },
-    opacity: {
-      value: { min: 0.1, max: 0.5 },
-    },
-    size: {
-      value: { min: 1, max: 3 },
-    },
-    move: {
-      enable: true,
-      speed: 6,
-      random: false,
-    },
-  },
-  interactivity: {
-    detectsOn: 'window',
-    events: {
-      onClick: {
-        enable: true,
-        mode: 'push',
-      },
-      resize: true,
-    },
-  },
-  background: {
-    image: 'radial-gradient(#6b2222, #111111 80%)',
-  },
-};
+  };
+}

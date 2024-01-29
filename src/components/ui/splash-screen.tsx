@@ -26,7 +26,9 @@ export function SplashScreen() {
           trackColor={theme.colors.background['900']}
         />
 
-        <Text mt="8">Carregando...</Text>
+        <Text mt="8" color="white">
+          Carregando...
+        </Text>
       </Center>
     </Box>
   );

@@ -1,22 +1,25 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { Titillium_Web } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
+import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
+import { Titillium_Web } from 'next/font/google';
 import { Router } from 'next/router';
 import NextNProgress from 'nextjs-progressbar';
 import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { DefaultSeo } from 'next-seo';
-import { Analytics } from '@vercel/analytics/react';
 
-import { useUIStore } from '$stores/ui';
-import { theme } from '$styles/theme';
+import { useScrollLock } from '$hooks/use-scroll-lock';
 import { useSplashScreen } from '$hooks/use-splash-screen';
 import { queryClient } from '$services/query-client';
-import { useScrollLock } from '$hooks/use-scroll-lock';
+import { useUIStore } from '$stores/ui';
+import { theme } from '$styles/theme';
 
 import SEO from 'next-seo.config';
 
+import { usePreferencesStore } from '$stores/preferences';
+import { colorThemes } from '$styles/color-theme';
 import '$styles/css/devicon/style.min.css';
+import { useMemo } from 'react';
 
 const tintilliumWeb = Titillium_Web({
   weight: ['400', '600', '700', '900'],
@@ -24,6 +27,8 @@ const tintilliumWeb = Titillium_Web({
 });
 
 function App({ Component, pageProps }: AppProps) {
+  const { preferences } = usePreferencesStore();
+
   useSplashScreen('hide');
 
   const { unlockScroll } = useScrollLock();
@@ -36,6 +41,16 @@ function App({ Component, pageProps }: AppProps) {
     closeSidebar();
   });
 
+  const selectedTheme = useMemo(() => {
+    return {
+      ...theme,
+      colors: {
+        ...theme.colors,
+        brand: colorThemes[preferences.color],
+      },
+    };
+  }, [preferences.color]);
+
   return (
     <>
       <style jsx global>{`
@@ -47,13 +62,13 @@ function App({ Component, pageProps }: AppProps) {
       <DefaultSeo {...SEO} />
 
       <NextNProgress
-        color={theme.colors.brand['500']}
+        color={selectedTheme.colors.brand['500']}
         startPosition={0.3}
         stopDelayMs={200}
         height={4}
       />
 
-      <ChakraProvider theme={theme}>
+      <ChakraProvider theme={selectedTheme}>
         <QueryClientProvider client={queryClient}>
           <Component {...pageProps} />
           <Analytics />

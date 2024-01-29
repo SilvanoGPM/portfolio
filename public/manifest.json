@@ -14,7 +14,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#b33939",
+  "theme_color": "#3498db",
   "description": "Meu portfolio com projetos e posts realizados por mim",
   "background_color": "#111111",
   "start_url": "/",

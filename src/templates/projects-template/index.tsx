@@ -48,11 +48,13 @@ export function ProjectsTemplate() {
         )}
         afterList={
           <Pagination
+            mt="8"
+            w="full"
+            direction="column"
             currentPage={page}
             onPageChange={setPage}
             totalCountOfRegisters={projectsQuery.total}
             registersPerPage={PROJECTS_PER_PAGE}
-            showResume={false}
           />
         }
         error="Aconteceu um erro ao tentar pesquisar os projetos."
