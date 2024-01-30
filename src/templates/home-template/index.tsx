@@ -1,14 +1,37 @@
 import { VStack } from '@chakra-ui/react';
+import dynamic from 'next/dynamic';
 
 import { DefaultLayout } from '$components/layout/default-layout';
 import { BackToTop } from '$components/ui/back-to-top';
 
 import { Welcome } from './welcome';
-import { Technologies } from './technologies';
 import { AboutMe } from './about-me';
-import { Services } from './services';
-import { Projects, Project } from './projects';
-import { Contact } from './contact';
+import type { Project } from './projects';
+
+const Technologies = dynamic(
+  () => import('./technologies').then((mod) => mod.Technologies),
+  {
+    ssr: false,
+  },
+);
+
+const Services = dynamic(
+  () => import('./services').then((mod) => mod.Services),
+  {
+    ssr: false,
+  },
+);
+
+const Projects = dynamic(
+  () => import('./projects').then((mod) => mod.Projects),
+  {
+    ssr: false,
+  },
+);
+
+const Contact = dynamic(() => import('./contact').then((mod) => mod.Contact), {
+  ssr: false,
+});
 
 interface InfoProps {
   aboutMe: string;

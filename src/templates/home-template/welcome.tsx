@@ -3,7 +3,6 @@ import { Fade, Zoom } from 'react-awesome-reveal';
 import { FaLaptopCode } from 'react-icons/fa';
 import ReactTypingEffect from 'react-typing-effect';
 
-import welcomeAnimation from '$assets/lottie/welcome.json';
 import { Section } from '$components/layout/section';
 import { SlideFade } from '$components/ui/animations/slide-fade';
 import { Lottie } from '$components/ui/lottie';
@@ -63,7 +62,7 @@ export function Welcome() {
       <Zoom duration={500} triggerOnce>
         <Lottie
           speed={0.5}
-          animation={welcomeAnimation}
+          animation="/animations/welcome.json"
           transform="auto"
           translateX={['0', '0', '40px']}
           translateY="-14"

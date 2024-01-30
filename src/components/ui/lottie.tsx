@@ -2,7 +2,7 @@ import { Box, BoxProps } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 
 interface LottieProps extends BoxProps {
-  animation: object;
+  animation: object | string;
   autoplay?: boolean;
   loop?: boolean;
   speed?: number;
