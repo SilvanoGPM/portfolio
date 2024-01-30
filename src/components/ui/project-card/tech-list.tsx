@@ -11,15 +11,15 @@ interface TechListProps {
 export function TechList({ project }: TechListProps) {
   return (
     <Wrap as={Fade} gap="2">
-      <Fade cascade triggerOnce>
-        <CategoryBadge category={project.category} />
+      <CategoryBadge category={project.category} as="li" />
 
-        {project.techs.map((tech) => (
-          <WrapItem key={tech}>
+      {project.techs.map((tech, index) => (
+        <WrapItem key={tech}>
+          <Fade cascade triggerOnce delay={(index + 1) * 50}>
             <Badge>{tech}</Badge>
-          </WrapItem>
-        ))}
-      </Fade>
+          </Fade>
+        </WrapItem>
+      ))}
     </Wrap>
   );
 }
