@@ -55,6 +55,7 @@ export function ThemeColorSelector() {
 
   return (
     <Select<ThemeOption>
+      aria-label="Trocar cores"
       options={options}
       menuPlacement={placement}
       defaultValue={defaultTheme}

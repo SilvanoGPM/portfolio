@@ -14,6 +14,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  productionBrowserSourceMaps: true,
   swcMinify: true,
   images: {
     domains: ['www.datocms-assets.com'],

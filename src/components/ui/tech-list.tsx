@@ -12,13 +12,13 @@ interface TechListProps extends FlexProps {
 export function TechList({ techs, ...props }: TechListProps) {
   return (
     <Wrap align="stretch" {...props}>
-      <Fade cascade triggerOnce damping={0.2}>
-        {techs.map((tech) => (
-          <WrapItem key={tech}>
+      {techs.map((tech, index) => (
+        <WrapItem key={tech}>
+          <Fade cascade triggerOnce delay={index * 200}>
             <TechCard name={tech} colored={!blackLogos.includes(tech)} />
-          </WrapItem>
-        ))}
-      </Fade>
+          </Fade>
+        </WrapItem>
+      ))}
     </Wrap>
   );
 }
