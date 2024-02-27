@@ -6,7 +6,7 @@ import { Button } from './components/button';
 import { Heading } from './components/heading';
 import { thinScrollbar } from './tokens';
 
-export const defaultColorTheme: ColorTheme = 'blue';
+export const defaultColorTheme: ColorTheme = 'purple';
 
 export const theme = extendTheme({
   initialColorMode: 'light',

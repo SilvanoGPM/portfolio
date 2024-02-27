@@ -25,7 +25,7 @@ export function Services({ api, web, other }: ServicesProps) {
           more="Desejo saber mais sobre o desenvolvimento de sites."
           description={web}
           Icon={WebIcon}
-          delay={1000}
+          delay={500}
         />
 
         <Card
@@ -33,7 +33,7 @@ export function Services({ api, web, other }: ServicesProps) {
           more="Desejo saber mais sobre o desenvolvimento de APIs."
           description={api}
           Icon={ApiIcon}
-          delay={500}
+          delay={250}
         />
 
         <Card
@@ -41,7 +41,7 @@ export function Services({ api, web, other }: ServicesProps) {
           more="Desejo saber mais sobre o desenvolvimento de softwares."
           description={other}
           Icon={OtherIcon}
-          delay={1500}
+          delay={750}
         />
       </Flex>
     </Section>

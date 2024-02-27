@@ -29,9 +29,9 @@ export function HomeTemplate({ projects, info }: HomeTemplateProps) {
     <DefaultLayout>
       <VStack align="start" spacing="16" as="main">
         <Welcome />
-        <AboutMe text={info.aboutMe} />
-        <Technologies technologies={info.techs} />
         <Projects projects={projects} />
+        <Technologies technologies={info.techs} />
+        <AboutMe text={info.aboutMe} />
         <Services {...info} />
         <Contact />
       </VStack>

@@ -29,7 +29,7 @@ export function ProjectTemplate({ project }: ProjectTemplateProps) {
     <DefaultLayout>
       <Box
         as="main"
-        mt="8"
+        mt={{ base: '16', mt: '8' }}
         w="full"
         p={['4', '8']}
         sx={glassmorphismContainer()}

@@ -8,16 +8,17 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
-import { AiOutlineArrowRight, AiOutlineLink } from 'react-icons/ai';
 import { Link } from '@chakra-ui/next-js';
+import { AiOutlineLink } from 'react-icons/ai';
 
 import { Image } from '$components/chakra/image';
 import { SlideFade } from '$components/ui/animations/slide-fade';
 import { glassmorphismContainer } from '$styles/tokens';
 
-import { TechList } from './tech-list';
-import { Links } from './links';
 import { Fade } from 'react-awesome-reveal';
+import { FaRegArrowAltCircleRight } from 'react-icons/fa';
+import { Links } from './links';
+import { TechList } from './tech-list';
 
 export type Category = 'web' | 'mobile' | 'api' | 'other';
 
@@ -112,7 +113,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <Button
             as={Link}
             href={href}
-            rightIcon={<Icon as={AiOutlineArrowRight} />}
+            rightIcon={<Icon as={FaRegArrowAltCircleRight} />}
             w="full"
           >
             Ver projeto

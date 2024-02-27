@@ -8,8 +8,9 @@ import { throttle } from '$utils/throttle';
 import { Content } from './content';
 import { SidebarButtons } from './sidebar-buttons';
 
-const ON_SCROLL_THROTTLE_MILLIS = 200;
-const MIN_HEIGHT_TO_TOP = 50;
+export const DESKTOP_HEIGHT = '100px';
+export const ON_SCROLL_THROTTLE_MILLIS = 200;
+export const MIN_HEIGHT_TO_TOP = 50;
 
 export function Header() {
   const { sidebarIsOpen, headerInTop, setHeaderInTop } = useUIStore();
@@ -59,14 +60,14 @@ export function Header() {
 
   return (
     <>
-      <Box h="100px" w="full" />
+      <Box h={DESKTOP_HEIGHT} w="full" />
 
       <Center
         pos="fixed"
         zIndex="modal"
         top="0"
         left="0"
-        h="100px"
+        h={DESKTOP_HEIGHT}
         w="full"
         transition="0.2s ease-in-out"
         sx={headerBg}

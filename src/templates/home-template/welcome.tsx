@@ -1,21 +1,24 @@
-import { Box, Heading, Icon, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Icon, Text } from '@chakra-ui/react';
 import { Fade, Zoom } from 'react-awesome-reveal';
-import { FaLaptopCode } from 'react-icons/fa';
+import { FaLaptopCode, FaRocket } from 'react-icons/fa';
 import ReactTypingEffect from 'react-typing-effect';
 
 import { Section } from '$components/layout/section';
 import { SlideFade } from '$components/ui/animations/slide-fade';
 import { Lottie } from '$components/ui/lottie';
 import { ScrollButton } from '$components/ui/scroll-button';
-import { ABOUT_ME } from '$shared/sections';
+import { ABOUT_ME, PROJECTS } from '$shared/sections';
+import { DESKTOP_HEIGHT } from '$components/layout/header';
 
 export function Welcome() {
   return (
     <Section
+      // 100px é o tamanho do header.
+      h={`calc(100vh - ${DESKTOP_HEIGHT})`}
+      mt={{ base: '16', md: '0' }}
       justify="space-between"
-      mt={{ base: '20', md: '8', lg: '0' }}
-      direction={{ base: 'column', md: 'row' }}
       align="center"
+      direction={{ base: 'column', md: 'row' }}
     >
       <Box>
         <Fade triggerOnce>
@@ -40,7 +43,7 @@ export function Welcome() {
           <Box fontSize="2xl" fontWeight="bold" color="white">
             <ReactTypingEffect
               staticText="Desenvolvedor"
-              text={['Front-end.', 'Web.']}
+              text={['Front-end.', 'Back-end.', 'FullStack.']}
             />
           </Box>
         </Fade>
@@ -50,12 +53,24 @@ export function Welcome() {
             Programação, Sites, APIs, Open Source e muito café ☕.
           </Text>
 
-          <ScrollButton
-            dataScroll={ABOUT_ME}
-            rightIcon={<Icon as={FaLaptopCode} />}
-          >
-            Mais sobre mim
-          </ScrollButton>
+          <Flex gap="2" direction={{ base: 'column', md: 'row' }}>
+            <ScrollButton
+              dataScroll={ABOUT_ME}
+              size="md"
+              rightIcon={<Icon as={FaLaptopCode} />}
+            >
+              Mais sobre mim
+            </ScrollButton>
+
+            <ScrollButton
+              dataScroll={PROJECTS}
+              variant="outline"
+              size="md"
+              rightIcon={<Icon as={FaRocket} />}
+            >
+              Meus projetos
+            </ScrollButton>
+          </Flex>
         </SlideFade>
       </Box>
 

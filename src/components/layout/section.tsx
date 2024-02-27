@@ -27,7 +27,7 @@ export function Section({
         {...props}
       >
         {title && (
-          <Fade triggerOnce delay={800}>
+          <Fade triggerOnce delay={300}>
             <Title
               textAlign={props.textAlign}
               underlineHeight={underlineHeight}

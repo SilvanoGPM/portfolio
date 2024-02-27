@@ -1,10 +1,10 @@
-import { Flex, Icon, Text, VStack } from '@chakra-ui/react';
-import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from '@chakra-ui/next-js';
+import { Button, Icon, VStack } from '@chakra-ui/react';
 
 import { Section } from '$components/layout/section';
-import { PROJECTS } from '$shared/sections';
 import { ProjectCard } from '$components/ui/project-card';
+import { PROJECTS } from '$shared/sections';
+import { FaRegArrowAltCircleRight } from 'react-icons/fa';
 
 export type Category = 'web' | 'mobile' | 'api' | 'other';
 
@@ -38,18 +38,16 @@ export function Projects({ projects }: ProjectsProps) {
         ))}
       </VStack>
 
-      <Link href="/projects" mt="8" color="white">
-        <Flex
-          as={Text}
-          fontSize={['xl', '2xl']}
-          fontWeight="bold"
-          align="center"
-          gap="1"
-          mr="2"
-        >
-          Ver todos os projetos <Icon as={AiOutlineArrowRight} />
-        </Flex>
-      </Link>
+      <Button
+        as={Link}
+        href="/projects"
+        variant="outline"
+        mt="8"
+        color="white"
+        rightIcon={<Icon as={FaRegArrowAltCircleRight} />}
+      >
+        Ver todos os projetos
+      </Button>
     </Section>
   );
 }

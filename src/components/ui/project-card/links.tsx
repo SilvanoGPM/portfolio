@@ -21,7 +21,7 @@ export function Links({ repository, url, ...props }: LinksProps) {
             variant="outline"
             w="full"
           >
-            Visitar Site
+            Visitar site
           </Button>
         </WrapItem>
       )}

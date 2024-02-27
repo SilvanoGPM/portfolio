@@ -5,7 +5,8 @@ import { IntersectingTypes } from '$utils/intersecting-types';
 
 import { iconsTech } from './icons-tech';
 
-interface TechProps extends Partial<IntersectingTypes<IconProps, TextProps>> {
+export interface TechProps
+  extends Partial<IntersectingTypes<IconProps, TextProps>> {
   name: string;
   colored?: boolean;
   bottomGap?: boolean;
@@ -30,11 +31,16 @@ const TechBase: ForwardRefRenderFunction<
       : { ...iconProps, ...props };
 
     return (
-      <TechIcon
-        mb={bottomGap ? '10px' : otherProps.mb}
-        {...otherProps}
-        ref={ref as LegacyRef<SVGSVGElement>}
-      />
+      <Text
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        mb={bottomGap ? '8px' : otherProps.mb}
+        {...(props as TextProps)}
+        ref={ref as LegacyRef<HTMLParagraphElement>}
+      >
+        <TechIcon {...otherProps} />
+      </Text>
     );
   }
 

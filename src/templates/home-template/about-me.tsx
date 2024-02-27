@@ -68,8 +68,8 @@ export function AboutMe({ text }: AboutMeProps) {
         </Fade>
       </Flex>
 
-      <SlideFade delay={1000} cascade>
-        <Text mt="10" maxW="400px">
+      <SlideFade>
+        <Text mt="10" maxW="400px" color="gray.500">
           Ficou com alguma dúvida? <br /> Entre em contato agora mesmo.
         </Text>
 
