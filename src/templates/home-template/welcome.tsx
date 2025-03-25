@@ -43,32 +43,32 @@ export function Welcome() {
           <Box fontSize="2xl" fontWeight="bold" color="white">
             <ReactTypingEffect
               staticText="Desenvolvedor"
-              text={['Front-end.', 'Back-end.', 'FullStack.']}
+              text={['FullStack.', 'Front-end.', 'Back-end.']}
             />
           </Box>
         </Fade>
 
         <SlideFade delay={1000} direction="up" cascade>
           <Text mt="10">
-            Programação, Sites, APIs, Open Source e muito café ☕.
+            Desenvolvendo ideias, criando soluções e explorando o código 💡.
           </Text>
 
           <Flex gap="2" direction={{ base: 'column', md: 'row' }}>
             <ScrollButton
-              dataScroll={ABOUT_ME}
-              size="md"
-              rightIcon={<Icon as={FaLaptopCode} />}
-            >
-              Mais sobre mim
-            </ScrollButton>
-
-            <ScrollButton
               dataScroll={PROJECTS}
-              variant="outline"
               size="md"
               rightIcon={<Icon as={FaRocket} />}
             >
               Meus projetos
+            </ScrollButton>
+
+            <ScrollButton
+              dataScroll={ABOUT_ME}
+              variant="outline"
+              size="md"
+              rightIcon={<Icon as={FaLaptopCode} />}
+            >
+              Sobre mim
             </ScrollButton>
           </Flex>
         </SlideFade>

@@ -72,7 +72,7 @@ export function Contact() {
       <Text mb="8" maxW="600px" mx="auto" color="gray.500">
         Vamos criar algo incrível juntos, estou aqui para transformar suas
         ideias em código. Acesse minhas redes no canto superior ou me envie um
-        E-mail.
+        e-mail.
       </Text>
 
       <VStack as="form" onSubmit={handleContact} spacing="4" w="full">

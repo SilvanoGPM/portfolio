@@ -8,7 +8,7 @@ export function getOptions(color: ColorTheme): ISourceOptions {
     fpsLimit: 30,
     particles: {
       number: {
-        value: 150,
+        value: 50,
         density: {
           enable: true,
         },
@@ -24,7 +24,7 @@ export function getOptions(color: ColorTheme): ISourceOptions {
       },
       move: {
         enable: true,
-        speed: 6,
+        speed: 1,
         random: false,
       },
       interactivity: {

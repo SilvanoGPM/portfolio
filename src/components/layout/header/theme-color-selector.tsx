@@ -2,7 +2,7 @@ import { usePreferencesStore } from '$stores/preferences';
 
 import { ColorTheme, colorThemes } from '$styles/color-theme';
 import { glassmorphismContainer } from '$styles/tokens';
-import { Box, Center, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Center, Tooltip, useBreakpointValue } from '@chakra-ui/react';
 import { ChakraStylesConfig, Select } from 'chakra-react-select';
 
 interface ThemeOption {
@@ -54,54 +54,68 @@ export function ThemeColorSelector() {
   };
 
   return (
-    <Select<ThemeOption>
-      aria-label="Trocar cores"
-      options={options}
-      menuPlacement={placement}
-      defaultValue={defaultTheme}
-      chakraStyles={chakraStyles}
-      isSearchable={false}
-      placeholder=""
-      components={{
-        DropdownIndicator: null,
-        Option: (props) => (
-          <Center
-            cursor="pointer"
-            w="full"
-            h="full"
-            mb="2"
-            onClick={() => {
-              const themeFound = options.find(
-                (option) => option.label === props.label,
-              );
+    <Tooltip
+      hasArrow
+      label="Alterar cores do site"
+      bg="brand.500"
+      textColor="white"
+    >
+      <div>
+        <Select<ThemeOption>
+          aria-label="Trocar cores"
+          options={options}
+          menuPlacement={placement}
+          defaultValue={defaultTheme}
+          chakraStyles={chakraStyles}
+          isSearchable={false}
+          placeholder=""
+          components={{
+            DropdownIndicator: null,
+            Option: (props) => (
+              <Center
+                cursor="pointer"
+                w="full"
+                h="full"
+                mb="2"
+                onClick={() => {
+                  const themeFound = options.find(
+                    (option) => option.label === props.label,
+                  );
 
-              if (!themeFound) {
-                return;
-              }
+                  if (!themeFound) {
+                    return;
+                  }
 
-              props.selectOption(themeFound);
+                  props.selectOption(themeFound);
 
-              updatePreferences({
-                color: props.label as ColorTheme,
-              });
-            }}
-          >
-            <Box
-              boxSize="24px"
-              rounded="full"
-              bgGradient={
-                options.find((option) => option.label === props.label)?.value
-              }
-            />{' '}
-          </Center>
-        ),
+                  updatePreferences({
+                    color: props.label as ColorTheme,
+                  });
+                }}
+              >
+                <Box
+                  boxSize="24px"
+                  rounded="full"
+                  bgGradient={
+                    options.find((option) => option.label === props.label)
+                      ?.value
+                  }
+                />{' '}
+              </Center>
+            ),
 
-        SingleValue: (props) => (
-          <Center cursor="pointer" w="full" h="full">
-            <Box boxSize="24px" rounded="full" bgGradient={props.data?.value} />
-          </Center>
-        ),
-      }}
-    />
+            SingleValue: (props) => (
+              <Center cursor="pointer" w="full" h="full">
+                <Box
+                  boxSize="24px"
+                  rounded="full"
+                  bgGradient={props.data?.value}
+                />
+              </Center>
+            ),
+          }}
+        />
+      </div>
+    </Tooltip>
   );
 }

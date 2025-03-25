@@ -7,7 +7,7 @@ import { ABOUT_ME, CONTACT } from '$shared/sections';
 import { ScrollButton } from '$components/ui/scroll-button';
 import { Image } from '$components/chakra/image';
 
-import meImg from '$assets/me.jpeg';
+import meImg from '$assets/me.jpg';
 import { Markdown } from '$components/ui/markdown';
 import { SlideFade } from '$components/ui/animations/slide-fade';
 

@@ -1,5 +1,9 @@
 import { HStack, Icon } from '@chakra-ui/react';
-import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiOutlineWhatsApp,
+} from 'react-icons/ai';
 
 import { ExternalLink } from '$components/chakra/external-link';
 import { ThemeColorSelector } from './theme-color-selector';
@@ -23,6 +27,14 @@ export function Footer() {
         aria-label="Meu linkedin"
       >
         <Icon as={AiFillLinkedin} />
+      </ExternalLink>
+
+      <ExternalLink
+        href="https://api.whatsapp.com/send/?phone=5587981356579"
+        animated={false}
+        aria-label="Meu Whatsapp"
+      >
+        <Icon as={AiOutlineWhatsApp} />
       </ExternalLink>
     </HStack>
   );
