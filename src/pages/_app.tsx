@@ -12,12 +12,11 @@ import { useScrollLock } from '$hooks/use-scroll-lock';
 import { useSplashScreen } from '$hooks/use-splash-screen';
 import { queryClient } from '$services/query-client';
 import { useUIStore } from '$stores/ui';
-import { theme } from '$styles/theme';
+import { getThemeValues, theme } from '$styles/theme';
 
 import SEO from 'next-seo.config';
 
 import { usePreferencesStore } from '$stores/preferences';
-import { colorThemes } from '$styles/color-theme';
 import '$styles/css/devicon/style.min.css';
 import { useMemo } from 'react';
 
@@ -42,11 +41,19 @@ function App({ Component, pageProps }: AppProps) {
   });
 
   const selectedTheme = useMemo(() => {
+    const { colors, styles } = getThemeValues(preferences.color);
+
     return {
       ...theme,
+
       colors: {
         ...theme.colors,
-        brand: colorThemes[preferences.color],
+        ...colors,
+      },
+
+      styles: {
+        ...theme.styles,
+        ...styles,
       },
     };
   }, [preferences.color]);
